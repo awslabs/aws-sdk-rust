@@ -5,10 +5,16 @@ pub use crate::operation::update_media_insights_pipeline_status::_update_media_i
 
 impl UpdateMediaInsightsPipelineStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_media_insights_pipeline_status();
         fluent_builder.inner = self;
         fluent_builder.send().await

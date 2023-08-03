@@ -5,10 +5,16 @@ pub use crate::operation::export_auto_scaling_group_recommendations::_export_aut
 
 impl ExportAutoScalingGroupRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.export_auto_scaling_group_recommendations();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::rotate_ingest_endpoint_credentials::_rotate_ingest_end
 
 impl RotateIngestEndpointCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.rotate_ingest_endpoint_credentials();
         fluent_builder.inner = self;
         fluent_builder.send().await

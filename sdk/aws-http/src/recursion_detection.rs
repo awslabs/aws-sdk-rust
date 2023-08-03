@@ -11,7 +11,7 @@ use http::HeaderValue;
 use percent_encoding::{percent_encode, CONTROLS};
 use std::borrow::Cow;
 
-// TODO(enableNewSmithyRuntime): Delete this module
+// TODO(enableNewSmithyRuntimeCleanup): Delete this module
 
 /// Recursion Detection Middleware
 ///

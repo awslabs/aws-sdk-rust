@@ -5,10 +5,16 @@ pub use crate::operation::batch_associate_client_device_with_core_device::_batch
 
 impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_associate_client_device_with_core_device();
         fluent_builder.inner = self;
         fluent_builder.send().await

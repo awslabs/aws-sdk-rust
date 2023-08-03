@@ -5,10 +5,16 @@ pub use crate::operation::batch_delete_device_position_history::_batch_delete_de
 
 impl BatchDeleteDevicePositionHistoryInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_delete_device_position_history();
         fluent_builder.inner = self;
         fluent_builder.send().await

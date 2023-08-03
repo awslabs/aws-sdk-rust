@@ -7,6 +7,7 @@
 
 use crate::endpoint::error::InvalidEndpointError;
 use crate::operation::error::BuildError;
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use http::uri::{Authority, Uri};
 use std::borrow::Cow;
 use std::fmt::{Debug, Formatter};
@@ -64,6 +65,10 @@ impl<T> From<Arc<dyn ResolveEndpoint<T>>> for SharedEndpointResolver<T> {
     fn from(resolve_endpoint: Arc<dyn ResolveEndpoint<T>>) -> Self {
         SharedEndpointResolver(resolve_endpoint)
     }
+}
+
+impl<T: 'static> Storable for SharedEndpointResolver<T> {
+    type Storer = StoreReplace<SharedEndpointResolver<T>>;
 }
 
 impl<T> ResolveEndpoint<T> for SharedEndpointResolver<T> {

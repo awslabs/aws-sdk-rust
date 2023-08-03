@@ -5,10 +5,16 @@ pub use crate::operation::attach_certificate_to_distribution::_attach_certificat
 
 impl AttachCertificateToDistributionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.attach_certificate_to_distribution();
         fluent_builder.inner = self;
         fluent_builder.send().await

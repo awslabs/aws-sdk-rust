@@ -5,10 +5,16 @@ pub use crate::operation::list_document_classification_jobs::_list_document_clas
 
 impl ListDocumentClassificationJobsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_document_classification_jobs();
         fluent_builder.inner = self;
         fluent_builder.send().await

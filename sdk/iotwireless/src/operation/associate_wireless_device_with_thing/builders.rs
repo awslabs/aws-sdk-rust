@@ -5,10 +5,16 @@ pub use crate::operation::associate_wireless_device_with_thing::_associate_wirel
 
 impl AssociateWirelessDeviceWithThingInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.associate_wireless_device_with_thing();
         fluent_builder.inner = self;
         fluent_builder.send().await

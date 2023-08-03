@@ -5,10 +5,16 @@ pub use crate::operation::list_query_suggestions_block_lists::_list_query_sugges
 
 impl ListQuerySuggestionsBlockListsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_query_suggestions_block_lists();
         fluent_builder.inner = self;
         fluent_builder.send().await

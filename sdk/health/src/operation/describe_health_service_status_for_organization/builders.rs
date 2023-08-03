@@ -5,10 +5,16 @@ pub use crate::operation::describe_health_service_status_for_organization::_desc
 
 impl DescribeHealthServiceStatusForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_health_service_status_for_organization();
         fluent_builder.inner = self;
         fluent_builder.send().await

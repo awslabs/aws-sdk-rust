@@ -5,10 +5,16 @@ pub use crate::operation::accept_direct_connect_gateway_association_proposal::_a
 
 impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalOutput, ::aws_smithy_http::result::SdkError<crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.accept_direct_connect_gateway_association_proposal();
         fluent_builder.inner = self;
         fluent_builder.send().await

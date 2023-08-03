@@ -5,10 +5,16 @@ pub use crate::operation::delete_bucket_analytics_configuration::_delete_bucket_
 
 impl DeleteBucketAnalyticsConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_bucket_analytics_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

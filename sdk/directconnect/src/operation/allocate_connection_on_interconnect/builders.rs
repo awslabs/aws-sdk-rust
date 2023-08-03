@@ -5,10 +5,16 @@ pub use crate::operation::allocate_connection_on_interconnect::_allocate_connect
 
 impl AllocateConnectionOnInterconnectInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.allocate_connection_on_interconnect();
         fluent_builder.inner = self;
         fluent_builder.send().await

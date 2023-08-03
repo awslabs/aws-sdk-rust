@@ -5,10 +5,16 @@ pub use crate::operation::unassign_private_nat_gateway_address::_unassign_privat
 
 impl UnassignPrivateNatGatewayAddressInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.unassign_private_nat_gateway_address();
         fluent_builder.inner = self;
         fluent_builder.send().await

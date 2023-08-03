@@ -5,10 +5,16 @@ pub use crate::operation::get_sagemaker_servicecatalog_portfolio_status::_get_sa
 
 impl GetSagemakerServicecatalogPortfolioStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_sagemaker_servicecatalog_portfolio_status();
         fluent_builder.inner = self;
         fluent_builder.send().await

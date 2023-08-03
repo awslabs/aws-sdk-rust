@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// TODO(enableNewSmithyRuntime): Remove this blanket allow once the old implementations are deleted
+// TODO(enableNewSmithyRuntimeCleanup): Remove this blanket allow once the old implementations are deleted
 #![allow(deprecated)]
 
 use crate::middleware::Signature;
@@ -123,7 +123,7 @@ mod tests {
     }
 }
 
-// TODO(enableNewSmithyRuntime): Delete this old implementation that was kept around to support patch releases.
+// TODO(enableNewSmithyRuntimeCleanup): Delete this old implementation that was kept around to support patch releases.
 #[deprecated = "use aws_sig_auth::event_stream::SigV4MessageSigner instead (this may require upgrading the smithy-rs code generator)"]
 #[derive(Debug)]
 /// Event Stream SigV4 signing implementation.
@@ -199,7 +199,7 @@ impl SignMessage for SigV4Signer {
     }
 }
 
-// TODO(enableNewSmithyRuntime): Delete this old implementation that was kept around to support patch releases.
+// TODO(enableNewSmithyRuntimeCleanup): Delete this old implementation that was kept around to support patch releases.
 #[cfg(test)]
 mod old_tests {
     use crate::event_stream::SigV4Signer;

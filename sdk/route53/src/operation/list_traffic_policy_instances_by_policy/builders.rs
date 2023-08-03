@@ -5,10 +5,16 @@ pub use crate::operation::list_traffic_policy_instances_by_policy::_list_traffic
 
 impl ListTrafficPolicyInstancesByPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_traffic_policy_instances_by_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::validate_sol_network_package_content::_validate_sol_ne
 
 impl ValidateSolNetworkPackageContentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput, ::aws_smithy_http::result::SdkError<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.validate_sol_network_package_content();
         fluent_builder.inner = self;
         fluent_builder.send().await

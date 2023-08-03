@@ -5,10 +5,16 @@ pub use crate::operation::describe_usage_report_subscriptions::_describe_usage_r
 
 impl DescribeUsageReportSubscriptionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_usage_report_subscriptions::DescribeUsageReportSubscriptionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_usage_report_subscriptions();
         fluent_builder.inner = self;
         fluent_builder.send().await

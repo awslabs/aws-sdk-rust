@@ -294,7 +294,6 @@ impl<I, O, E: Debug> InterceptorContext<I, O, E> {
         }
 
         // Otherwise, rewind to the saved request checkpoint
-        // TODO(enableNewSmithyRuntime): Also rewind the ConfigBag
         self.phase = Phase::BeforeTransmit;
         self.request = try_clone(self.request_checkpoint.as_ref().expect("checked above"));
         assert!(

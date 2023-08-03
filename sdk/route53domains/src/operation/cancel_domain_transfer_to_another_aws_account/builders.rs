@@ -5,10 +5,16 @@ pub use crate::operation::cancel_domain_transfer_to_another_aws_account::_cancel
 
 impl CancelDomainTransferToAnotherAwsAccountInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.cancel_domain_transfer_to_another_aws_account();
         fluent_builder.inner = self;
         fluent_builder.send().await

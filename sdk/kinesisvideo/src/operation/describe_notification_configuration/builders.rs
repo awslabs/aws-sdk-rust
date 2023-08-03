@@ -5,10 +5,16 @@ pub use crate::operation::describe_notification_configuration::_describe_notific
 
 impl DescribeNotificationConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configuration::DescribeNotificationConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_notification_configuration::DescribeNotificationConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_notification_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

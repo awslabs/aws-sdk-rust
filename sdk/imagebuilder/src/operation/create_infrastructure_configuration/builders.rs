@@ -5,10 +5,16 @@ pub use crate::operation::create_infrastructure_configuration::_create_infrastru
 
 impl CreateInfrastructureConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_infrastructure_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

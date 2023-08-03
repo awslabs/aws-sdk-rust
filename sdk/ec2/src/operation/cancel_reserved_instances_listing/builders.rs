@@ -5,10 +5,16 @@ pub use crate::operation::cancel_reserved_instances_listing::_cancel_reserved_in
 
 impl CancelReservedInstancesListingInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.cancel_reserved_instances_listing();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::update_pull_request_approval_state::_update_pull_reque
 
 impl UpdatePullRequestApprovalStateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_pull_request_approval_state();
         fluent_builder.inner = self;
         fluent_builder.send().await

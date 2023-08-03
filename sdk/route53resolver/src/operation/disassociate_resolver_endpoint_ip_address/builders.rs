@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassocia
 
 impl DisassociateResolverEndpointIpAddressInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_resolver_endpoint_ip_address();
         fluent_builder.inner = self;
         fluent_builder.send().await

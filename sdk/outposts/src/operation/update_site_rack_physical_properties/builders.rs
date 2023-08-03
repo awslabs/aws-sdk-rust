@@ -5,10 +5,16 @@ pub use crate::operation::update_site_rack_physical_properties::_update_site_rac
 
 impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_site_rack_physical_properties();
         fluent_builder.inner = self;
         fluent_builder.send().await

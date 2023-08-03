@@ -5,10 +5,16 @@ pub use crate::operation::delete_permissions_boundary_from_permission_set::_dele
 
 impl DeletePermissionsBoundaryFromPermissionSetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_permissions_boundary_from_permission_set();
         fluent_builder.inner = self;
         fluent_builder.send().await

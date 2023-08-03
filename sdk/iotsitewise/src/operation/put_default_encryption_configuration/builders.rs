@@ -5,10 +5,16 @@ pub use crate::operation::put_default_encryption_configuration::_put_default_enc
 
 impl PutDefaultEncryptionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_default_encryption_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

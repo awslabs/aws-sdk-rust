@@ -5,10 +5,16 @@ pub use crate::operation::list_failures_for_license_configuration_operations::_l
 
 impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_failures_for_license_configuration_operations();
         fluent_builder.inner = self;
         fluent_builder.send().await

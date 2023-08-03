@@ -5,10 +5,16 @@ pub use crate::operation::get_relational_database_log_events::_get_relational_da
 
 impl GetRelationalDatabaseLogEventsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_relational_database_log_events();
         fluent_builder.inner = self;
         fluent_builder.send().await

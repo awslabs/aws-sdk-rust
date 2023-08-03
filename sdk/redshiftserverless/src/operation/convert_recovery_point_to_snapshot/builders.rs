@@ -5,10 +5,16 @@ pub use crate::operation::convert_recovery_point_to_snapshot::_convert_recovery_
 
 impl ConvertRecoveryPointToSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.convert_recovery_point_to_snapshot();
         fluent_builder.inner = self;
         fluent_builder.send().await

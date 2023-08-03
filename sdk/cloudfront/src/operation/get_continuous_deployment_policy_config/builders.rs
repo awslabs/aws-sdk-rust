@@ -5,10 +5,16 @@ pub use crate::operation::get_continuous_deployment_policy_config::_get_continuo
 
 impl GetContinuousDeploymentPolicyConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_continuous_deployment_policy_config();
         fluent_builder.inner = self;
         fluent_builder.send().await

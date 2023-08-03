@@ -101,7 +101,7 @@ impl DeferredSigner {
                     .unwrap()
                     .try_recv()
                     .ok()
-                    // TODO(enableNewSmithyRuntime): When the middleware implementation is removed,
+                    // TODO(enableNewSmithyRuntimeCleanup): When the middleware implementation is removed,
                     // this should panic rather than default to the `NoOpSigner`. The reason it defaults
                     // is because middleware-based generic clients don't have any default middleware,
                     // so there is no way to send a `NoOpSigner` by default when there is no other

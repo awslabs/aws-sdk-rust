@@ -5,10 +5,16 @@ pub use crate::operation::describe_query_suggestions_config::_describe_query_sug
 
 impl DescribeQuerySuggestionsConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_query_suggestions_config();
         fluent_builder.inner = self;
         fluent_builder.send().await

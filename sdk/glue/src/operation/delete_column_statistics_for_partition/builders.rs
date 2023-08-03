@@ -5,10 +5,16 @@ pub use crate::operation::delete_column_statistics_for_partition::_delete_column
 
 impl DeleteColumnStatisticsForPartitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_column_statistics_for_partition();
         fluent_builder.inner = self;
         fluent_builder.send().await

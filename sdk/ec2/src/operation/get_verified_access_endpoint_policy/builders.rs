@@ -5,10 +5,16 @@ pub use crate::operation::get_verified_access_endpoint_policy::_get_verified_acc
 
 impl GetVerifiedAccessEndpointPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_verified_access_endpoint_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await

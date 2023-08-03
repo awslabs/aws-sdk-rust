@@ -5,10 +5,16 @@ pub use crate::operation::create_load_balancer_tls_certificate::_create_load_bal
 
 impl CreateLoadBalancerTlsCertificateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_load_balancer_tls_certificate();
         fluent_builder.inner = self;
         fluent_builder.send().await

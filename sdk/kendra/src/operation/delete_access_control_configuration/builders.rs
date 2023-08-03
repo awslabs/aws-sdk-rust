@@ -5,10 +5,16 @@ pub use crate::operation::delete_access_control_configuration::_delete_access_co
 
 impl DeleteAccessControlConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_access_control_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::batch_get_asset_property_value_history::_batch_get_ass
 
 impl BatchGetAssetPropertyValueHistoryInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_get_asset_property_value_history();
         fluent_builder.inner = self;
         fluent_builder.send().await

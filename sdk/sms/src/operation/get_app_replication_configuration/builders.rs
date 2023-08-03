@@ -5,10 +5,16 @@ pub use crate::operation::get_app_replication_configuration::_get_app_replicatio
 
 impl GetAppReplicationConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_app_replication_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

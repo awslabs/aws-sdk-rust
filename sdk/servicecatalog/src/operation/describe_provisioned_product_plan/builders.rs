@@ -5,10 +5,16 @@ pub use crate::operation::describe_provisioned_product_plan::_describe_provision
 
 impl DescribeProvisionedProductPlanInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_provisioned_product_plan();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::batch_update_custom_vocabulary_item::_batch_update_cus
 
 impl BatchUpdateCustomVocabularyItemInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_update_custom_vocabulary_item::BatchUpdateCustomVocabularyItemError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_update_custom_vocabulary_item();
         fluent_builder.inner = self;
         fluent_builder.send().await

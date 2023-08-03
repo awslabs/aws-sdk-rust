@@ -5,10 +5,16 @@ pub use crate::operation::modify_workspace_creation_properties::_modify_workspac
 
 impl ModifyWorkspaceCreationPropertiesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.modify_workspace_creation_properties();
         fluent_builder.inner = self;
         fluent_builder.send().await

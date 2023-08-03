@@ -5,10 +5,16 @@ pub use crate::operation::describe_tls_inspection_configuration::_describe_tls_i
 
 impl DescribeTlsInspectionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_tls_inspection_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

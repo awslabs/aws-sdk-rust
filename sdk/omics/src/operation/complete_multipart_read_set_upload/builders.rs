@@ -5,10 +5,16 @@ pub use crate::operation::complete_multipart_read_set_upload::_complete_multipar
 
 impl CompleteMultipartReadSetUploadInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.complete_multipart_read_set_upload();
         fluent_builder.inner = self;
         fluent_builder.send().await

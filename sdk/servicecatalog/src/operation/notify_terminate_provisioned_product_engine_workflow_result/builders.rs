@@ -5,10 +5,16 @@ pub use crate::operation::notify_terminate_provisioned_product_engine_workflow_r
 
 impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder =
             client.notify_terminate_provisioned_product_engine_workflow_result();
         fluent_builder.inner = self;

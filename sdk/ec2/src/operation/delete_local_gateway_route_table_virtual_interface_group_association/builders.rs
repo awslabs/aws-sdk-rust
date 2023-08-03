@@ -5,10 +5,16 @@ pub use crate::operation::delete_local_gateway_route_table_virtual_interface_gro
 
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder =
             client.delete_local_gateway_route_table_virtual_interface_group_association();
         fluent_builder.inner = self;

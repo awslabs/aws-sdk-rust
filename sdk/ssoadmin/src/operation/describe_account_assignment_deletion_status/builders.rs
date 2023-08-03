@@ -5,10 +5,16 @@ pub use crate::operation::describe_account_assignment_deletion_status::_describe
 
 impl DescribeAccountAssignmentDeletionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_account_assignment_deletion_status();
         fluent_builder.inner = self;
         fluent_builder.send().await

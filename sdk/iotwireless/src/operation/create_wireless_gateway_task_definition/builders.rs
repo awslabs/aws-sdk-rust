@@ -5,10 +5,16 @@ pub use crate::operation::create_wireless_gateway_task_definition::_create_wirel
 
 impl CreateWirelessGatewayTaskDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_wireless_gateway_task_definition();
         fluent_builder.inner = self;
         fluent_builder.send().await

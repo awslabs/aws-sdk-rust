@@ -5,10 +5,16 @@ pub use crate::operation::get_resolver_query_log_config_policy::_get_resolver_qu
 
 impl GetResolverQueryLogConfigPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_resolver_query_log_config_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await

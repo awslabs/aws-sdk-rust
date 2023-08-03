@@ -5,10 +5,16 @@ pub use crate::operation::create_additional_assignments_for_hit::_create_additio
 
 impl CreateAdditionalAssignmentsForHitInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_additional_assignments_for_hit();
         fluent_builder.inner = self;
         fluent_builder.send().await

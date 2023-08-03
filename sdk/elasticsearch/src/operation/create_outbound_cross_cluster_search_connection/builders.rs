@@ -5,10 +5,16 @@ pub use crate::operation::create_outbound_cross_cluster_search_connection::_crea
 
 impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_outbound_cross_cluster_search_connection();
         fluent_builder.inner = self;
         fluent_builder.send().await

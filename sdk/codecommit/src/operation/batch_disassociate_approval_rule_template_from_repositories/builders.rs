@@ -5,10 +5,16 @@ pub use crate::operation::batch_disassociate_approval_rule_template_from_reposit
 
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder =
             client.batch_disassociate_approval_rule_template_from_repositories();
         fluent_builder.inner = self;

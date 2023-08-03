@@ -13,7 +13,7 @@ use http::header::HeaderName;
 use http::{HeaderValue, Uri};
 use std::str::FromStr;
 
-// TODO(enableNewSmithyRuntime): Delete this module
+// TODO(enableNewSmithyRuntimeCleanup): Delete this module
 
 /// Middleware to apply an HTTP endpoint to the request
 ///

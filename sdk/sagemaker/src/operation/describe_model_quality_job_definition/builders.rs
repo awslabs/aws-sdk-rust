@@ -5,10 +5,16 @@ pub use crate::operation::describe_model_quality_job_definition::_describe_model
 
 impl DescribeModelQualityJobDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_model_quality_job_definition();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::list_pricing_rules_associated_to_pricing_plan::_list_p
 
 impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_pricing_rules_associated_to_pricing_plan();
         fluent_builder.inner = self;
         fluent_builder.send().await

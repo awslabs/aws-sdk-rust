@@ -5,10 +5,16 @@ pub use crate::operation::delete_configuration_set_tracking_options::_delete_con
 
 impl DeleteConfigurationSetTrackingOptionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_configuration_set_tracking_options();
         fluent_builder.inner = self;
         fluent_builder.send().await

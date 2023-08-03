@@ -5,10 +5,16 @@ pub use crate::operation::put_configuration_set_delivery_options::_put_configura
 
 impl PutConfigurationSetDeliveryOptionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_configuration_set_delivery_options();
         fluent_builder.inner = self;
         fluent_builder.send().await

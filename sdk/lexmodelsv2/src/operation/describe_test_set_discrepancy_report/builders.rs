@@ -5,10 +5,16 @@ pub use crate::operation::describe_test_set_discrepancy_report::_describe_test_s
 
 impl DescribeTestSetDiscrepancyReportInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_test_set_discrepancy_report();
         fluent_builder.inner = self;
         fluent_builder.send().await

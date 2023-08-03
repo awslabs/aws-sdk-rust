@@ -5,10 +5,16 @@ pub use crate::operation::update_security_group_rule_descriptions_egress::_updat
 
 impl UpdateSecurityGroupRuleDescriptionsEgressInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgressError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_security_group_rule_descriptions_egress();
         fluent_builder.inner = self;
         fluent_builder.send().await

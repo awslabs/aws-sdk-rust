@@ -5,10 +5,16 @@ pub use crate::operation::delete_bucket_lifecycle_configuration::_delete_bucket_
 
 impl DeleteBucketLifecycleConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_bucket_lifecycle_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

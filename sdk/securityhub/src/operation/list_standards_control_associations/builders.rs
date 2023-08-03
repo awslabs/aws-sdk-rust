@@ -5,10 +5,16 @@ pub use crate::operation::list_standards_control_associations::_list_standards_c
 
 impl ListStandardsControlAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_standards_control_associations::ListStandardsControlAssociationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_standards_control_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await

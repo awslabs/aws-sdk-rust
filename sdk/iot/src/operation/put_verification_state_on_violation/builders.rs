@@ -5,10 +5,16 @@ pub use crate::operation::put_verification_state_on_violation::_put_verification
 
 impl PutVerificationStateOnViolationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_verification_state_on_violation();
         fluent_builder.inner = self;
         fluent_builder.send().await

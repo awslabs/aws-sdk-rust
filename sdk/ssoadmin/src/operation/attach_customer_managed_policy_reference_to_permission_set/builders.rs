@@ -5,10 +5,16 @@ pub use crate::operation::attach_customer_managed_policy_reference_to_permission
 
 impl AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder =
             client.attach_customer_managed_policy_reference_to_permission_set();
         fluent_builder.inner = self;

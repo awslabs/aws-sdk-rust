@@ -5,10 +5,16 @@ pub use crate::operation::modify_vpc_endpoint_connection_notification::_modify_v
 
 impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.modify_vpc_endpoint_connection_notification();
         fluent_builder.inner = self;
         fluent_builder.send().await

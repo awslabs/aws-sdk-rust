@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_identity_provider_config::_disassociate_i
 
 impl DisassociateIdentityProviderConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_identity_provider_config();
         fluent_builder.inner = self;
         fluent_builder.send().await

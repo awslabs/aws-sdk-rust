@@ -5,10 +5,16 @@ pub use crate::operation::disable_health_service_access_for_organization::_disab
 
 impl DisableHealthServiceAccessForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disable_health_service_access_for_organization();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::start_bulk_disassociate_wireless_device_from_multicast
 
 impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder =
             client.start_bulk_disassociate_wireless_device_from_multicast_group();
         fluent_builder.inner = self;

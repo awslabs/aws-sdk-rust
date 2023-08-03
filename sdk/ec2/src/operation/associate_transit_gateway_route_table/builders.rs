@@ -5,10 +5,16 @@ pub use crate::operation::associate_transit_gateway_route_table::_associate_tran
 
 impl AssociateTransitGatewayRouteTableInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.associate_transit_gateway_route_table();
         fluent_builder.inner = self;
         fluent_builder.send().await

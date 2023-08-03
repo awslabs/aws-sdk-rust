@@ -5,10 +5,16 @@ pub use crate::operation::list_access_control_configurations::_list_access_contr
 
 impl ListAccessControlConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_access_control_configurations::ListAccessControlConfigurationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_access_control_configurations::ListAccessControlConfigurationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_access_control_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await

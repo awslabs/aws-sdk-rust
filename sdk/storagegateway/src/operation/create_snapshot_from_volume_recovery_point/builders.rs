@@ -5,10 +5,16 @@ pub use crate::operation::create_snapshot_from_volume_recovery_point::_create_sn
 
 impl CreateSnapshotFromVolumeRecoveryPointInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_snapshot_from_volume_recovery_point();
         fluent_builder.inner = self;
         fluent_builder.send().await

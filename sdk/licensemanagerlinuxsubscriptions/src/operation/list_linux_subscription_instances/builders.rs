@@ -5,10 +5,16 @@ pub use crate::operation::list_linux_subscription_instances::_list_linux_subscri
 
 impl ListLinuxSubscriptionInstancesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_linux_subscription_instances();
         fluent_builder.inner = self;
         fluent_builder.send().await

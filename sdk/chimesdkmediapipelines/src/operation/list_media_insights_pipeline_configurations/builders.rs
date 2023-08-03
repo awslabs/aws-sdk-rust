@@ -5,10 +5,16 @@ pub use crate::operation::list_media_insights_pipeline_configurations::_list_med
 
 impl ListMediaInsightsPipelineConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_media_insights_pipeline_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await

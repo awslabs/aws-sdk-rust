@@ -225,7 +225,6 @@ impl TestConnection {
 
 impl Connection for TestConnection {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
-        // TODO(enableNewSmithyRuntime) Validate request
         let (res, simulated_latency) = if let Some(event) = self.data.lock().unwrap().pop() {
             self.requests.lock().unwrap().push(ValidateRequest {
                 expected: event.req,

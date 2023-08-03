@@ -5,10 +5,16 @@ pub use crate::operation::create_calculated_attribute_definition::_create_calcul
 
 impl CreateCalculatedAttributeDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_calculated_attribute_definition();
         fluent_builder.inner = self;
         fluent_builder.send().await

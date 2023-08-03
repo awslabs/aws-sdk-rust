@@ -5,10 +5,16 @@ pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_
 
 impl DeleteFirewallManagerRuleGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_firewall_manager_rule_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await

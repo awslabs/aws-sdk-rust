@@ -5,10 +5,16 @@ pub use crate::operation::get_maintenance_window_execution_task::_get_maintenanc
 
 impl GetMaintenanceWindowExecutionTaskInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_maintenance_window_execution_task();
         fluent_builder.inner = self;
         fluent_builder.send().await

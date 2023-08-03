@@ -5,10 +5,16 @@ pub use crate::operation::describe_workspace_authentication::_describe_workspace
 
 impl DescribeWorkspaceAuthenticationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthenticationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_workspace_authentication();
         fluent_builder.inner = self;
         fluent_builder.send().await

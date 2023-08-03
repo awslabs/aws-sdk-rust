@@ -5,10 +5,16 @@ pub use crate::operation::create_site_to_site_vpn_attachment::_create_site_to_si
 
 impl CreateSiteToSiteVpnAttachmentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_site_to_site_vpn_attachment();
         fluent_builder.inner = self;
         fluent_builder.send().await

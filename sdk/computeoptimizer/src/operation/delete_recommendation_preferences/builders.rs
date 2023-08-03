@@ -5,10 +5,16 @@ pub use crate::operation::delete_recommendation_preferences::_delete_recommendat
 
 impl DeleteRecommendationPreferencesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_recommendation_preferences();
         fluent_builder.inner = self;
         fluent_builder.send().await

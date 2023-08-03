@@ -5,10 +5,16 @@ pub use crate::operation::register_app_instance_user_endpoint::_register_app_ins
 
 impl RegisterAppInstanceUserEndpointInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.register_app_instance_user_endpoint();
         fluent_builder.inner = self;
         fluent_builder.send().await

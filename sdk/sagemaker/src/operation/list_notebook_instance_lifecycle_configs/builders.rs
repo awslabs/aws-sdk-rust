@@ -5,10 +5,16 @@ pub use crate::operation::list_notebook_instance_lifecycle_configs::_list_notebo
 
 impl ListNotebookInstanceLifecycleConfigsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_notebook_instance_lifecycle_configs();
         fluent_builder.inner = self;
         fluent_builder.send().await

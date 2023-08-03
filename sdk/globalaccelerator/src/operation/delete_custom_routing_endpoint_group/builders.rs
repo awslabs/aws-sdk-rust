@@ -5,10 +5,16 @@ pub use crate::operation::delete_custom_routing_endpoint_group::_delete_custom_r
 
 impl DeleteCustomRoutingEndpointGroupInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_custom_routing_endpoint_group();
         fluent_builder.inner = self;
         fluent_builder.send().await

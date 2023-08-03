@@ -5,10 +5,16 @@ pub use crate::operation::list_observability_configurations::_list_observability
 
 impl ListObservabilityConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_observability_configurations::ListObservabilityConfigurationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_observability_configurations::ListObservabilityConfigurationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_observability_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await

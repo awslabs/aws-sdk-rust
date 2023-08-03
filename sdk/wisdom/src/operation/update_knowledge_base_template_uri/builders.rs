@@ -5,10 +5,16 @@ pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_
 
 impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_knowledge_base_template_uri();
         fluent_builder.inner = self;
         fluent_builder.send().await

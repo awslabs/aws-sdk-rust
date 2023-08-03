@@ -5,10 +5,16 @@ pub use crate::operation::get_voice_connector_logging_configuration::_get_voice_
 
 impl GetVoiceConnectorLoggingConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_voice_connector_logging_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

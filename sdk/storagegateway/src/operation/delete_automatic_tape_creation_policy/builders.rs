@@ -5,10 +5,16 @@ pub use crate::operation::delete_automatic_tape_creation_policy::_delete_automat
 
 impl DeleteAutomaticTapeCreationPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_automatic_tape_creation_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await

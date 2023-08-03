@@ -25,7 +25,7 @@ use crate::event_stream::SigV4MessageSigner as EventStreamSigV4Signer;
 #[cfg(feature = "sign-eventstream")]
 use aws_smithy_eventstream::frame::DeferredSignerSender;
 
-// TODO(enableNewSmithyRuntime): Delete `Signature` when switching to the orchestrator
+// TODO(enableNewSmithyRuntimeCleanup): Delete `Signature` when switching to the orchestrator
 /// Container for the request signature for use in the property bag.
 #[non_exhaustive]
 #[derive(Debug, Clone)]
@@ -151,7 +151,7 @@ fn signing_config(
         request_ts: config
             .get::<SharedTimeSource>()
             .map(|t| t.now())
-            // TODO(enableNewSmithyRuntime): Remove this fallback
+            // TODO(enableNewSmithyRuntimeLaunch): Remove this fallback
             .unwrap_or_else(|| SharedTimeSource::default().now()),
         region,
         payload_override,

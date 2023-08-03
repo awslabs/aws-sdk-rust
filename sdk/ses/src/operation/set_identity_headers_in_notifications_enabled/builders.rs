@@ -5,10 +5,16 @@ pub use crate::operation::set_identity_headers_in_notifications_enabled::_set_id
 
 impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.set_identity_headers_in_notifications_enabled();
         fluent_builder.inner = self;
         fluent_builder.send().await

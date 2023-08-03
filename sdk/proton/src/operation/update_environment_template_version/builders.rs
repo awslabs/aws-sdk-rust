@@ -5,10 +5,16 @@ pub use crate::operation::update_environment_template_version::_update_environme
 
 impl UpdateEnvironmentTemplateVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_environment_template_version();
         fluent_builder.inner = self;
         fluent_builder.send().await

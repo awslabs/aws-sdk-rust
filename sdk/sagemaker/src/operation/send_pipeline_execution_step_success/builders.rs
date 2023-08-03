@@ -5,10 +5,16 @@ pub use crate::operation::send_pipeline_execution_step_success::_send_pipeline_e
 
 impl SendPipelineExecutionStepSuccessInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.send_pipeline_execution_step_success();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_resource_share_permission::_disassociate_
 
 impl DisassociateResourceSharePermissionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_resource_share_permission();
         fluent_builder.inner = self;
         fluent_builder.send().await

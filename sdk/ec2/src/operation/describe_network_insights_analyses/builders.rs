@@ -5,10 +5,16 @@ pub use crate::operation::describe_network_insights_analyses::_describe_network_
 
 impl DescribeNetworkInsightsAnalysesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalysesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_network_insights_analyses();
         fluent_builder.inner = self;
         fluent_builder.send().await

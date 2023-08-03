@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_personas_from_entities::_disassociate_per
 
 impl DisassociatePersonasFromEntitiesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_personas_from_entities();
         fluent_builder.inner = self;
         fluent_builder.send().await

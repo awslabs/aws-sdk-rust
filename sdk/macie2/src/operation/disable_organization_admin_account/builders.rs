@@ -5,10 +5,16 @@ pub use crate::operation::disable_organization_admin_account::_disable_organizat
 
 impl DisableOrganizationAdminAccountInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disable_organization_admin_account();
         fluent_builder.inner = self;
         fluent_builder.send().await

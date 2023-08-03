@@ -5,10 +5,16 @@ pub use crate::operation::detach_load_balancer_target_groups::_detach_load_balan
 
 impl DetachLoadBalancerTargetGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.detach_load_balancer_target_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await

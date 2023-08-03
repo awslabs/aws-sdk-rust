@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_transit_gateway_connect_peer::_disassocia
 
 impl DisassociateTransitGatewayConnectPeerInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_transit_gateway_connect_peer();
         fluent_builder.inner = self;
         fluent_builder.send().await

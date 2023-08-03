@@ -5,10 +5,16 @@ pub use crate::operation::get_temporary_glue_partition_credentials::_get_tempora
 
 impl GetTemporaryGluePartitionCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_temporary_glue_partition_credentials();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// TODO(enableNewSmithyRuntime): Delete this file once test helpers on `CustomizableOperation` have been removed
+// TODO(enableNewSmithyRuntimeCleanup): Delete this file once test helpers on `CustomizableOperation` have been removed
 
 use aws_smithy_runtime_api::client::interceptors::{
     BeforeTransmitInterceptorContextMut, BoxError, Interceptor,

@@ -5,10 +5,16 @@ pub use crate::operation::create_container_service_registry_login::_create_conta
 
 impl CreateContainerServiceRegistryLoginInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_container_service_registry_login();
         fluent_builder.inner = self;
         fluent_builder.send().await

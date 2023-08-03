@@ -5,10 +5,16 @@ pub use crate::operation::put_permissions_boundary_to_permission_set::_put_permi
 
 impl PutPermissionsBoundaryToPermissionSetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_permissions_boundary_to_permission_set();
         fluent_builder.inner = self;
         fluent_builder.send().await

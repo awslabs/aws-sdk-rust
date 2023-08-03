@@ -5,10 +5,16 @@ pub use crate::operation::get_identity_provider_by_identifier::_get_identity_pro
 
 impl GetIdentityProviderByIdentifierInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_identity_provider_by_identifier();
         fluent_builder.inner = self;
         fluent_builder.send().await

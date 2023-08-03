@@ -5,10 +5,16 @@ pub use crate::operation::update_connection_alias_permission::_update_connection
 
 impl UpdateConnectionAliasPermissionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_connection_alias_permission();
         fluent_builder.inner = self;
         fluent_builder.send().await

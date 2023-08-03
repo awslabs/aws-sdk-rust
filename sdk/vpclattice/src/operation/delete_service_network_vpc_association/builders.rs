@@ -5,10 +5,16 @@ pub use crate::operation::delete_service_network_vpc_association::_delete_servic
 
 impl DeleteServiceNetworkVpcAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_service_network_vpc_association::DeleteServiceNetworkVpcAssociationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_service_network_vpc_association();
         fluent_builder.inner = self;
         fluent_builder.send().await

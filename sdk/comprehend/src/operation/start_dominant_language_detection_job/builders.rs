@@ -5,10 +5,16 @@ pub use crate::operation::start_dominant_language_detection_job::_start_dominant
 
 impl StartDominantLanguageDetectionJobInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.start_dominant_language_detection_job();
         fluent_builder.inner = self;
         fluent_builder.send().await

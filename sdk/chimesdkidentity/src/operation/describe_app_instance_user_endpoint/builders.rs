@@ -5,10 +5,16 @@ pub use crate::operation::describe_app_instance_user_endpoint::_describe_app_ins
 
 impl DescribeAppInstanceUserEndpointInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_app_instance_user_endpoint();
         fluent_builder.inner = self;
         fluent_builder.send().await

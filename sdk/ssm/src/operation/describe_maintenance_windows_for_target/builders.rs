@@ -5,10 +5,16 @@ pub use crate::operation::describe_maintenance_windows_for_target::_describe_mai
 
 impl DescribeMaintenanceWindowsForTargetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_maintenance_windows_for_target();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::describe_website_certificate_authority::_describe_webs
 
 impl DescribeWebsiteCertificateAuthorityInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_website_certificate_authority();
         fluent_builder.inner = self;
         fluent_builder.send().await

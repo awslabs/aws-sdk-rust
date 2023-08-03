@@ -5,10 +5,16 @@ pub use crate::operation::list_usage_for_license_configuration::_list_usage_for_
 
 impl ListUsageForLicenseConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_usage_for_license_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

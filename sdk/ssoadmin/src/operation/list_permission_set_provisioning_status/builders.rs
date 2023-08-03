@@ -5,10 +5,16 @@ pub use crate::operation::list_permission_set_provisioning_status::_list_permiss
 
 impl ListPermissionSetProvisioningStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_permission_set_provisioning_status();
         fluent_builder.inner = self;
         fluent_builder.send().await

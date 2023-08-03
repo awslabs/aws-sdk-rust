@@ -5,10 +5,16 @@ pub use crate::operation::update_identity_provider_configuration::_update_identi
 
 impl UpdateIdentityProviderConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_identity_provider_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

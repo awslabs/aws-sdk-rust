@@ -5,10 +5,16 @@ pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_inst
 
 impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.restore_db_instance_to_point_in_time();
         fluent_builder.inner = self;
         fluent_builder.send().await

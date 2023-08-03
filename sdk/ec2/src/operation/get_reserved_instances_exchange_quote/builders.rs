@@ -5,10 +5,16 @@ pub use crate::operation::get_reserved_instances_exchange_quote::_get_reserved_i
 
 impl GetReservedInstancesExchangeQuoteInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_reserved_instances_exchange_quote();
         fluent_builder.inner = self;
         fluent_builder.send().await

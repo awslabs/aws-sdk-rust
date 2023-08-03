@@ -5,10 +5,16 @@ pub use crate::operation::detach_instances_from_load_balancer::_detach_instances
 
 impl DetachInstancesFromLoadBalancerInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.detach_instances_from_load_balancer();
         fluent_builder.inner = self;
         fluent_builder.send().await

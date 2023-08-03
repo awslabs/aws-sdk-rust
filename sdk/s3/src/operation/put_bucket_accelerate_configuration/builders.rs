@@ -5,10 +5,16 @@ pub use crate::operation::put_bucket_accelerate_configuration::_put_bucket_accel
 
 impl PutBucketAccelerateConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_bucket_accelerate_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

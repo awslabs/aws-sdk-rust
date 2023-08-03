@@ -5,10 +5,16 @@ pub use crate::operation::send_serial_console_ssh_public_key::_send_serial_conso
 
 impl SendSerialConsoleSshPublicKeyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.send_serial_console_ssh_public_key();
         fluent_builder.inner = self;
         fluent_builder.send().await

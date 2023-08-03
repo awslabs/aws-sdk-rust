@@ -5,10 +5,16 @@ pub use crate::operation::start_studio_sso_configuration_repair::_start_studio_s
 
 impl StartStudioSsoConfigurationRepairInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.start_studio_sso_configuration_repair();
         fluent_builder.inner = self;
         fluent_builder.send().await

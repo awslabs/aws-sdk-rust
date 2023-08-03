@@ -5,6 +5,7 @@
 
 //! New-type for a configurable app name.
 
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::borrow::Cow;
 use std::error::Error;
 use std::fmt;
@@ -36,6 +37,10 @@ impl fmt::Display for AppName {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.0)
     }
+}
+
+impl Storable for AppName {
+    type Storer = StoreReplace<AppName>;
 }
 
 impl AppName {

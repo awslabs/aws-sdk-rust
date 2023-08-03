@@ -5,10 +5,16 @@ pub use crate::operation::resend_contact_reachability_email::_resend_contact_rea
 
 impl ResendContactReachabilityEmailInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput, ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.resend_contact_reachability_email();
         fluent_builder.inner = self;
         fluent_builder.send().await

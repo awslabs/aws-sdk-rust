@@ -5,10 +5,16 @@ pub use crate::operation::describe_client_vpn_target_networks::_describe_client_
 
 impl DescribeClientVpnTargetNetworksInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_client_vpn_target_networks::DescribeClientVpnTargetNetworksError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_client_vpn_target_networks();
         fluent_builder.inner = self;
         fluent_builder.send().await

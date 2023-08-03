@@ -5,10 +5,16 @@ pub use crate::operation::override_pull_request_approval_rules::_override_pull_r
 
 impl OverridePullRequestApprovalRulesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput, ::aws_smithy_http::result::SdkError<crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.override_pull_request_approval_rules();
         fluent_builder.inner = self;
         fluent_builder.send().await

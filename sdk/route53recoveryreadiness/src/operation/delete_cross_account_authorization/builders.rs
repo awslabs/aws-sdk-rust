@@ -5,10 +5,16 @@ pub use crate::operation::delete_cross_account_authorization::_delete_cross_acco
 
 impl DeleteCrossAccountAuthorizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_cross_account_authorization();
         fluent_builder.inner = self;
         fluent_builder.send().await

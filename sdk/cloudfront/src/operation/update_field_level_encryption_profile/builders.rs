@@ -5,10 +5,16 @@ pub use crate::operation::update_field_level_encryption_profile::_update_field_l
 
 impl UpdateFieldLevelEncryptionProfileInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_field_level_encryption_profile();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::get_recovery_group_readiness_summary::_get_recovery_gr
 
 impl GetRecoveryGroupReadinessSummaryInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_recovery_group_readiness_summary();
         fluent_builder.inner = self;
         fluent_builder.send().await

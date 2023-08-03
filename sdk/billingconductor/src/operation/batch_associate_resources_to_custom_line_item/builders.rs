@@ -5,10 +5,16 @@ pub use crate::operation::batch_associate_resources_to_custom_line_item::_batch_
 
 impl BatchAssociateResourcesToCustomLineItemInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_associate_resources_to_custom_line_item();
         fluent_builder.inner = self;
         fluent_builder.send().await

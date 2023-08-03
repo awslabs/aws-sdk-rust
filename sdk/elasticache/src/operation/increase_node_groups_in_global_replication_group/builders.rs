@@ -5,10 +5,16 @@ pub use crate::operation::increase_node_groups_in_global_replication_group::_inc
 
 impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.increase_node_groups_in_global_replication_group();
         fluent_builder.inner = self;
         fluent_builder.send().await

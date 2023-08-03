@@ -5,10 +5,16 @@ pub use crate::operation::batch_associate_assessment_report_evidence::_batch_ass
 
 impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_associate_assessment_report_evidence();
         fluent_builder.inner = self;
         fluent_builder.send().await

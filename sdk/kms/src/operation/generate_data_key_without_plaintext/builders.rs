@@ -5,10 +5,16 @@ pub use crate::operation::generate_data_key_without_plaintext::_generate_data_ke
 
 impl GenerateDataKeyWithoutPlaintextInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.generate_data_key_without_plaintext();
         fluent_builder.inner = self;
         fluent_builder.send().await

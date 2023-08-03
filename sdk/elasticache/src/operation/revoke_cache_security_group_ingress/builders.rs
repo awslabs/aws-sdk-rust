@@ -5,10 +5,16 @@ pub use crate::operation::revoke_cache_security_group_ingress::_revoke_cache_sec
 
 impl RevokeCacheSecurityGroupIngressInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.revoke_cache_security_group_ingress();
         fluent_builder.inner = self;
         fluent_builder.send().await

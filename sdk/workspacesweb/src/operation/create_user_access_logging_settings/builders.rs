@@ -5,10 +5,16 @@ pub use crate::operation::create_user_access_logging_settings::_create_user_acce
 
 impl CreateUserAccessLoggingSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_user_access_logging_settings::CreateUserAccessLoggingSettingsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_user_access_logging_settings();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::update_subscriptions_to_event_bridge::_update_subscrip
 
 impl UpdateSubscriptionsToEventBridgeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_subscriptions_to_event_bridge();
         fluent_builder.inner = self;
         fluent_builder.send().await

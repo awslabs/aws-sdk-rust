@@ -5,10 +5,16 @@ pub use crate::operation::confirm_transit_virtual_interface::_confirm_transit_vi
 
 impl ConfirmTransitVirtualInterfaceInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.confirm_transit_virtual_interface();
         fluent_builder.inner = self;
         fluent_builder.send().await

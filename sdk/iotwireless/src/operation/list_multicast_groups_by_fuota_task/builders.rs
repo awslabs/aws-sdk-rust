@@ -5,10 +5,16 @@ pub use crate::operation::list_multicast_groups_by_fuota_task::_list_multicast_g
 
 impl ListMulticastGroupsByFuotaTaskInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_multicast_groups_by_fuota_task();
         fluent_builder.inner = self;
         fluent_builder.send().await

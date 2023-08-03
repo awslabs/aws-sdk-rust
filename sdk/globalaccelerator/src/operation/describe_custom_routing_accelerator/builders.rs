@@ -5,10 +5,16 @@ pub use crate::operation::describe_custom_routing_accelerator::_describe_custom_
 
 impl DescribeCustomRoutingAcceleratorInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_custom_routing_accelerator();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -111,7 +111,7 @@ async fn resolve_endpoint(
         )
     })?;
     let endpoint = describe_endpoints.endpoints().unwrap().get(0).unwrap();
-    let expiry = client.conf().time_source.now()
+    let expiry = client.conf().time_source().now()
         + ::std::time::Duration::from_secs(endpoint.cache_period_in_minutes() as u64 * 60);
     Ok((
         ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -136,7 +136,7 @@ impl Client {
             .conf()
             .sleep_impl()
             .expect("sleep impl must be provided");
-        let time = self.conf().time_source.clone();
+        let time = self.conf().time_source();
         let (resolver, reloader) = crate::endpoint_discovery::create_cache(
             move || {
                 let client = self.clone();

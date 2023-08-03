@@ -5,10 +5,16 @@ pub use crate::operation::batch_describe_type_configurations::_batch_describe_ty
 
 impl BatchDescribeTypeConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_describe_type_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await

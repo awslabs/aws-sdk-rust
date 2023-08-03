@@ -5,10 +5,16 @@ pub use crate::operation::describe_audit_mitigation_actions_task::_describe_audi
 
 impl DescribeAuditMitigationActionsTaskInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_audit_mitigation_actions_task();
         fluent_builder.inner = self;
         fluent_builder.send().await

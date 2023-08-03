@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// TODO(enableNewSmithyRuntime): Delete this file when cleaning up middleware
+// TODO(enableNewSmithyRuntimeCleanup): Delete this file when cleaning up middleware
 
 use aws_sig_auth::signer::SignableBody;
 use aws_smithy_http::body::SdkBody;

@@ -5,10 +5,16 @@ pub use crate::operation::describe_predictor_backtest_export_job::_describe_pred
 
 impl DescribePredictorBacktestExportJobInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_predictor_backtest_export_job();
         fluent_builder.inner = self;
         fluent_builder.send().await

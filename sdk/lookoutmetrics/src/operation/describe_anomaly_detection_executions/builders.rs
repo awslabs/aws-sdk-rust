@@ -5,10 +5,16 @@ pub use crate::operation::describe_anomaly_detection_executions::_describe_anoma
 
 impl DescribeAnomalyDetectionExecutionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_anomaly_detection_executions();
         fluent_builder.inner = self;
         fluent_builder.send().await

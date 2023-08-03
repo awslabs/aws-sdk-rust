@@ -24,9 +24,8 @@ pub struct Config {
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
-    #[allow(missing_docs)] // documentation missing in model
     pub(crate) time_source: ::aws_smithy_async::time::SharedTimeSource,
-    app_name: Option<::aws_types::app_name::AppName>,
+    app_name: ::std::option::Option<::aws_types::app_name::AppName>,
     #[allow(missing_docs)] // documentation missing in model
     pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -74,11 +73,15 @@ impl Config {
     pub fn timeout_config(&self) -> Option<&::aws_smithy_types::timeout::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
+    /// Return time source used for this service.
+    pub fn time_source(&self) -> ::aws_smithy_async::time::SharedTimeSource {
+        self.time_source.clone()
+    }
     /// Returns the name of the app that is using the client, if it was provided.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
     /// gets sent along with requests.
-    pub fn app_name(&self) -> Option<&::aws_types::app_name::AppName> {
+    pub fn app_name(&self) -> ::std::option::Option<&::aws_types::app_name::AppName> {
         self.app_name.as_ref()
     }
     /// Return an [`HttpConnector`](::aws_smithy_client::http_connector::HttpConnector) to use when making requests, if any.
@@ -108,7 +111,7 @@ impl Config {
 /// Builder for creating a `Config`.
 #[derive(Clone, Default)]
 pub struct Builder {
-    make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    make_token: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
     endpoint_resolver: ::std::option::Option<
         ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     >,
@@ -116,7 +119,7 @@ pub struct Builder {
     sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
     time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>,
-    app_name: Option<::aws_types::app_name::AppName>,
+    app_name: ::std::option::Option<::aws_types::app_name::AppName>,
     endpoint_url: ::std::option::Option<::std::string::String>,
     use_dual_stack: ::std::option::Option<::std::primitive::bool>,
     use_fips: ::std::option::Option<::std::primitive::bool>,
@@ -139,16 +142,16 @@ impl Builder {
     /// Sets the idempotency token provider to use for service calls that require tokens.
     pub fn make_token(
         mut self,
-        make_token: impl Into<crate::idempotency_token::IdempotencyTokenProvider>,
+        make_token: impl ::std::convert::Into<crate::idempotency_token::IdempotencyTokenProvider>,
     ) -> Self {
-        self.set_make_token(Some(make_token.into()));
+        self.set_make_token(::std::option::Option::Some(make_token.into()));
         self
     }
 
     /// Sets the idempotency token provider to use for service calls that require tokens.
     pub fn set_make_token(
         &mut self,
-        make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
+        make_token: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
     ) -> &mut Self {
         self.make_token = make_token;
         self
@@ -361,7 +364,7 @@ impl Builder {
     /// Sets the time source used for this service
     pub fn time_source(
         mut self,
-        time_source: impl Into<::aws_smithy_async::time::SharedTimeSource>,
+        time_source: impl ::std::convert::Into<::aws_smithy_async::time::SharedTimeSource>,
     ) -> Self {
         self.time_source = Some(time_source.into());
         self
@@ -369,7 +372,7 @@ impl Builder {
     /// Sets the time source used for this service
     pub fn set_time_source(
         &mut self,
-        time_source: Option<::aws_smithy_async::time::SharedTimeSource>,
+        time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>,
     ) -> &mut Self {
         self.time_source = time_source;
         self
@@ -387,7 +390,10 @@ impl Builder {
     ///
     /// This _optional_ name is used to identify the application in the user agent that
     /// gets sent along with requests.
-    pub fn set_app_name(&mut self, app_name: Option<::aws_types::app_name::AppName>) -> &mut Self {
+    pub fn set_app_name(
+        &mut self,
+        app_name: ::std::option::Option<::aws_types::app_name::AppName>,
+    ) -> &mut Self {
         self.app_name = app_name;
         self
     }

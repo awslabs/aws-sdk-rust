@@ -5,10 +5,16 @@ pub use crate::operation::generate_organizations_access_report::_generate_organi
 
 impl GenerateOrganizationsAccessReportInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.generate_organizations_access_report();
         fluent_builder.inner = self;
         fluent_builder.send().await

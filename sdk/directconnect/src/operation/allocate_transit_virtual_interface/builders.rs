@@ -5,10 +5,16 @@ pub use crate::operation::allocate_transit_virtual_interface::_allocate_transit_
 
 impl AllocateTransitVirtualInterfaceInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.allocate_transit_virtual_interface();
         fluent_builder.inner = self;
         fluent_builder.send().await

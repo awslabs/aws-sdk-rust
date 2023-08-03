@@ -5,10 +5,16 @@ pub use crate::operation::attach_verified_access_trust_provider::_attach_verifie
 
 impl AttachVerifiedAccessTrustProviderInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.attach_verified_access_trust_provider();
         fluent_builder.inner = self;
         fluent_builder.send().await

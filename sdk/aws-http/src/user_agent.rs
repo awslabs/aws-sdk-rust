@@ -513,7 +513,7 @@ impl fmt::Display for ExecEnvMetadata {
     }
 }
 
-// TODO(enableNewSmithyRuntime): Delete the user agent Tower middleware and consider moving all the remaining code into aws-runtime
+// TODO(enableNewSmithyRuntimeCleanup): Delete the user agent Tower middleware and consider moving all the remaining code into aws-runtime
 
 /// User agent middleware
 #[non_exhaustive]

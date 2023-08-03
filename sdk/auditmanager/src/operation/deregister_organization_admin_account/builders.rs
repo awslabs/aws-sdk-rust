@@ -5,10 +5,16 @@ pub use crate::operation::deregister_organization_admin_account::_deregister_org
 
 impl DeregisterOrganizationAdminAccountInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.deregister_organization_admin_account();
         fluent_builder.inner = self;
         fluent_builder.send().await

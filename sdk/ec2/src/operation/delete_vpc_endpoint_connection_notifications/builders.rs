@@ -5,10 +5,16 @@ pub use crate::operation::delete_vpc_endpoint_connection_notifications::_delete_
 
 impl DeleteVpcEndpointConnectionNotificationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_vpc_endpoint_connection_notifications();
         fluent_builder.inner = self;
         fluent_builder.send().await

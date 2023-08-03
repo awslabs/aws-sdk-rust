@@ -5,10 +5,16 @@ pub use crate::operation::describe_remediation_execution_status::_describe_remed
 
 impl DescribeRemediationExecutionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_remediation_execution_status();
         fluent_builder.inner = self;
         fluent_builder.send().await

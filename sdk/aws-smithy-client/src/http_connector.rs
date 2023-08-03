@@ -8,6 +8,7 @@
 
 use crate::erase::DynConnector;
 use aws_smithy_async::rt::sleep::SharedAsyncSleep;
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::time::Duration;
 use std::{fmt::Debug, sync::Arc};
@@ -39,6 +40,10 @@ impl Debug for HttpConnector {
             }
         }
     }
+}
+
+impl Storable for HttpConnector {
+    type Storer = StoreReplace<HttpConnector>;
 }
 
 impl HttpConnector {

@@ -5,10 +5,16 @@ pub use crate::operation::list_skills_store_skills_by_category::_list_skills_sto
 
 impl ListSkillsStoreSkillsByCategoryInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_skills_store_skills_by_category();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::update_virtual_interface_attributes::_update_virtual_i
 
 impl UpdateVirtualInterfaceAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.update_virtual_interface_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await

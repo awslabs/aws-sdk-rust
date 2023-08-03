@@ -5,10 +5,16 @@ pub use crate::operation::create_certificate_authority_audit_report::_create_cer
 
 impl CreateCertificateAuthorityAuditReportInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_certificate_authority_audit_report();
         fluent_builder.inner = self;
         fluent_builder.send().await

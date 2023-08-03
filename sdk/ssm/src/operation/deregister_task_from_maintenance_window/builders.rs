@@ -5,10 +5,16 @@ pub use crate::operation::deregister_task_from_maintenance_window::_deregister_t
 
 impl DeregisterTaskFromMaintenanceWindowInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.deregister_task_from_maintenance_window();
         fluent_builder.inner = self;
         fluent_builder.send().await

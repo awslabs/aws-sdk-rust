@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_delegation_signer_from_domain::_disassoci
 
 impl DisassociateDelegationSignerFromDomainInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_delegation_signer_from_domain();
         fluent_builder.inner = self;
         fluent_builder.send().await

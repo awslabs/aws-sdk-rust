@@ -5,10 +5,16 @@ pub use crate::operation::set_security_token_service_preferences::_set_security_
 
 impl SetSecurityTokenServicePreferencesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.set_security_token_service_preferences();
         fluent_builder.inner = self;
         fluent_builder.send().await

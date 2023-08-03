@@ -5,10 +5,16 @@ pub use crate::operation::get_identity_verification_attributes::_get_identity_ve
 
 impl GetIdentityVerificationAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_identity_verification_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await

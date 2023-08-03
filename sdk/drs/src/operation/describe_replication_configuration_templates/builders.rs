@@ -5,10 +5,16 @@ pub use crate::operation::describe_replication_configuration_templates::_describ
 
 impl DescribeReplicationConfigurationTemplatesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_replication_configuration_templates();
         fluent_builder.inner = self;
         fluent_builder.send().await

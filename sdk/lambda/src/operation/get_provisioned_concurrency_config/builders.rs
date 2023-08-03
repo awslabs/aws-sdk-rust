@@ -5,10 +5,16 @@ pub use crate::operation::get_provisioned_concurrency_config::_get_provisioned_c
 
 impl GetProvisionedConcurrencyConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_provisioned_concurrency_config();
         fluent_builder.inner = self;
         fluent_builder.send().await

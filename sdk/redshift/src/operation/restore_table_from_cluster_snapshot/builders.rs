@@ -5,10 +5,16 @@ pub use crate::operation::restore_table_from_cluster_snapshot::_restore_table_fr
 
 impl RestoreTableFromClusterSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.restore_table_from_cluster_snapshot();
         fluent_builder.inner = self;
         fluent_builder.send().await

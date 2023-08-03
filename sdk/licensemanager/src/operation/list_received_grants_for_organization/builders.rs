@@ -5,10 +5,16 @@ pub use crate::operation::list_received_grants_for_organization::_list_received_
 
 impl ListReceivedGrantsForOrganizationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_received_grants_for_organization();
         fluent_builder.inner = self;
         fluent_builder.send().await

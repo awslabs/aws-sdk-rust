@@ -5,10 +5,16 @@ pub use crate::operation::list_access_points_for_object_lambda::_list_access_poi
 
 impl ListAccessPointsForObjectLambdaInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_access_points_for_object_lambda();
         fluent_builder.inner = self;
         fluent_builder.send().await

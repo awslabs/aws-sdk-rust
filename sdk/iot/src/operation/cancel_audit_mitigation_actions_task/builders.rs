@@ -5,10 +5,16 @@ pub use crate::operation::cancel_audit_mitigation_actions_task::_cancel_audit_mi
 
 impl CancelAuditMitigationActionsTaskInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.cancel_audit_mitigation_actions_task();
         fluent_builder.inner = self;
         fluent_builder.send().await

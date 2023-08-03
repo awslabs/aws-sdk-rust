@@ -5,10 +5,16 @@ pub use crate::operation::list_detect_mitigation_actions_executions::_list_detec
 
 impl ListDetectMitigationActionsExecutionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_detect_mitigation_actions_executions();
         fluent_builder.inner = self;
         fluent_builder.send().await

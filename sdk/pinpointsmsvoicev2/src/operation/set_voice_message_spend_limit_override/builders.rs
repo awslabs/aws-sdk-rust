@@ -5,10 +5,16 @@ pub use crate::operation::set_voice_message_spend_limit_override::_set_voice_mes
 
 impl SetVoiceMessageSpendLimitOverrideInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.set_voice_message_spend_limit_override();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::get_organization_custom_rule_policy::_get_organization
 
 impl GetOrganizationCustomRulePolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_organization_custom_rule_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await

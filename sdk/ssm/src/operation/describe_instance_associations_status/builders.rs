@@ -5,10 +5,16 @@ pub use crate::operation::describe_instance_associations_status::_describe_insta
 
 impl DescribeInstanceAssociationsStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_instance_associations_status();
         fluent_builder.inner = self;
         fluent_builder.send().await

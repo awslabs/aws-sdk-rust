@@ -5,10 +5,16 @@ pub use crate::operation::disable_kinesis_streaming_destination::_disable_kinesi
 
 impl DisableKinesisStreamingDestinationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disable_kinesis_streaming_destination();
         fluent_builder.inner = self;
         fluent_builder.send().await

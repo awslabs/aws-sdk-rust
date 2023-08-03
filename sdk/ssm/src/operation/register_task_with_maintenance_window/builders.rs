@@ -5,10 +5,16 @@ pub use crate::operation::register_task_with_maintenance_window::_register_task_
 
 impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.register_task_with_maintenance_window();
         fluent_builder.inner = self;
         fluent_builder.send().await

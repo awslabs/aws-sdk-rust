@@ -5,10 +5,16 @@ pub use crate::operation::describe_association_execution_targets::_describe_asso
 
 impl DescribeAssociationExecutionTargetsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_association_execution_targets();
         fluent_builder.inner = self;
         fluent_builder.send().await

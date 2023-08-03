@@ -5,10 +5,16 @@ pub use crate::operation::start_network_insights_access_scope_analysis::_start_n
 
 impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.start_network_insights_access_scope_analysis();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::list_groups_older_than_ordering_id::_list_groups_older
 
 impl ListGroupsOlderThanOrderingIdInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_groups_older_than_ordering_id();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::configure_logs_for_playback_configuration::_configure_
 
 impl ConfigureLogsForPlaybackConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.configure_logs_for_playback_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

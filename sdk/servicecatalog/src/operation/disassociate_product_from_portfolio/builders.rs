@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_product_from_portfolio::_disassociate_pro
 
 impl DisassociateProductFromPortfolioInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_product_from_portfolio();
         fluent_builder.inner = self;
         fluent_builder.send().await

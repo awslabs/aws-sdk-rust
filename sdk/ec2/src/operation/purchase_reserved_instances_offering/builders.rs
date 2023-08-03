@@ -5,10 +5,16 @@ pub use crate::operation::purchase_reserved_instances_offering::_purchase_reserv
 
 impl PurchaseReservedInstancesOfferingInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.purchase_reserved_instances_offering();
         fluent_builder.inner = self;
         fluent_builder.send().await

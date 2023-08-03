@@ -5,10 +5,16 @@ pub use crate::operation::delete_text_message_spend_limit_override::_delete_text
 
 impl DeleteTextMessageSpendLimitOverrideInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_text_message_spend_limit_override();
         fluent_builder.inner = self;
         fluent_builder.send().await

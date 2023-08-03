@@ -5,10 +5,16 @@ pub use crate::operation::register_transit_gateway_multicast_group_members::_reg
 
 impl RegisterTransitGatewayMulticastGroupMembersInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.register_transit_gateway_multicast_group_members();
         fluent_builder.inner = self;
         fluent_builder.send().await

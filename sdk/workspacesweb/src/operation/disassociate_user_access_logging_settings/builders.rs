@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_user_access_logging_settings::_disassocia
 
 impl DisassociateUserAccessLoggingSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_user_access_logging_settings();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::put_backup_vault_lock_configuration::_put_backup_vault
 
 impl PutBackupVaultLockConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_backup_vault_lock_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

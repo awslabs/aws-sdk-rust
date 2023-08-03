@@ -5,10 +5,16 @@ pub use crate::operation::describe_cluster_parameter_groups::_describe_cluster_p
 
 impl DescribeClusterParameterGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_cluster_parameter_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await

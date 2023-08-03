@@ -9,7 +9,7 @@ pub mod error;
 use crate::client::interceptors::context::wrappers::{
     FinalizerInterceptorContextMut, FinalizerInterceptorContextRef,
 };
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreAppend};
 use aws_smithy_types::error::display::DisplayErrorContext;
 pub use context::{
     wrappers::{
@@ -633,6 +633,10 @@ impl Deref for SharedInterceptor {
     fn deref(&self) -> &Self::Target {
         &self.interceptor
     }
+}
+
+impl Storable for SharedInterceptor {
+    type Storer = StoreAppend<SharedInterceptor>;
 }
 
 /// Collection of [`SharedInterceptor`] that allows for only registration

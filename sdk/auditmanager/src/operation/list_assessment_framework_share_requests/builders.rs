@@ -5,10 +5,16 @@ pub use crate::operation::list_assessment_framework_share_requests::_list_assess
 
 impl ListAssessmentFrameworkShareRequestsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_assessment_framework_share_requests();
         fluent_builder.inner = self;
         fluent_builder.send().await

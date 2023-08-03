@@ -5,10 +5,16 @@ pub use crate::operation::describe_node_configuration_options::_describe_node_co
 
 impl DescribeNodeConfigurationOptionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_node_configuration_options();
         fluent_builder.inner = self;
         fluent_builder.send().await

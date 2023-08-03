@@ -72,6 +72,7 @@ construct credentials from hardcoded values.
 //! ```
 
 use crate::Credentials;
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::sync::Arc;
 
 /// Credentials provider errors
@@ -349,4 +350,8 @@ impl ProvideCredentials for SharedCredentialsProvider {
     {
         self.0.provide_credentials()
     }
+}
+
+impl Storable for SharedCredentialsProvider {
+    type Storer = StoreReplace<SharedCredentialsProvider>;
 }

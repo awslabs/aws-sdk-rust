@@ -5,10 +5,16 @@ pub use crate::operation::get_access_point_configuration_for_object_lambda::_get
 
 impl GetAccessPointConfigurationForObjectLambdaInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_access_point_configuration_for_object_lambda();
         fluent_builder.inner = self;
         fluent_builder.send().await

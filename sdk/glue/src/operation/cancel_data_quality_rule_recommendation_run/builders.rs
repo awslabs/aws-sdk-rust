@@ -5,10 +5,16 @@ pub use crate::operation::cancel_data_quality_rule_recommendation_run::_cancel_d
 
 impl CancelDataQualityRuleRecommendationRunInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.cancel_data_quality_rule_recommendation_run();
         fluent_builder.inner = self;
         fluent_builder.send().await

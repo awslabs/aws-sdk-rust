@@ -5,10 +5,16 @@ pub use crate::operation::list_open_id_connect_provider_tags::_list_open_id_conn
 
 impl ListOpenIdConnectProviderTagsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_open_id_connect_provider_tags::ListOpenIDConnectProviderTagsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_open_id_connect_provider_tags::ListOpenIDConnectProviderTagsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_open_id_connect_provider_tags();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,6 +5,7 @@
 
 //! This module defines types that describe when to retry given a response.
 
+use crate::config_bag::{Storable, StoreReplace};
 use std::fmt;
 use std::str::FromStr;
 use std::time::Duration;
@@ -276,6 +277,10 @@ pub struct RetryConfig {
     initial_backoff: Duration,
     max_backoff: Duration,
     reconnect_mode: ReconnectMode,
+}
+
+impl Storable for RetryConfig {
+    type Storer = StoreReplace<RetryConfig>;
 }
 
 /// Mode for connection re-establishment

@@ -5,10 +5,16 @@ pub use crate::operation::delete_provisioning_template_version::_delete_provisio
 
 impl DeleteProvisioningTemplateVersionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.delete_provisioning_template_version();
         fluent_builder.inner = self;
         fluent_builder.send().await

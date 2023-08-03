@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_transit_gateway_multicast_domain::_disass
 
 impl DisassociateTransitGatewayMulticastDomainInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_transit_gateway_multicast_domain();
         fluent_builder.inner = self;
         fluent_builder.send().await

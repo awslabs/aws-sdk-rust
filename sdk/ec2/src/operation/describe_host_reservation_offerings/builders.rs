@@ -5,10 +5,16 @@ pub use crate::operation::describe_host_reservation_offerings::_describe_host_re
 
 impl DescribeHostReservationOfferingsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_host_reservation_offerings();
         fluent_builder.inner = self;
         fluent_builder.send().await

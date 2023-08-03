@@ -5,10 +5,16 @@ pub use crate::operation::list_pipeline_parameters_for_execution::_list_pipeline
 
 impl ListPipelineParametersForExecutionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_pipeline_parameters_for_execution::ListPipelineParametersForExecutionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_pipeline_parameters_for_execution();
         fluent_builder.inner = self;
         fluent_builder.send().await

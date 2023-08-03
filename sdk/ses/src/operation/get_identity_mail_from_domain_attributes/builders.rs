@@ -5,10 +5,16 @@ pub use crate::operation::get_identity_mail_from_domain_attributes::_get_identit
 
 impl GetIdentityMailFromDomainAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_identity_mail_from_domain_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await

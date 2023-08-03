@@ -5,10 +5,16 @@ pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_ti
 
 impl SkipWaitTimeForInstanceTerminationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput, ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.skip_wait_time_for_instance_termination();
         fluent_builder.inner = self;
         fluent_builder.send().await

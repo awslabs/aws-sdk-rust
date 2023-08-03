@@ -34,7 +34,7 @@ pub struct StandardRetryStrategy {
 
 impl StandardRetryStrategy {
     pub fn new(retry_config: &RetryConfig) -> Self {
-        // TODO(enableNewSmithyRuntime) add support for `retry_config.reconnect_mode()` here or in the orchestrator flow.
+        // TODO(enableNewSmithyRuntimeLaunch) add support for `retry_config.reconnect_mode()` here or in the orchestrator flow.
         Self::default()
             .with_max_attempts(retry_config.max_attempts() as usize)
             .with_initial_backoff(retry_config.initial_backoff())

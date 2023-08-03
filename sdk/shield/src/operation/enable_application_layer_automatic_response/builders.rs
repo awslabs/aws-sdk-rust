@@ -5,10 +5,16 @@ pub use crate::operation::enable_application_layer_automatic_response::_enable_a
 
 impl EnableApplicationLayerAutomaticResponseInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.enable_application_layer_automatic_response();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::batch_get_repository_scanning_configuration::_batch_ge
 
 impl BatchGetRepositoryScanningConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.batch_get_repository_scanning_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await

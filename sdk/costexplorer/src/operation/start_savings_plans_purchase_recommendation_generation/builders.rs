@@ -5,10 +5,16 @@ pub use crate::operation::start_savings_plans_purchase_recommendation_generation
 
 impl StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.start_savings_plans_purchase_recommendation_generation();
         fluent_builder.inner = self;
         fluent_builder.send().await

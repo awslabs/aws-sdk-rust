@@ -5,10 +5,16 @@ pub use crate::operation::list_slack_channel_configurations::_list_slack_channel
 
 impl ListSlackChannelConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_slack_channel_configurations();
         fluent_builder.inner = self;
         fluent_builder.send().await

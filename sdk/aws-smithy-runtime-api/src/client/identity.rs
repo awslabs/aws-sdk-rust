@@ -5,7 +5,7 @@
 
 use crate::client::auth::AuthSchemeId;
 use crate::client::orchestrator::Future;
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::any::Any;
 use std::fmt::Debug;
 use std::sync::Arc;
@@ -21,6 +21,10 @@ pub trait IdentityResolver: Send + Sync + Debug {
 #[derive(Clone, Debug, Default)]
 pub struct IdentityResolvers {
     identity_resolvers: Vec<(AuthSchemeId, Arc<dyn IdentityResolver>)>,
+}
+
+impl Storable for IdentityResolvers {
+    type Storer = StoreReplace<IdentityResolvers>;
 }
 
 impl IdentityResolvers {

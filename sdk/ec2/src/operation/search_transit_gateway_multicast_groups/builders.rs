@@ -5,10 +5,16 @@ pub use crate::operation::search_transit_gateway_multicast_groups::_search_trans
 
 impl SearchTransitGatewayMulticastGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.search_transit_gateway_multicast_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await

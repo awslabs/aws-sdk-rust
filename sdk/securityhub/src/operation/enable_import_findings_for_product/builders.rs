@@ -5,10 +5,16 @@ pub use crate::operation::enable_import_findings_for_product::_enable_import_fin
 
 impl EnableImportFindingsForProductInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.enable_import_findings_for_product();
         fluent_builder.inner = self;
         fluent_builder.send().await

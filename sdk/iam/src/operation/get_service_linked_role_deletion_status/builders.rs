@@ -5,10 +5,16 @@ pub use crate::operation::get_service_linked_role_deletion_status::_get_service_
 
 impl GetServiceLinkedRoleDeletionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_service_linked_role_deletion_status();
         fluent_builder.inner = self;
         fluent_builder.send().await

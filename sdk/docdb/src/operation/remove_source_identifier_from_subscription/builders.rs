@@ -5,10 +5,16 @@ pub use crate::operation::remove_source_identifier_from_subscription::_remove_so
 
 impl RemoveSourceIdentifierFromSubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.remove_source_identifier_from_subscription();
         fluent_builder.inner = self;
         fluent_builder.send().await

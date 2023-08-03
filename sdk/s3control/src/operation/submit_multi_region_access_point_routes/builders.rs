@@ -5,10 +5,16 @@ pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi
 
 impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.submit_multi_region_access_point_routes();
         fluent_builder.inner = self;
         fluent_builder.send().await

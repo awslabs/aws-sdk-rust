@@ -24,7 +24,7 @@ pub struct ManualTimeSource {
 
 impl TimeSource for ManualTimeSource {
     fn now(&self) -> SystemTime {
-        self.start_time + self.log.lock().unwrap().iter().sum()
+        self.start_time + self.log.lock().unwrap().iter().sum::<Duration>()
     }
 }
 

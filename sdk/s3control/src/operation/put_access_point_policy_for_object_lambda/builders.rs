@@ -5,10 +5,16 @@ pub use crate::operation::put_access_point_policy_for_object_lambda::_put_access
 
 impl PutAccessPointPolicyForObjectLambdaInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_access_point_policy_for_object_lambda();
         fluent_builder.inner = self;
         fluent_builder.send().await

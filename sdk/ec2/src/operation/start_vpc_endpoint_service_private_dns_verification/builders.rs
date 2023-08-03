@@ -5,10 +5,16 @@ pub use crate::operation::start_vpc_endpoint_service_private_dns_verification::_
 
 impl StartVpcEndpointServicePrivateDnsVerificationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.start_vpc_endpoint_service_private_dns_verification();
         fluent_builder.inner = self;
         fluent_builder.send().await

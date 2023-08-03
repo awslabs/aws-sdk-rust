@@ -5,10 +5,16 @@ pub use crate::operation::create_relational_database_snapshot::_create_relationa
 
 impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.create_relational_database_snapshot();
         fluent_builder.inner = self;
         fluent_builder.send().await

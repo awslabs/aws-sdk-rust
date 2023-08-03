@@ -54,7 +54,6 @@ impl RequestInfoInterceptor {
         &self,
         cfg: &ConfigBag,
     ) -> Option<(Cow<'static, str>, Cow<'static, str>)> {
-        // TODO(enableNewSmithyRuntime) What config will we actually store in the bag? Will it be a whole config or just the max_attempts part?
         if let Some(retry_config) = cfg.get::<RetryConfig>() {
             let max_attempts = retry_config.max_attempts().to_string();
             Some((Cow::Borrowed("max"), Cow::Owned(max_attempts)))

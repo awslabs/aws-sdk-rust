@@ -5,10 +5,16 @@ pub use crate::operation::describe_organization_conformance_pack_statuses::_desc
 
 impl DescribeOrganizationConformancePackStatusesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_organization_conformance_pack_statuses();
         fluent_builder.inner = self;
         fluent_builder.send().await

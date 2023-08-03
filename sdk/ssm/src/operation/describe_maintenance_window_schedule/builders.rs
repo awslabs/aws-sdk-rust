@@ -5,10 +5,16 @@ pub use crate::operation::describe_maintenance_window_schedule::_describe_mainte
 
 impl DescribeMaintenanceWindowScheduleInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_maintenance_window_schedule();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::describe_recommendation_export_jobs::_describe_recomme
 
 impl DescribeRecommendationExportJobsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_recommendation_export_jobs();
         fluent_builder.inner = self;
         fluent_builder.send().await

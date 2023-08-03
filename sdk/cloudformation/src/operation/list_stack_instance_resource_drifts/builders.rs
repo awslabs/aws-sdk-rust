@@ -5,10 +5,16 @@ pub use crate::operation::list_stack_instance_resource_drifts::_list_stack_insta
 
 impl ListStackInstanceResourceDriftsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_stack_instance_resource_drifts();
         fluent_builder.inner = self;
         fluent_builder.send().await

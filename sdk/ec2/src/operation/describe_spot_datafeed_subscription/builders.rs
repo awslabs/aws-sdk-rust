@@ -5,10 +5,16 @@ pub use crate::operation::describe_spot_datafeed_subscription::_describe_spot_da
 
 impl DescribeSpotDatafeedSubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_spot_datafeed_subscription();
         fluent_builder.inner = self;
         fluent_builder.send().await

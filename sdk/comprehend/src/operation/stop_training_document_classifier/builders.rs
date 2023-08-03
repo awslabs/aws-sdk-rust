@@ -5,10 +5,16 @@ pub use crate::operation::stop_training_document_classifier::_stop_training_docu
 
 impl StopTrainingDocumentClassifierInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.stop_training_document_classifier();
         fluent_builder.inner = self;
         fluent_builder.send().await

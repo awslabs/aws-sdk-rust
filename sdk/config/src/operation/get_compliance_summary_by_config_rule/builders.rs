@@ -5,10 +5,16 @@ pub use crate::operation::get_compliance_summary_by_config_rule::_get_compliance
 
 impl GetComplianceSummaryByConfigRuleInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.get_compliance_summary_by_config_rule();
         fluent_builder.inner = self;
         fluent_builder.send().await

@@ -5,10 +5,16 @@ pub use crate::operation::list_license_manager_report_generators::_list_license_
 
 impl ListLicenseManagerReportGeneratorsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.list_license_manager_report_generators();
         fluent_builder.inner = self;
         fluent_builder.send().await

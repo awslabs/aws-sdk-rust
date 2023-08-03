@@ -5,6 +5,7 @@
 
 //! Region type for determining the endpoint to send requests to.
 
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::borrow::Cow;
 use std::fmt::{Display, Formatter};
 
@@ -33,6 +34,10 @@ impl Display for Region {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}", self.0)
     }
+}
+
+impl Storable for Region {
+    type Storer = StoreReplace<Region>;
 }
 
 impl Region {

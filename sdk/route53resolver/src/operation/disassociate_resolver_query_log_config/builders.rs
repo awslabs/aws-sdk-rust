@@ -5,10 +5,16 @@ pub use crate::operation::disassociate_resolver_query_log_config::_disassociate_
 
 impl DisassociateResolverQueryLogConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.disassociate_resolver_query_log_config();
         fluent_builder.inner = self;
         fluent_builder.send().await

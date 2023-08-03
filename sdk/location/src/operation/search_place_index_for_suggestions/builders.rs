@@ -5,10 +5,16 @@ pub use crate::operation::search_place_index_for_suggestions::_search_place_inde
 
 impl SearchPlaceIndexForSuggestionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.search_place_index_for_suggestions();
         fluent_builder.inner = self;
         fluent_builder.send().await

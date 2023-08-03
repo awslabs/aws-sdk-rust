@@ -5,10 +5,16 @@ pub use crate::operation::describe_applicable_individual_assessments::_describe_
 
 impl DescribeApplicableIndividualAssessmentsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.describe_applicable_individual_assessments();
         fluent_builder.inner = self;
         fluent_builder.send().await

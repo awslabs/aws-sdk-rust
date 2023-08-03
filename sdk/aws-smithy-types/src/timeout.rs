@@ -6,6 +6,7 @@
 //! This module defines types that describe timeouts that can be applied to various stages of the
 //! Smithy networking stack.
 
+use crate::config_bag::{Storable, StoreReplace};
 use std::time::Duration;
 
 /// Builder for [`TimeoutConfig`].
@@ -206,6 +207,10 @@ pub struct TimeoutConfig {
     read_timeout: Option<Duration>,
     operation_timeout: Option<Duration>,
     operation_attempt_timeout: Option<Duration>,
+}
+
+impl Storable for TimeoutConfig {
+    type Storer = StoreReplace<TimeoutConfig>;
 }
 
 impl TimeoutConfig {

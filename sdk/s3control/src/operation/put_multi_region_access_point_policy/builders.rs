@@ -5,10 +5,16 @@ pub use crate::operation::put_multi_region_access_point_policy::_put_multi_regio
 
 impl PutMultiRegionAccessPointPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.put_multi_region_access_point_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await

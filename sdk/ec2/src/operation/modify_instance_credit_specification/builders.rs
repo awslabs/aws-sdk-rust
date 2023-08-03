@@ -5,10 +5,16 @@ pub use crate::operation::modify_instance_credit_specification::_modify_instance
 
 impl ModifyInstanceCreditSpecificationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationError, ::aws_smithy_http::operation::Response>>
-                    
-                    
-                    {
+                    pub async fn send_with(
+                        self,
+                        client: &crate::Client
+                    ) -> ::std::result::Result<
+                        crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationOutput,
+                        ::aws_smithy_http::result::SdkError<
+                            crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationError,
+                            ::aws_smithy_http::operation::Response
+                        >
+    >{
         let mut fluent_builder = client.modify_instance_credit_specification();
         fluent_builder.inner = self;
         fluent_builder.send().await
