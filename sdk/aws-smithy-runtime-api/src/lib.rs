@@ -15,3 +15,5 @@
 
 /// Smithy runtime for client orchestration.
 pub mod client;
+
+pub mod macros;

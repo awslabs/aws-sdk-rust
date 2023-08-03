@@ -10,23 +10,22 @@ use std::sync::Arc;
 use tokio::sync::{OwnedSemaphorePermit, Semaphore};
 use tracing::trace;
 
-/// A [RuntimePlugin] to provide a standard token bucket, usable by the
-/// [`StandardRetryStrategy`](crate::client::retries::strategy::standard::StandardRetryStrategy).
+/// A [RuntimePlugin] to provide a token bucket, usable by a retry strategy.
 #[non_exhaustive]
 #[derive(Debug, Default)]
-pub struct StandardTokenBucketRuntimePlugin {
-    token_bucket: StandardTokenBucket,
+pub struct TokenBucketRuntimePlugin {
+    token_bucket: TokenBucket,
 }
 
-impl StandardTokenBucketRuntimePlugin {
+impl TokenBucketRuntimePlugin {
     pub fn new(initial_tokens: usize) -> Self {
         Self {
-            token_bucket: StandardTokenBucket::new(initial_tokens),
+            token_bucket: TokenBucket::new(initial_tokens),
         }
     }
 }
 
-impl RuntimePlugin for StandardTokenBucketRuntimePlugin {
+impl RuntimePlugin for TokenBucketRuntimePlugin {
     fn config(&self) -> Option<FrozenLayer> {
         let mut cfg = Layer::new("standard token bucket");
         cfg.store_put(self.token_bucket.clone());
@@ -41,18 +40,18 @@ const RETRY_TIMEOUT_COST: u32 = RETRY_COST * 2;
 const PERMIT_REGENERATION_AMOUNT: usize = 1;
 
 #[derive(Clone, Debug)]
-pub(crate) struct StandardTokenBucket {
+pub(crate) struct TokenBucket {
     semaphore: Arc<Semaphore>,
     max_permits: usize,
     timeout_retry_cost: u32,
     retry_cost: u32,
 }
 
-impl Storable for StandardTokenBucket {
+impl Storable for TokenBucket {
     type Storer = StoreReplace<Self>;
 }
 
-impl Default for StandardTokenBucket {
+impl Default for TokenBucket {
     fn default() -> Self {
         Self {
             semaphore: Arc::new(Semaphore::new(DEFAULT_CAPACITY)),
@@ -63,7 +62,7 @@ impl Default for StandardTokenBucket {
     }
 }
 
-impl StandardTokenBucket {
+impl TokenBucket {
     pub(crate) fn new(initial_quota: usize) -> Self {
         Self {
             semaphore: Arc::new(Semaphore::new(initial_quota)),

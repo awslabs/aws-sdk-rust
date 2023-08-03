@@ -19,7 +19,7 @@ use std::borrow::Cow;
 use std::fmt::{Debug, Formatter};
 use std::iter::Rev;
 use std::marker::PhantomData;
-use std::ops::Deref;
+use std::ops::{Deref, DerefMut};
 use std::slice::Iter;
 use std::sync::Arc;
 
@@ -65,7 +65,7 @@ impl Deref for FrozenLayer {
 
 /// Private module to keep Value type while avoiding "private type in public latest"
 pub(crate) mod value {
-    #[derive(Debug)]
+    #[derive(Clone, Debug)]
     pub enum Value<T> {
         Set(T),
         ExplicitlyUnset(&'static str),
@@ -76,6 +76,123 @@ use value::Value;
 impl<T: Default> Default for Value<T> {
     fn default() -> Self {
         Self::Set(Default::default())
+    }
+}
+
+/// [`CloneableLayer`] allows itself to be cloned. This is useful when a type that implements
+/// `Clone` wishes to store a config layer.
+///
+/// It ensures that all the items in `CloneableLayer` are `Clone` upon entry, e.g. when they are
+/// first stored, the mutable methods require that they have a `Clone` bound on them.
+///
+/// While [`FrozenLayer`] is also cloneable, which is a shallow clone via `Arc`, `CloneableLayer`
+/// performs a deep clone that newly allocates all the items stored in it.
+#[derive(Debug)]
+pub struct CloneableLayer(Layer);
+
+impl Deref for CloneableLayer {
+    type Target = Layer;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for CloneableLayer {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+
+impl Clone for CloneableLayer {
+    fn clone(&self) -> Self {
+        Self(
+            self.try_clone()
+                .expect("only cloneable types can be inserted"),
+        )
+    }
+}
+
+// We need to "override" the mutable methods to encode the information that an item being stored
+// implements `Clone`. For the immutable methods, they can just be delegated via the `Deref` trait.
+impl CloneableLayer {
+    /// Creates a new `CloneableLayer` with a given name
+    pub fn new(name: impl Into<Cow<'static, str>>) -> Self {
+        Self(Layer::new(name))
+    }
+
+    pub fn freeze(self) -> FrozenLayer {
+        self.0.into()
+    }
+
+    /// Removes `T` from this bag
+    pub fn unset<T: Send + Sync + Clone + Debug + 'static>(&mut self) -> &mut Self {
+        self.put_directly::<StoreReplace<T>>(Value::ExplicitlyUnset(type_name::<T>()));
+        self
+    }
+
+    fn put_directly<T: Store>(&mut self, value: T::StoredType) -> &mut Self
+    where
+        T::StoredType: Clone,
+    {
+        self.props
+            .insert(TypeId::of::<T>(), TypeErasedBox::new_with_clone(value));
+        self
+    }
+
+    /// Stores `item` of type `T` into the config bag, overriding a previous value of the same type
+    pub fn store_put<T>(&mut self, item: T) -> &mut Self
+    where
+        T: Storable<Storer = StoreReplace<T>> + Clone,
+    {
+        self.put_directly::<StoreReplace<T>>(Value::Set(item));
+        self
+    }
+
+    /// Stores `item` of type `T` into the config bag, overriding a previous value of the same type,
+    /// or unsets it by passing a `None`
+    pub fn store_or_unset<T>(&mut self, item: Option<T>) -> &mut Self
+    where
+        T: Storable<Storer = StoreReplace<T>> + Clone,
+    {
+        let item = match item {
+            Some(item) => Value::Set(item),
+            None => Value::ExplicitlyUnset(type_name::<T>()),
+        };
+        self.put_directly::<StoreReplace<T>>(item);
+        self
+    }
+
+    /// Stores `item` of type `T` into the config bag, appending it to the existing list of the same
+    /// type
+    pub fn store_append<T>(&mut self, item: T) -> &mut Self
+    where
+        T: Storable<Storer = StoreAppend<T>> + Clone,
+    {
+        match self.get_mut_or_default::<StoreAppend<T>>() {
+            Value::Set(list) => list.push(item),
+            v @ Value::ExplicitlyUnset(_) => *v = Value::Set(vec![item]),
+        }
+        self
+    }
+
+    /// Clears the value of type `T` from the config bag
+    pub fn clear<T>(&mut self)
+    where
+        T: Storable<Storer = StoreAppend<T>> + Clone,
+    {
+        self.put_directly::<StoreAppend<T>>(Value::ExplicitlyUnset(type_name::<T>()));
+    }
+
+    fn get_mut_or_default<T: Send + Sync + Store + 'static>(&mut self) -> &mut T::StoredType
+    where
+        T::StoredType: Default + Clone,
+    {
+        self.props
+            .entry(TypeId::of::<T>())
+            .or_insert_with(|| TypeErasedBox::new_with_clone(T::StoredType::default()))
+            .downcast_mut()
+            .expect("typechecked")
     }
 }
 
@@ -101,6 +218,22 @@ impl Debug for Layer {
 }
 
 impl Layer {
+    fn try_clone(&self) -> Option<Self> {
+        let new_props = self
+            .props
+            .iter()
+            .flat_map(|(tyid, erased)| erased.try_clone().map(|e| (*tyid, e)))
+            .collect::<TypeIdMap<_>>();
+        if new_props.len() == self.props.len() {
+            Some(Layer {
+                name: self.name.clone(),
+                props: new_props,
+            })
+        } else {
+            None
+        }
+    }
+
     /// Inserts `value` into the layer directly
     fn put_directly<T: Store>(&mut self, value: T::StoredType) -> &mut Self {
         self.props
@@ -485,7 +618,7 @@ impl From<Layer> for FrozenLayer {
 #[cfg(test)]
 mod test {
     use super::ConfigBag;
-    use crate::config_bag::{Layer, Storable, StoreAppend, StoreReplace};
+    use crate::config_bag::{CloneableLayer, Layer, Storable, StoreAppend, StoreReplace};
 
     #[test]
     fn layered_property_bag() {
@@ -671,5 +804,39 @@ mod test {
         // if it was unset, we can't clone the current one, that would be wrong
         assert_eq!(bag.get_mut::<Foo>(), None);
         assert_eq!(bag.get_mut_or_default::<Foo>(), &Foo(0));
+    }
+
+    #[test]
+    fn cloning_layers() {
+        #[derive(Clone, Debug)]
+        struct TestStr(String);
+        impl Storable for TestStr {
+            type Storer = StoreReplace<TestStr>;
+        }
+        let mut layer_1 = CloneableLayer::new("layer_1");
+        let expected_str = "I can be cloned";
+        layer_1.store_put(TestStr(expected_str.to_owned()));
+        let layer_1_cloned = layer_1.clone();
+        assert_eq!(expected_str, &layer_1_cloned.load::<TestStr>().unwrap().0);
+
+        #[derive(Clone, Debug)]
+        struct Rope(String);
+        impl Storable for Rope {
+            type Storer = StoreAppend<Rope>;
+        }
+        let mut layer_2 = CloneableLayer::new("layer_2");
+        layer_2.store_append(Rope("A".to_owned()));
+        layer_2.store_append(Rope("big".to_owned()));
+        layer_2.store_append(Rope("rope".to_owned()));
+        let layer_2_cloned = layer_2.clone();
+        let rope = layer_2_cloned.load::<Rope>().cloned().collect::<Vec<_>>();
+        assert_eq!(
+            "A big rope",
+            rope.iter()
+                .rev()
+                .map(|r| r.0.clone())
+                .collect::<Vec<_>>()
+                .join(" ")
+        );
     }
 }

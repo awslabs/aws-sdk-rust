@@ -484,11 +484,7 @@ impl AggregatedBytes {
 
     /// Convert this buffer into a `Vec<u8>`
     pub fn to_vec(self) -> Vec<u8> {
-        self.0
-            .into_inner()
-            .into_iter()
-            .flat_map(|b| b.to_vec())
-            .collect()
+        self.0.into_inner().into_iter().flatten().collect()
     }
 }
 

@@ -56,6 +56,7 @@ version = "1.25"
 features = []
 
 [dev-dependencies]
+approx = "0.5.1"
 tracing-test = "0.2.1"
 
 [dev-dependencies.aws-smithy-async]

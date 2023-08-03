@@ -69,6 +69,40 @@ impl ControlledSleep {
     }
 }
 
+/// A sleep implementation where calls to [`AsyncSleep::sleep`] will complete instantly.
+///
+/// Create a [`InstantSleep`] with [`instant_time_and_sleep`]
+#[derive(Debug, Clone)]
+pub struct InstantSleep {
+    log: Arc<Mutex<Vec<Duration>>>,
+}
+
+impl AsyncSleep for InstantSleep {
+    fn sleep(&self, duration: Duration) -> Sleep {
+        let log = self.log.clone();
+        Sleep::new(async move {
+            log.lock().unwrap().push(duration);
+        })
+    }
+}
+
+impl InstantSleep {
+    /// Given a shared log for sleep durations, create a new `InstantSleep`.
+    pub fn new(log: Arc<Mutex<Vec<Duration>>>) -> Self {
+        Self { log }
+    }
+
+    /// Return the sleep durations that were logged by this `InstantSleep`.
+    pub fn logs(&self) -> Vec<Duration> {
+        self.log.lock().unwrap().iter().cloned().collect()
+    }
+
+    /// Return the total sleep duration that was logged by this `InstantSleep`.
+    pub fn total_duration(&self) -> Duration {
+        self.log.lock().unwrap().iter().sum()
+    }
+}
+
 /// Guard returned from [`SleepGate::expect_sleep`]
 ///
 /// # Examples
@@ -112,9 +146,9 @@ impl CapturedSleep<'_> {
     /// ```rust
     /// use std::time::Duration;
     /// use aws_smithy_async::rt::sleep::AsyncSleep;
-    /// fn do_something(sleep: &dyn AsyncSleep) {
+    /// async fn do_something(sleep: &dyn AsyncSleep) {
     ///   println!("before sleep");
-    ///   sleep.sleep(Duration::from_secs(1));
+    ///   sleep.sleep(Duration::from_secs(1)).await;
     ///   println!("after sleep");
     /// }
     /// ```
@@ -194,6 +228,14 @@ pub fn controlled_time_and_sleep(
     (ManualTimeSource { start_time, log }, sleep, gate)
 }
 
+/// Returns a duo of tools to test interactions with time. Sleeps will end instantly, but the
+/// desired length of the sleeps will be recorded for later verification.
+pub fn instant_time_and_sleep(start_time: SystemTime) -> (ManualTimeSource, InstantSleep) {
+    let log = Arc::new(Mutex::new(vec![]));
+    let sleep = InstantSleep::new(log.clone());
+    (ManualTimeSource { start_time, log }, sleep)
+}
+
 impl TimeSource for SystemTime {
     fn now(&self) -> SystemTime {
         *self
@@ -249,7 +291,7 @@ mod test {
 
         let guard = gate.expect_sleep().await;
         assert_eq!(progress.load(Ordering::Acquire), 2);
-        assert_eq!(task.is_finished(), false);
+        assert!(!task.is_finished(), "task should not be finished");
         guard.allow_progress();
         timeout(Duration::from_secs(1), task)
             .await

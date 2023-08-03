@@ -8,6 +8,7 @@ use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
 use std::ops::{Deref, DerefMut};
+use std::sync::Arc;
 
 /// A [`TypeErasedBox`] with type information tracked via generics at compile-time
 ///
@@ -101,9 +102,11 @@ impl<T: fmt::Debug + Send + Sync + 'static> DerefMut for TypedBox<T> {
 pub struct TypeErasedBox {
     field: Box<dyn Any + Send + Sync>,
     #[allow(clippy::type_complexity)]
-    debug: Box<
+    debug: Arc<
         dyn Fn(&Box<dyn Any + Send + Sync>, &mut fmt::Formatter<'_>) -> fmt::Result + Send + Sync,
     >,
+    #[allow(clippy::type_complexity)]
+    clone: Option<Arc<dyn Fn(&Box<dyn Any + Send + Sync>) -> TypeErasedBox + Send + Sync>>,
 }
 
 #[cfg(feature = "test-util")]
@@ -132,14 +135,41 @@ impl TypeErasedBox {
         };
         Self {
             field: Box::new(value),
-            debug: Box::new(debug),
+            debug: Arc::new(debug),
+            clone: None,
         }
+    }
+
+    pub fn new_with_clone<T: Send + Sync + Clone + fmt::Debug + 'static>(value: T) -> Self {
+        let debug = |value: &Box<dyn Any + Send + Sync>, f: &mut fmt::Formatter<'_>| {
+            fmt::Debug::fmt(value.downcast_ref::<T>().expect("type-checked"), f)
+        };
+        let clone = |value: &Box<dyn Any + Send + Sync>| {
+            TypeErasedBox::new(value.downcast_ref::<T>().expect("typechecked").clone())
+        };
+        Self {
+            field: Box::new(value),
+            debug: Arc::new(debug),
+            clone: Some(Arc::new(clone)),
+        }
+    }
+
+    pub fn try_clone(&self) -> Option<Self> {
+        Some((self.clone.as_ref()?)(&self.field))
     }
 
     /// Downcast into a `Box<T>`, or return `Self` if it is not a `T`.
     pub fn downcast<T: fmt::Debug + Send + Sync + 'static>(self) -> Result<Box<T>, Self> {
-        let TypeErasedBox { field, debug } = self;
-        field.downcast().map_err(|field| Self { field, debug })
+        let TypeErasedBox {
+            field,
+            debug,
+            clone,
+        } = self;
+        field.downcast().map_err(|field| Self {
+            field,
+            debug,
+            clone,
+        })
     }
 
     /// Downcast as a `&T`, or return `None` if it is not a `T`.
@@ -158,6 +188,7 @@ impl From<TypeErasedError> for TypeErasedBox {
         TypeErasedBox {
             field: value.field,
             debug: value.debug,
+            clone: None,
         }
     }
 }
@@ -166,7 +197,7 @@ impl From<TypeErasedError> for TypeErasedBox {
 pub struct TypeErasedError {
     field: Box<dyn Any + Send + Sync>,
     #[allow(clippy::type_complexity)]
-    debug: Box<
+    debug: Arc<
         dyn Fn(&Box<dyn Any + Send + Sync>, &mut fmt::Formatter<'_>) -> fmt::Result + Send + Sync,
     >,
     #[allow(clippy::type_complexity)]
@@ -200,7 +231,7 @@ impl TypeErasedError {
         };
         Self {
             field: Box::new(value),
-            debug: Box::new(debug),
+            debug: Arc::new(debug),
             as_error: Box::new(|value: &TypeErasedError| {
                 value.downcast_ref::<T>().expect("typechecked") as _
             }),
@@ -238,7 +269,7 @@ impl TypeErasedError {
 
 #[cfg(test)]
 mod tests {
-    use super::{TypeErasedError, TypedBox};
+    use super::{TypeErasedBox, TypeErasedError, TypedBox};
     use std::fmt;
 
     #[derive(Debug)]
@@ -319,5 +350,17 @@ mod tests {
             .expect("type erased error can be downcast into original type")
             .unwrap();
         assert_eq!(test_err, actual);
+    }
+
+    #[test]
+    fn test_typed_cloneable_boxes() {
+        let expected_str = "I can be cloned";
+        let cloneable = TypeErasedBox::new_with_clone(expected_str.to_owned());
+        // ensure it can be cloned
+        let cloned = cloneable.try_clone().unwrap();
+        let actual_str = cloned.downcast_ref::<String>().unwrap();
+        assert_eq!(expected_str, actual_str);
+        // they should point to different addresses
+        assert_ne!(format!("{expected_str:p}"), format! {"{actual_str:p}"});
     }
 }

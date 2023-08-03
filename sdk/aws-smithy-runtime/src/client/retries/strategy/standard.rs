@@ -6,7 +6,7 @@
 use crate::client::retries::strategy::standard::ReleaseResult::{
     APermitWasReleased, NoPermitWasReleased,
 };
-use crate::client::runtime_plugin::standard_token_bucket::StandardTokenBucket;
+use crate::client::retries::token_bucket::TokenBucket;
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors};
 use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
@@ -114,7 +114,7 @@ impl RetryStrategy for StandardRetryStrategy {
         let output_or_error = ctx.output_or_error().expect(
             "This must never be called without reaching the point where the result exists.",
         );
-        let token_bucket = cfg.get::<StandardTokenBucket>();
+        let token_bucket = cfg.get::<TokenBucket>();
         if output_or_error.is_ok() {
             tracing::debug!("request succeeded, no retry necessary");
             if let Some(tb) = token_bucket {
@@ -159,8 +159,9 @@ impl RetryStrategy for StandardRetryStrategy {
                         Some(permit) => self.set_retry_permit(permit),
                         None => {
                             tracing::debug!(
-                        "attempt #{request_attempts} failed with {kind:?}; However, no retry permits are available, so no retry will be attempted.",
-                    );
+                                "attempt #{request_attempts} failed with {kind:?}; \
+                                However, no retry permits are available, so no retry will be attempted.",
+                            );
                             return Ok(ShouldAttempt::No);
                         }
                     }
@@ -179,7 +180,7 @@ impl RetryStrategy for StandardRetryStrategy {
             }
             Some(_) => unreachable!("RetryReason is non-exhaustive"),
             None => {
-                tracing::trace!(
+                tracing::debug!(
                     attempts = request_attempts,
                     max_attempts = self.max_attempts,
                     "encountered unretryable error"
@@ -219,7 +220,7 @@ mod tests {
     use std::time::Duration;
 
     #[cfg(feature = "test-util")]
-    use crate::client::runtime_plugin::standard_token_bucket::StandardTokenBucket;
+    use crate::client::retries::token_bucket::TokenBucket;
 
     #[test]
     fn no_retry_necessary_for_ok_result() {
@@ -370,8 +371,8 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(StandardTokenBucket::default());
-        let token_bucket = cfg.get::<StandardTokenBucket>().unwrap().clone();
+        cfg.interceptor_state().put(TokenBucket::default());
+        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
 
         cfg.interceptor_state().put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
@@ -400,8 +401,8 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(3);
-        cfg.interceptor_state().put(StandardTokenBucket::default());
-        let token_bucket = cfg.get::<StandardTokenBucket>().unwrap().clone();
+        cfg.interceptor_state().put(TokenBucket::default());
+        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
 
         cfg.interceptor_state().put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
@@ -428,8 +429,8 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(StandardTokenBucket::new(5));
-        let token_bucket = cfg.get::<StandardTokenBucket>().unwrap().clone();
+        cfg.interceptor_state().put(TokenBucket::new(5));
+        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
 
         cfg.interceptor_state().put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
@@ -453,8 +454,8 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(StandardTokenBucket::new(100));
-        let token_bucket = cfg.get::<StandardTokenBucket>().unwrap().clone();
+        cfg.interceptor_state().put(TokenBucket::new(100));
+        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
 
         cfg.interceptor_state().put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
@@ -485,9 +486,8 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(usize::MAX);
-        cfg.interceptor_state()
-            .put(StandardTokenBucket::new(PERMIT_COUNT));
-        let token_bucket = cfg.get::<StandardTokenBucket>().unwrap().clone();
+        cfg.interceptor_state().put(TokenBucket::new(PERMIT_COUNT));
+        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
 
         let mut attempt = 1;
 
@@ -533,8 +533,8 @@ mod tests {
         let strategy = StandardRetryStrategy::default()
             .with_base(|| 1.0)
             .with_max_attempts(5);
-        cfg.interceptor_state().put(StandardTokenBucket::default());
-        let token_bucket = cfg.get::<StandardTokenBucket>().unwrap().clone();
+        cfg.interceptor_state().put(TokenBucket::default());
+        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
 
         cfg.interceptor_state().put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();
@@ -575,8 +575,8 @@ mod tests {
             .with_max_attempts(5)
             .with_initial_backoff(Duration::from_secs(1))
             .with_max_backoff(Duration::from_secs(3));
-        cfg.interceptor_state().put(StandardTokenBucket::default());
-        let token_bucket = cfg.get::<StandardTokenBucket>().unwrap().clone();
+        cfg.interceptor_state().put(TokenBucket::default());
+        let token_bucket = cfg.get::<TokenBucket>().unwrap().clone();
 
         cfg.interceptor_state().put(RequestAttempts::new(1));
         let should_retry = strategy.should_attempt_retry(&ctx, &cfg).unwrap();

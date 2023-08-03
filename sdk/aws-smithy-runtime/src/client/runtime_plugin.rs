@@ -5,5 +5,3 @@
 
 #[cfg(feature = "anonymous-auth")]
 pub mod anonymous_auth;
-
-pub mod standard_token_bucket;
