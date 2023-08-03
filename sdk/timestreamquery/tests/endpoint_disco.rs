@@ -6,12 +6,12 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_timestreamquery as query;
 use aws_sdk_timestreamquery::config::Credentials;
+use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_async::test_util::controlled_time_and_sleep;
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_client::dvr::{MediaType, ReplayingConnection};
 use aws_types::region::Region;
 use aws_types::SdkConfig;
-use std::sync::Arc;
 use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
@@ -24,7 +24,7 @@ async fn do_endpoint_discovery() {
     let config = SdkConfig::builder()
         .http_connector(conn.clone())
         .region(Region::from_static("us-west-2"))
-        .sleep_impl(Arc::new(sleep))
+        .sleep_impl(SharedAsyncSleep::new(sleep))
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .time_source(SharedTimeSource::new(ts.clone()))
         .build();

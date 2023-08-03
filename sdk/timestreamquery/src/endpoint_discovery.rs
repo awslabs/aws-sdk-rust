@@ -6,8 +6,8 @@
 
 //! Maintain a cache of discovered endpoints
 
-use aws_smithy_async::rt::sleep::AsyncSleep;
-use aws_smithy_async::time::TimeSource;
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
+use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_client::erase::boxclone::BoxFuture;
 use aws_smithy_http::endpoint::{ResolveEndpoint, ResolveEndpointError};
 use aws_smithy_types::endpoint::Endpoint;
@@ -25,8 +25,8 @@ pub struct ReloadEndpoint {
     endpoint: Arc<Mutex<Option<ExpiringEndpoint>>>,
     error: Arc<Mutex<Option<ResolveEndpointError>>>,
     rx: Receiver<()>,
-    sleep: Arc<dyn AsyncSleep>,
-    time: Arc<dyn TimeSource>,
+    sleep: SharedAsyncSleep,
+    time: SharedTimeSource,
 }
 
 impl Debug for ReloadEndpoint {
@@ -107,8 +107,8 @@ impl ExpiringEndpoint {
 
 pub(crate) async fn create_cache<F>(
     loader_fn: impl Fn() -> F + Send + Sync + 'static,
-    sleep: Arc<dyn AsyncSleep>,
-    time: Arc<dyn TimeSource>,
+    sleep: SharedAsyncSleep,
+    time: SharedTimeSource,
 ) -> Result<(EndpointCache, ReloadEndpoint), ResolveEndpointError>
 where
     F: Future<Output = Result<(Endpoint, SystemTime), ResolveEndpointError>> + Send + 'static,
@@ -156,9 +156,9 @@ impl EndpointCache {
 #[cfg(test)]
 mod test {
     use crate::endpoint_discovery::create_cache;
-    use aws_smithy_async::rt::sleep::TokioSleep;
+    use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
     use aws_smithy_async::test_util::controlled_time_and_sleep;
-    use aws_smithy_async::time::SystemTimeSource;
+    use aws_smithy_async::time::{SharedTimeSource, SystemTimeSource};
     use aws_smithy_types::endpoint::Endpoint;
     use std::sync::atomic::{AtomicUsize, Ordering};
     use std::sync::Arc;
@@ -179,8 +179,8 @@ mod test {
                     SystemTime::now(),
                 ))
             },
-            Arc::new(TokioSleep::new()),
-            Arc::new(SystemTimeSource::new()),
+            SharedAsyncSleep::new(TokioSleep::new()),
+            SharedTimeSource::new(SystemTimeSource::new()),
         )
         .await
         .unwrap();
@@ -205,8 +205,8 @@ mod test {
                     ))
                 }
             },
-            Arc::new(TokioSleep::new()),
-            Arc::new(SystemTimeSource::new()),
+            SharedAsyncSleep::new(TokioSleep::new()),
+            SharedTimeSource::new(SystemTimeSource::new()),
         )
         .await
         .expect("returns an endpoint");
@@ -249,8 +249,8 @@ mod test {
                     ))
                 }
             },
-            Arc::new(sleep.clone()),
-            Arc::new(time.clone()),
+            SharedAsyncSleep::new(sleep.clone()),
+            SharedTimeSource::new(time.clone()),
         )
         .await
         .expect("first load success");

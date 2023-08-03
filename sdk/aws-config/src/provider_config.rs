@@ -6,7 +6,7 @@
 //! Configuration Options for Credential Providers
 
 use aws_credential_types::time_source::TimeSource;
-use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_types::error::display::DisplayErrorContext;
@@ -41,7 +41,7 @@ pub struct ProviderConfig {
     fs: Fs,
     time_source: SharedTimeSource,
     connector: HttpConnector,
-    sleep: Option<Arc<dyn AsyncSleep>>,
+    sleep: Option<SharedAsyncSleep>,
     region: Option<Region>,
     /// An AWS profile created from `ProfileFiles` and a `profile_name`
     parsed_profile: Arc<OnceCell<Result<ProfileSet, ProfileFileLoadError>>>,
@@ -65,7 +65,7 @@ impl Debug for ProviderConfig {
 impl Default for ProviderConfig {
     fn default() -> Self {
         let connector = HttpConnector::ConnectorFn(Arc::new(
-            |settings: &ConnectorSettings, sleep: Option<Arc<dyn AsyncSleep>>| {
+            |settings: &ConnectorSettings, sleep: Option<SharedAsyncSleep>| {
                 default_connector(settings, sleep)
             },
         ));
@@ -195,7 +195,7 @@ impl ProviderConfig {
     }
 
     #[allow(dead_code)]
-    pub(crate) fn sleep(&self) -> Option<Arc<dyn AsyncSleep>> {
+    pub(crate) fn sleep(&self) -> Option<SharedAsyncSleep> {
         self.sleep.clone()
     }
 
@@ -332,8 +332,7 @@ impl ProviderConfig {
         C::Future: Unpin + Send + 'static,
         C::Error: Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
     {
-        let connector_fn = move |settings: &ConnectorSettings,
-                                 sleep: Option<Arc<dyn AsyncSleep>>| {
+        let connector_fn = move |settings: &ConnectorSettings, sleep: Option<SharedAsyncSleep>| {
             let mut builder = aws_smithy_client::hyper_ext::Adapter::builder()
                 .connector_settings(settings.clone());
             if let Some(sleep) = sleep {
@@ -350,7 +349,7 @@ impl ProviderConfig {
     /// Override the sleep implementation for this configuration
     pub fn with_sleep(self, sleep: impl AsyncSleep + 'static) -> Self {
         ProviderConfig {
-            sleep: Some(Arc::new(sleep)),
+            sleep: Some(SharedAsyncSleep::new(sleep)),
             ..self
         }
     }

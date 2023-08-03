@@ -39,15 +39,44 @@ where
     }
 }
 
+/// Wrapper type for sharable `AsyncSleep`
+#[derive(Clone, Debug)]
+pub struct SharedAsyncSleep(Arc<dyn AsyncSleep>);
+
+impl SharedAsyncSleep {
+    /// Create a new `SharedAsyncSleep` from `AsyncSleep`
+    pub fn new(sleep: impl AsyncSleep + 'static) -> Self {
+        Self(Arc::new(sleep))
+    }
+}
+
+impl AsRef<dyn AsyncSleep> for SharedAsyncSleep {
+    fn as_ref(&self) -> &(dyn AsyncSleep + 'static) {
+        self.0.as_ref()
+    }
+}
+
+impl From<Arc<dyn AsyncSleep>> for SharedAsyncSleep {
+    fn from(sleep: Arc<dyn AsyncSleep>) -> Self {
+        SharedAsyncSleep(sleep)
+    }
+}
+
+impl AsyncSleep for SharedAsyncSleep {
+    fn sleep(&self, duration: Duration) -> Sleep {
+        self.0.sleep(duration)
+    }
+}
+
 #[cfg(feature = "rt-tokio")]
 /// Returns a default sleep implementation based on the features enabled
-pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {
-    Some(sleep_tokio())
+pub fn default_async_sleep() -> Option<SharedAsyncSleep> {
+    Some(SharedAsyncSleep::from(sleep_tokio()))
 }
 
 #[cfg(not(feature = "rt-tokio"))]
 /// Returns a default sleep implementation based on the features enabled
-pub fn default_async_sleep() -> Option<Arc<dyn AsyncSleep>> {
+pub fn default_async_sleep() -> Option<SharedAsyncSleep> {
     None
 }
 

@@ -5,7 +5,7 @@
 
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
-use aws_smithy_async::rt::sleep::{AsyncSleep, TokioSleep};
+use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
 
 use aws_smithy_client::http_connector::{ConnectorSettings, HttpConnector};
 use aws_smithy_client::test_connection;
@@ -25,7 +25,7 @@ async fn make_connector_fn_test() {
     let sentinel = Arc::new(AtomicUsize::new(0));
     let connector_sentinel = sentinel.clone();
     let connector_with_counter = HttpConnector::ConnectorFn(Arc::new(
-        move |_settings: &ConnectorSettings, _sleep: Option<Arc<dyn AsyncSleep>>| {
+        move |_settings: &ConnectorSettings, _sleep: Option<SharedAsyncSleep>| {
             connector_sentinel.fetch_add(1, Ordering::Relaxed);
             Some(test_connection::infallible_connection_fn(|_req| {
                 http::Response::builder().status(200).body("ok!").unwrap()
@@ -60,7 +60,7 @@ async fn timeouts_can_be_set_by_service() {
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::from_static("us-east-1"))
-        .sleep_impl(Arc::new(TokioSleep::new()))
+        .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
         .timeout_config(
             TimeoutConfig::builder()
                 .operation_timeout(Duration::from_secs(5))

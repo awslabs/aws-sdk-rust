@@ -9,11 +9,9 @@
 //!
 //! This module contains an shared configuration representation that is agnostic from a specific service.
 
-use std::sync::Arc;
-
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_client::http_connector::HttpConnector;
 use aws_smithy_types::retry::RetryConfig;
@@ -55,7 +53,7 @@ pub struct SdkConfig {
     region: Option<Region>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
-    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    sleep_impl: Option<SharedAsyncSleep>,
     time_source: Option<SharedTimeSource>,
     timeout_config: Option<TimeoutConfig>,
     http_connector: Option<HttpConnector>,
@@ -76,7 +74,7 @@ pub struct Builder {
     region: Option<Region>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
-    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    sleep_impl: Option<SharedAsyncSleep>,
     time_source: Option<SharedTimeSource>,
     timeout_config: Option<TimeoutConfig>,
     http_connector: Option<HttpConnector>,
@@ -241,8 +239,7 @@ impl Builder {
     /// # Examples
     ///
     /// ```rust
-    /// use std::sync::Arc;
-    /// use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+    /// use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
     /// use aws_types::SdkConfig;
     ///
     /// ##[derive(Debug)]
@@ -254,10 +251,10 @@ impl Builder {
     ///     }
     /// }
     ///
-    /// let sleep_impl = Arc::new(ForeverSleep);
+    /// let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     /// let config = SdkConfig::builder().sleep_impl(sleep_impl).build();
     /// ```
-    pub fn sleep_impl(mut self, sleep_impl: Arc<dyn AsyncSleep>) -> Self {
+    pub fn sleep_impl(mut self, sleep_impl: SharedAsyncSleep) -> Self {
         self.set_sleep_impl(Some(sleep_impl));
         self
     }
@@ -270,7 +267,7 @@ impl Builder {
     ///
     /// # Examples
     /// ```rust
-    /// # use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+    /// # use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
     /// # use aws_types::sdk_config::{Builder, SdkConfig};
     /// #[derive(Debug)]
     /// pub struct ForeverSleep;
@@ -282,7 +279,7 @@ impl Builder {
     /// }
     ///
     /// fn set_never_ending_sleep_impl(builder: &mut Builder) {
-    ///     let sleep_impl = std::sync::Arc::new(ForeverSleep);
+    ///     let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     ///     builder.set_sleep_impl(Some(sleep_impl));
     /// }
     ///
@@ -290,7 +287,7 @@ impl Builder {
     /// set_never_ending_sleep_impl(&mut builder);
     /// let config = builder.build();
     /// ```
-    pub fn set_sleep_impl(&mut self, sleep_impl: Option<Arc<dyn AsyncSleep>>) -> &mut Self {
+    pub fn set_sleep_impl(&mut self, sleep_impl: Option<SharedAsyncSleep>) -> &mut Self {
         self.sleep_impl = sleep_impl;
         self
     }
@@ -558,7 +555,7 @@ impl SdkConfig {
 
     #[doc(hidden)]
     /// Configured sleep implementation
-    pub fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>> {
+    pub fn sleep_impl(&self) -> Option<SharedAsyncSleep> {
         self.sleep_impl.clone()
     }
 
@@ -568,13 +565,13 @@ impl SdkConfig {
     }
 
     /// Configured credentials provider
-    pub fn credentials_provider(&self) -> Option<&SharedCredentialsProvider> {
-        self.credentials_provider.as_ref()
+    pub fn credentials_provider(&self) -> Option<SharedCredentialsProvider> {
+        self.credentials_provider.clone()
     }
 
     /// Configured time source
-    pub fn time_source(&self) -> Option<&SharedTimeSource> {
-        self.time_source.as_ref()
+    pub fn time_source(&self) -> Option<SharedTimeSource> {
+        self.time_source.clone()
     }
 
     /// Configured app name

@@ -3,13 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::sync::Arc;
 use std::time::Duration;
 
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_sdk_dynamodb::error::SdkError;
-use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 use aws_smithy_client::never::NeverConnector;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
@@ -37,7 +36,7 @@ async fn api_call_timeout_retries() {
                 .build(),
         )
         .retry_config(RetryConfig::standard())
-        .sleep_impl(Arc::new(InstantSleep))
+        .sleep_impl(SharedAsyncSleep::new(InstantSleep))
         .build();
     let client = aws_sdk_dynamodb::Client::from_conf(aws_sdk_dynamodb::Config::new(&conf));
     let resp = client
@@ -70,7 +69,7 @@ async fn no_retries_on_operation_timeout() {
                 .build(),
         )
         .retry_config(RetryConfig::standard())
-        .sleep_impl(Arc::new(InstantSleep))
+        .sleep_impl(SharedAsyncSleep::new(InstantSleep))
         .build();
     let client = aws_sdk_dynamodb::Client::from_conf(aws_sdk_dynamodb::Config::new(&conf));
     let resp = client

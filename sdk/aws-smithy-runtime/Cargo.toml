@@ -24,6 +24,7 @@ http-body = "0.4.5"
 pin-project-lite = "0.2.7"
 pin-utils = "0.1.0"
 tracing = "0.1.37"
+fastrand = "1.4"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -64,6 +65,11 @@ version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
+[dev-dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
 features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 

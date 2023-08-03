@@ -5,11 +5,10 @@
 
 //! Lazy, credentials cache implementation
 
-use std::sync::Arc;
 use std::time::{Duration, Instant};
 
 use aws_smithy_async::future::timeout::Timeout;
-use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use tracing::{debug, info, info_span, Instrument};
 
 use crate::cache::{ExpiringCache, ProvideCachedCredentials};
@@ -25,7 +24,7 @@ const DEFAULT_BUFFER_TIME_JITTER_FRACTION: fn() -> f64 = fastrand::f64;
 #[derive(Debug)]
 pub(crate) struct LazyCredentialsCache {
     time: TimeSource,
-    sleeper: Arc<dyn AsyncSleep>,
+    sleeper: SharedAsyncSleep,
     cache: ExpiringCache<Credentials, CredentialsError>,
     provider: SharedCredentialsProvider,
     load_timeout: Duration,
@@ -37,7 +36,7 @@ pub(crate) struct LazyCredentialsCache {
 impl LazyCredentialsCache {
     fn new(
         time: TimeSource,
-        sleeper: Arc<dyn AsyncSleep>,
+        sleeper: SharedAsyncSleep,
         provider: SharedCredentialsProvider,
         load_timeout: Duration,
         buffer_time: Duration,
@@ -133,12 +132,11 @@ use crate::Credentials;
 pub use builder::Builder;
 
 mod builder {
-    use std::sync::Arc;
     use std::time::Duration;
 
     use crate::cache::{CredentialsCache, Inner};
     use crate::provider::SharedCredentialsProvider;
-    use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+    use aws_smithy_async::rt::sleep::{default_async_sleep, SharedAsyncSleep};
 
     use super::TimeSource;
     use super::{
@@ -160,7 +158,7 @@ mod builder {
     /// `build` to create a `LazyCredentialsCache`.
     #[derive(Clone, Debug, Default)]
     pub struct Builder {
-        sleep: Option<Arc<dyn AsyncSleep>>,
+        sleep: Option<SharedAsyncSleep>,
         time_source: Option<TimeSource>,
         load_timeout: Option<Duration>,
         buffer_time: Option<Duration>,
@@ -174,22 +172,22 @@ mod builder {
             Default::default()
         }
 
-        /// Implementation of [`AsyncSleep`] to use for timeouts.
+        /// Implementation of [`AsyncSleep`](aws_smithy_async::rt::sleep::AsyncSleep) to use for timeouts.
         ///
         /// This enables use of the `LazyCredentialsCache` with other async runtimes.
         /// If using Tokio as the async runtime, this should be set to an instance of
         /// [`TokioSleep`](aws_smithy_async::rt::sleep::TokioSleep).
-        pub fn sleep(mut self, sleep: Arc<dyn AsyncSleep>) -> Self {
+        pub fn sleep(mut self, sleep: SharedAsyncSleep) -> Self {
             self.set_sleep(Some(sleep));
             self
         }
 
-        /// Implementation of [`AsyncSleep`] to use for timeouts.
+        /// Implementation of [`AsyncSleep`](aws_smithy_async::rt::sleep::AsyncSleep) to use for timeouts.
         ///
         /// This enables use of the `LazyCredentialsCache` with other async runtimes.
         /// If using Tokio as the async runtime, this should be set to an instance of
         /// [`TokioSleep`](aws_smithy_async::rt::sleep::TokioSleep).
-        pub fn set_sleep(&mut self, sleep: Option<Arc<dyn AsyncSleep>>) -> &mut Self {
+        pub fn set_sleep(&mut self, sleep: Option<SharedAsyncSleep>) -> &mut Self {
             self.sleep = sleep;
             self
         }
@@ -347,7 +345,7 @@ mod tests {
     use std::sync::{Arc, Mutex};
     use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
-    use aws_smithy_async::rt::sleep::TokioSleep;
+    use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
     use tracing::info;
     use tracing_test::traced_test;
 
@@ -372,7 +370,7 @@ mod tests {
         let load_list = Arc::new(Mutex::new(load_list));
         LazyCredentialsCache::new(
             time,
-            Arc::new(TokioSleep::new()),
+            SharedAsyncSleep::new(TokioSleep::new()),
             SharedCredentialsProvider::new(provide_credentials_fn(move || {
                 let list = load_list.clone();
                 async move {
@@ -414,7 +412,7 @@ mod tests {
         }));
         let credentials_cache = LazyCredentialsCache::new(
             TimeSource::testing(&time),
-            Arc::new(TokioSleep::new()),
+            SharedAsyncSleep::new(TokioSleep::new()),
             provider,
             DEFAULT_LOAD_TIMEOUT,
             DEFAULT_BUFFER_TIME,
@@ -534,7 +532,7 @@ mod tests {
         let time = TestingTimeSource::new(epoch_secs(100));
         let credentials_cache = LazyCredentialsCache::new(
             TimeSource::testing(&time),
-            Arc::new(TokioSleep::new()),
+            SharedAsyncSleep::new(TokioSleep::new()),
             SharedCredentialsProvider::new(provide_credentials_fn(|| async {
                 aws_smithy_async::future::never::Never::new().await;
                 Ok(credentials(1000))

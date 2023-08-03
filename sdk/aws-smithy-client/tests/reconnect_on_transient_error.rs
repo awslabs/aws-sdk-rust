@@ -7,7 +7,7 @@
 
 mod test_operation;
 
-use aws_smithy_async::rt::sleep::TokioSleep;
+use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
 use aws_smithy_client::test_connection::wire_mock;
 use aws_smithy_client::test_connection::wire_mock::{check_matches, RecordedEvent, ReplayedEvent};
 use aws_smithy_client::{hyper_ext, Builder};
@@ -21,7 +21,6 @@ use http::Uri;
 use http_body::combinators::BoxBody;
 use hyper::client::{Builder as HyperBuilder, HttpConnector};
 use std::convert::Infallible;
-use std::sync::Arc;
 use std::time::Duration;
 use test_operation::{TestOperationParser, TestRetryClassifier};
 use tower::layer::util::Identity;
@@ -94,7 +93,7 @@ async fn wire_level_test(
             .operation_attempt_timeout(Duration::from_millis(100))
             .build(),
     ))
-    .sleep_impl(Arc::new(TokioSleep::new()))
+    .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
     .build();
     loop {
         match client

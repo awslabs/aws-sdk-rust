@@ -21,7 +21,7 @@ pub struct Config {
     pub(crate) endpoint_resolver:
         std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
-    sleep_impl: Option<std::sync::Arc<dyn ::aws_smithy_async::rt::sleep::AsyncSleep>>,
+    sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
     #[allow(missing_docs)] // documentation missing in model
     pub(crate) time_source: ::aws_smithy_async::time::SharedTimeSource,
@@ -57,10 +57,8 @@ impl Config {
         self.retry_config.as_ref()
     }
 
-    /// Return a cloned Arc containing the async sleep implementation from this config, if any.
-    pub fn sleep_impl(
-        &self,
-    ) -> Option<std::sync::Arc<dyn ::aws_smithy_async::rt::sleep::AsyncSleep>> {
+    /// Return a cloned shared async sleep implementation from this config, if any.
+    pub fn sleep_impl(&self) -> Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep> {
         self.sleep_impl.clone()
     }
 
@@ -99,7 +97,7 @@ pub struct Builder {
         std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
     >,
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
-    sleep_impl: Option<std::sync::Arc<dyn ::aws_smithy_async::rt::sleep::AsyncSleep>>,
+    sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
     time_source: ::std::option::Option<::aws_smithy_async::time::SharedTimeSource>,
     app_name: Option<::aws_types::app_name::AppName>,
@@ -222,7 +220,7 @@ impl Builder {
     /// # Examples
     ///
     /// ```no_run
-    /// use aws_sdk_codecatalyst::config::{AsyncSleep, Sleep, Config};
+    /// use aws_sdk_codecatalyst::config::{AsyncSleep, Config, SharedAsyncSleep, Sleep};
     ///
     /// #[derive(Debug)]
     /// pub struct ForeverSleep;
@@ -233,12 +231,12 @@ impl Builder {
     ///     }
     /// }
     ///
-    /// let sleep_impl = std::sync::Arc::new(ForeverSleep);
+    /// let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     /// let config = Config::builder().sleep_impl(sleep_impl).build();
     /// ```
     pub fn sleep_impl(
         mut self,
-        sleep_impl: std::sync::Arc<dyn ::aws_smithy_async::rt::sleep::AsyncSleep>,
+        sleep_impl: ::aws_smithy_async::rt::sleep::SharedAsyncSleep,
     ) -> Self {
         self.set_sleep_impl(Some(sleep_impl));
         self
@@ -249,7 +247,7 @@ impl Builder {
     /// # Examples
     ///
     /// ```no_run
-    /// use aws_sdk_codecatalyst::config::{AsyncSleep, Sleep, Builder, Config};
+    /// use aws_sdk_codecatalyst::config::{AsyncSleep, Builder, Config, SharedAsyncSleep, Sleep};
     ///
     /// #[derive(Debug)]
     /// pub struct ForeverSleep;
@@ -261,7 +259,7 @@ impl Builder {
     /// }
     ///
     /// fn set_never_ending_sleep_impl(builder: &mut Builder) {
-    ///     let sleep_impl = std::sync::Arc::new(ForeverSleep);
+    ///     let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     ///     builder.set_sleep_impl(Some(sleep_impl));
     /// }
     ///
@@ -271,7 +269,7 @@ impl Builder {
     /// ```
     pub fn set_sleep_impl(
         &mut self,
-        sleep_impl: Option<std::sync::Arc<dyn ::aws_smithy_async::rt::sleep::AsyncSleep>>,
+        sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     ) -> &mut Self {
         self.sleep_impl = sleep_impl;
         self
@@ -591,7 +589,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &::aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
         builder.set_credentials_cache(input.credentials_cache().cloned());
-        builder.set_credentials_provider(input.credentials_provider().cloned());
+        builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
         builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
@@ -601,7 +599,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_sleep_impl(input.sleep_impl());
 
         builder.set_http_connector(input.http_connector().cloned());
-        builder.set_time_source(input.time_source().cloned());
+        builder.set_time_source(input.time_source());
         builder.set_app_name(input.app_name().cloned());
 
         builder
@@ -616,7 +614,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Config {
 
 pub use ::aws_types::app_name::AppName;
 
-pub use ::aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+pub use ::aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 
 /// Retry configuration
 ///

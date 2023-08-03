@@ -5,14 +5,13 @@
 
 mod test_operation;
 use crate::test_operation::{TestOperationParser, TestRetryClassifier};
-use aws_smithy_async::rt::sleep::TokioSleep;
+use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_client::Client;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation;
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::result::SdkError;
-use std::sync::Arc;
 use std::time::Duration;
 use tower::layer::util::Identity;
 
@@ -72,7 +71,7 @@ async fn end_to_end_retry_test() {
         .connector(conn.clone())
         .middleware(Identity::new())
         .retry_config(retry_config)
-        .sleep_impl(Arc::new(TokioSleep::new()))
+        .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
         .build();
     tokio::time::pause();
     let initial = tokio::time::Instant::now();

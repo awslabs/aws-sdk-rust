@@ -19,7 +19,7 @@ use std::time::Duration;
 
 use tracing::Instrument;
 
-use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::retry::ClassifyRetry;
@@ -40,7 +40,7 @@ where
     type Policy;
 
     /// Create a new policy mechanism instance.
-    fn new_request_policy(&self, sleep_impl: Option<Arc<dyn AsyncSleep>>) -> Self::Policy;
+    fn new_request_policy(&self, sleep_impl: Option<SharedAsyncSleep>) -> Self::Policy;
 }
 
 /// Retry Policy Configuration
@@ -165,7 +165,7 @@ impl Standard {
 impl NewRequestPolicy for Standard {
     type Policy = RetryHandler;
 
-    fn new_request_policy(&self, sleep_impl: Option<Arc<dyn AsyncSleep>>) -> Self::Policy {
+    fn new_request_policy(&self, sleep_impl: Option<SharedAsyncSleep>) -> Self::Policy {
         RetryHandler {
             local: RequestLocalRetryState::new(),
             shared: self.shared_state.clone(),
@@ -262,7 +262,7 @@ pub struct RetryHandler {
     local: RequestLocalRetryState,
     shared: CrossRequestRetryState,
     config: Config,
-    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    sleep_impl: Option<SharedAsyncSleep>,
 }
 
 #[cfg(test)]

@@ -7,6 +7,7 @@ use self::auth::orchestrate_auth;
 use crate::client::orchestrator::endpoints::orchestrate_endpoint;
 use crate::client::orchestrator::http::read_body;
 use crate::client::timeout::{MaybeTimeout, ProvideMaybeTimeoutConfig, TimeoutKind};
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::byte_stream::ByteStream;
 use aws_smithy_http::result::SdkError;
@@ -132,7 +133,12 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
     halt_on_err!([ctx] => interceptors.modify_before_retry_loop(ctx, cfg));
 
     let retry_strategy = cfg.retry_strategy();
-    match retry_strategy.should_attempt_initial_request(cfg) {
+    // If we got a retry strategy from the bag, ask it what to do.
+    // Otherwise, assume we should attempt the initial request.
+    let should_attempt = retry_strategy
+        .map(|rs| rs.should_attempt_initial_request(cfg))
+        .unwrap_or(Ok(ShouldAttempt::Yes));
+    match should_attempt {
         // Yes, let's make a request
         Ok(ShouldAttempt::Yes) => trace!("retry strategy has OKed initial request"),
         // No, this request shouldn't be sent
@@ -178,7 +184,13 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
         continue_on_err!([ctx] => maybe_timeout);
 
         let retry_strategy = cfg.retry_strategy();
-        let should_attempt = halt_on_err!([ctx] => retry_strategy.should_attempt_retry(ctx, cfg));
+        // If we got a retry strategy from the bag, ask it what to do.
+        // If no strategy was set, we won't retry.
+        let should_attempt = halt_on_err!(
+            [ctx] => retry_strategy
+                .map(|rs| rs.should_attempt_retry(ctx, cfg))
+                .unwrap_or(Ok(ShouldAttempt::No)
+        ));
         match should_attempt {
             // Yes, let's retry the request
             ShouldAttempt::Yes => continue,

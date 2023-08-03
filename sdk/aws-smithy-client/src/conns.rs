@@ -54,13 +54,12 @@ lazy_static::lazy_static! {
 mod default_connector {
     use crate::erase::DynConnector;
     use crate::http_connector::ConnectorSettings;
-    use aws_smithy_async::rt::sleep::AsyncSleep;
-    use std::sync::Arc;
+    use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 
     #[cfg(feature = "rustls")]
     fn base(
         settings: &ConnectorSettings,
-        sleep: Option<Arc<dyn AsyncSleep>>,
+        sleep: Option<SharedAsyncSleep>,
     ) -> crate::hyper_ext::Builder {
         let mut hyper = crate::hyper_ext::Adapter::builder().connector_settings(settings.clone());
         if let Some(sleep) = sleep {
@@ -69,10 +68,10 @@ mod default_connector {
         hyper
     }
 
-    /// Given `ConnectorSettings` and an `AsyncSleep`, create a `DynConnector` from defaults depending on what cargo features are activated.
+    /// Given `ConnectorSettings` and an `SharedAsyncSleep`, create a `DynConnector` from defaults depending on what cargo features are activated.
     pub fn default_connector(
         settings: &ConnectorSettings,
-        sleep: Option<Arc<dyn AsyncSleep>>,
+        sleep: Option<SharedAsyncSleep>,
     ) -> Option<DynConnector> {
         #[cfg(feature = "rustls")]
         {

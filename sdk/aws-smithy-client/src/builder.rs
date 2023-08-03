@@ -4,12 +4,11 @@
  */
 
 use crate::{bounds, erase, retry, Client};
-use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+use aws_smithy_async::rt::sleep::{default_async_sleep, SharedAsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_types::retry::ReconnectMode;
 use aws_smithy_types::timeout::{OperationTimeoutConfig, TimeoutConfig};
-use std::sync::Arc;
 
 #[derive(Clone, Debug)]
 struct MaybeRequiresSleep<I> {
@@ -37,7 +36,7 @@ pub struct Builder<C = (), M = (), R = retry::Standard> {
     middleware: M,
     retry_policy: MaybeRequiresSleep<R>,
     operation_timeout_config: Option<OperationTimeoutConfig>,
-    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    sleep_impl: Option<SharedAsyncSleep>,
     reconnect_mode: Option<ReconnectMode>,
 }
 
@@ -312,14 +311,14 @@ impl<C, M> Builder<C, M> {
         self
     }
 
-    /// Set the [`AsyncSleep`] function that the [`Client`] will use to create things like timeout futures.
-    pub fn set_sleep_impl(&mut self, async_sleep: Option<Arc<dyn AsyncSleep>>) -> &mut Self {
+    /// Set [`aws_smithy_async::rt::sleep::SharedAsyncSleep`] that the [`Client`] will use to create things like timeout futures.
+    pub fn set_sleep_impl(&mut self, async_sleep: Option<SharedAsyncSleep>) -> &mut Self {
         self.sleep_impl = async_sleep;
         self
     }
 
-    /// Set the [`AsyncSleep`] function that the [`Client`] will use to create things like timeout futures.
-    pub fn sleep_impl(mut self, async_sleep: Arc<dyn AsyncSleep>) -> Self {
+    /// Set [`aws_smithy_async::rt::sleep::SharedAsyncSleep`] that the [`Client`] will use to create things like timeout futures.
+    pub fn sleep_impl(mut self, async_sleep: SharedAsyncSleep) -> Self {
         self.set_sleep_impl(Some(async_sleep));
         self
     }
@@ -458,7 +457,7 @@ where
 mod tests {
     use super::*;
     use crate::never::NeverConnector;
-    use aws_smithy_async::rt::sleep::Sleep;
+    use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
     use std::panic::{self, AssertUnwindSafe};
     use std::time::Duration;
 

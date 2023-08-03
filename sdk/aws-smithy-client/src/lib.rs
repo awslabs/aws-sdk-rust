@@ -51,7 +51,7 @@ pub mod hyper_ext;
 pub mod static_tests;
 
 use crate::poison::PoisonLayer;
-use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 
 use aws_smithy_http::operation::Operation;
 use aws_smithy_http::response::ParseHttpResponse;
@@ -62,7 +62,6 @@ use aws_smithy_http_tower::parse_response::ParseResponseLayer;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::{ProvideErrorKind, ReconnectMode};
 use aws_smithy_types::timeout::OperationTimeoutConfig;
-use std::sync::Arc;
 use timeout::ClientTimeoutParams;
 pub use timeout::TimeoutLayer;
 use tower::{Service, ServiceBuilder, ServiceExt};
@@ -97,7 +96,7 @@ pub struct Client<
     retry_policy: RetryPolicy,
     reconnect_mode: ReconnectMode,
     operation_timeout_config: OperationTimeoutConfig,
-    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    sleep_impl: Option<SharedAsyncSleep>,
 }
 
 impl Client<(), (), ()> {

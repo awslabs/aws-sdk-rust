@@ -27,7 +27,9 @@ async fn test_clients_from_service_config() {
     }
 
     let config = aws_sdk_s3::Config::builder()
-        .sleep_impl(std::sync::Arc::new(StubSleep {}))
+        .sleep_impl(aws_smithy_async::rt::sleep::SharedAsyncSleep::new(
+            StubSleep {},
+        ))
         .build();
     // This will panic due to the lack of an HTTP connector
     aws_sdk_s3::Client::from_conf(config);

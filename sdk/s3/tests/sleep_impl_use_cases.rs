@@ -8,7 +8,7 @@ mod with_sdk_config {
     use aws_config::timeout::TimeoutConfig;
     use aws_config::SdkConfig;
     use aws_sdk_s3 as s3;
-    use std::sync::Arc;
+    use aws_smithy_async::rt::sleep::SharedAsyncSleep;
     use std::time::Duration;
 
     #[tokio::test]
@@ -101,7 +101,9 @@ mod with_sdk_config {
                     .build(),
             )
             .retry_config(RetryConfig::standard().with_max_attempts(2))
-            .sleep_impl(Arc::new(aws_smithy_async::rt::sleep::TokioSleep::new()))
+            .sleep_impl(SharedAsyncSleep::new(
+                aws_smithy_async::rt::sleep::TokioSleep::new(),
+            ))
             .build();
         assert!(config.timeout_config().unwrap().has_timeouts());
         assert!(config.retry_config().unwrap().has_retry());
@@ -114,7 +116,7 @@ mod with_service_config {
     use aws_config::timeout::TimeoutConfig;
     use aws_config::SdkConfig;
     use aws_sdk_s3 as s3;
-    use std::sync::Arc;
+    use aws_smithy_async::rt::sleep::SharedAsyncSleep;
     use std::time::Duration;
 
     #[test]
@@ -188,7 +190,9 @@ mod with_service_config {
                     .build(),
             )
             .retry_config(RetryConfig::standard().with_max_attempts(2))
-            .sleep_impl(Arc::new(aws_smithy_async::rt::sleep::TokioSleep::new()))
+            .sleep_impl(SharedAsyncSleep::new(
+                aws_smithy_async::rt::sleep::TokioSleep::new(),
+            ))
             .build();
         let _s3 = s3::Client::new(&config);
     }

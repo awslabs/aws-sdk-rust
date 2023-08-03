@@ -4,7 +4,7 @@
  */
 
 use aws_smithy_async::future::timeout::Timeout;
-use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 use aws_smithy_client::SdkError;
 use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, HttpResponse};
 use aws_smithy_types::config_bag::ConfigBag;
@@ -12,7 +12,6 @@ use aws_smithy_types::timeout::TimeoutConfig;
 use pin_project_lite::pin_project;
 use std::future::Future;
 use std::pin::Pin;
-use std::sync::Arc;
 use std::task::{Context, Poll};
 use std::time::Duration;
 
@@ -104,7 +103,7 @@ pub(super) enum TimeoutKind {
 
 #[derive(Clone, Debug)]
 pub(super) struct MaybeTimeoutConfig {
-    sleep_impl: Option<Arc<dyn AsyncSleep>>,
+    sleep_impl: Option<SharedAsyncSleep>,
     timeout: Option<Duration>,
     timeout_kind: TimeoutKind,
 }
@@ -187,7 +186,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_no_timeout() {
-        let sleep_impl: Arc<dyn AsyncSleep> = Arc::new(TokioSleep::new());
+        let sleep_impl = SharedAsyncSleep::new(TokioSleep::new());
         let sleep_future = sleep_impl.sleep(Duration::from_millis(250));
         let underlying_future = async {
             sleep_future.await;
@@ -211,7 +210,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_operation_timeout() {
-        let sleep_impl: Arc<dyn AsyncSleep> = Arc::new(TokioSleep::new());
+        let sleep_impl = SharedAsyncSleep::new(TokioSleep::new());
         let never = Never::new();
         let underlying_future = async {
             never.await;

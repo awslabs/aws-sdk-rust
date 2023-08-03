@@ -136,7 +136,7 @@ impl Client {
             .conf()
             .sleep_impl()
             .expect("sleep impl must be provided");
-        let time = ::std::sync::Arc::new(self.conf().time_source.clone());
+        let time = self.conf().time_source.clone();
         let (resolver, reloader) = crate::endpoint_discovery::create_cache(
             move || {
                 let client = self.clone();

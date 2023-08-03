@@ -12,13 +12,12 @@ use aws_sdk_s3::types::{
 };
 use aws_sdk_s3::Client;
 use aws_smithy_async::assert_elapsed;
-use aws_smithy_async::rt::sleep::{default_async_sleep, TokioSleep};
+use aws_smithy_async::rt::sleep::{default_async_sleep, SharedAsyncSleep, TokioSleep};
 use aws_smithy_client::never::NeverConnector;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::future::Future;
 use std::net::SocketAddr;
-use std::sync::Arc;
 use std::time::Duration;
 use tokio::net::TcpListener;
 use tokio::time::timeout;
@@ -34,7 +33,7 @@ async fn test_timeout_service_ends_request_that_never_completes() {
                 .operation_timeout(Duration::from_secs_f32(0.5))
                 .build(),
         )
-        .sleep_impl(Arc::new(TokioSleep::new()))
+        .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
         .build();
     let client = Client::new(&sdk_config);
 

@@ -12,7 +12,7 @@ use crate::client::interceptors::context::{Error, Input, Output};
 use crate::client::retries::RetryClassifiers;
 use crate::client::retries::RetryStrategy;
 use aws_smithy_async::future::now_or_later::NowOrLater;
-use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_types::config_bag::ConfigBag;
@@ -135,14 +135,14 @@ pub trait ConfigBagAccessors {
     fn retry_classifiers(&self) -> &RetryClassifiers;
     fn set_retry_classifiers(&mut self, retry_classifier: RetryClassifiers);
 
-    fn retry_strategy(&self) -> &dyn RetryStrategy;
+    fn retry_strategy(&self) -> Option<&dyn RetryStrategy>;
     fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static);
 
     fn request_time(&self) -> Option<SharedTimeSource>;
     fn set_request_time(&mut self, time_source: impl TimeSource + 'static);
 
-    fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>>;
-    fn set_sleep_impl(&mut self, async_sleep: Option<Arc<dyn AsyncSleep>>);
+    fn sleep_impl(&self) -> Option<SharedAsyncSleep>;
+    fn set_sleep_impl(&mut self, async_sleep: Option<SharedAsyncSleep>);
 
     fn loaded_request_body(&self) -> &LoadedRequestBody;
     fn set_loaded_request_body(&mut self, loaded_request_body: LoadedRequestBody);
@@ -255,10 +255,8 @@ impl ConfigBagAccessors for ConfigBag {
         self.put::<RetryClassifiers>(retry_classifiers);
     }
 
-    fn retry_strategy(&self) -> &dyn RetryStrategy {
-        &**self
-            .get::<Box<dyn RetryStrategy>>()
-            .expect("a retry strategy must be set")
+    fn retry_strategy(&self) -> Option<&dyn RetryStrategy> {
+        self.get::<Box<dyn RetryStrategy>>().map(|rs| &**rs)
     }
 
     fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static) {
@@ -273,15 +271,15 @@ impl ConfigBagAccessors for ConfigBag {
         self.put::<SharedTimeSource>(SharedTimeSource::new(request_time));
     }
 
-    fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>> {
-        self.get::<Arc<dyn AsyncSleep>>().cloned()
+    fn sleep_impl(&self) -> Option<SharedAsyncSleep> {
+        self.get::<SharedAsyncSleep>().cloned()
     }
 
-    fn set_sleep_impl(&mut self, sleep_impl: Option<Arc<dyn AsyncSleep>>) {
+    fn set_sleep_impl(&mut self, sleep_impl: Option<SharedAsyncSleep>) {
         if let Some(sleep_impl) = sleep_impl {
-            self.put::<Arc<dyn AsyncSleep>>(sleep_impl);
+            self.put::<SharedAsyncSleep>(sleep_impl);
         } else {
-            self.unset::<Arc<dyn AsyncSleep>>();
+            self.unset::<SharedAsyncSleep>();
         }
     }
 

@@ -154,7 +154,7 @@ mod loader {
 
     use aws_credential_types::cache::CredentialsCache;
     use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
-    use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
+    use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
     use aws_smithy_client::http_connector::HttpConnector;
     use aws_smithy_types::retry::RetryConfig;
@@ -185,7 +185,7 @@ mod loader {
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
-        sleep: Option<Arc<dyn AsyncSleep>>,
+        sleep: Option<SharedAsyncSleep>,
         timeout_config: Option<TimeoutConfig>,
         provider_config: Option<ProviderConfig>,
         http_connector: Option<HttpConnector>,
@@ -260,7 +260,7 @@ mod loader {
         /// is used to create timeout futures.
         pub fn sleep_impl(mut self, sleep: impl AsyncSleep + 'static) -> Self {
             // it's possible that we could wrapping an `Arc in an `Arc` and that's OK
-            self.sleep = Some(Arc::new(sleep));
+            self.sleep = Some(SharedAsyncSleep::new(sleep));
             self
         }
 

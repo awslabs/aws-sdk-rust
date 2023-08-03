@@ -12,13 +12,12 @@ use aws_sdk_s3::types::{
 };
 use aws_sdk_s3::{Client, Config};
 use aws_smithy_async::assert_elapsed;
-use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 use aws_smithy_client::never::NeverConnector;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::fmt::Debug;
-use std::sync::Arc;
 use std::time::{Duration, Instant};
 
 #[derive(Debug)]
@@ -34,7 +33,8 @@ impl AsyncSleep for SmolSleep {
 
 #[test]
 fn test_smol_runtime_timeouts() {
-    if let Err(err) = smol::block_on(async { timeout_test(Arc::new(SmolSleep)).await }) {
+    if let Err(err) = smol::block_on(async { timeout_test(SharedAsyncSleep::new(SmolSleep)).await })
+    {
         println!("{err}");
         panic!();
     }
@@ -42,7 +42,7 @@ fn test_smol_runtime_timeouts() {
 
 #[test]
 fn test_smol_runtime_retry() {
-    if let Err(err) = smol::block_on(async { retry_test(Arc::new(SmolSleep)).await }) {
+    if let Err(err) = smol::block_on(async { retry_test(SharedAsyncSleep::new(SmolSleep)).await }) {
         println!("{err}");
         panic!();
     }
@@ -59,9 +59,9 @@ impl AsyncSleep for AsyncStdSleep {
 
 #[test]
 fn test_async_std_runtime_timeouts() {
-    if let Err(err) =
-        async_std::task::block_on(async { timeout_test(Arc::new(AsyncStdSleep)).await })
-    {
+    if let Err(err) = async_std::task::block_on(async {
+        timeout_test(SharedAsyncSleep::new(AsyncStdSleep)).await
+    }) {
         println!("{err}");
         panic!();
     }
@@ -69,14 +69,15 @@ fn test_async_std_runtime_timeouts() {
 
 #[test]
 fn test_async_std_runtime_retry() {
-    if let Err(err) = async_std::task::block_on(async { retry_test(Arc::new(AsyncStdSleep)).await })
+    if let Err(err) =
+        async_std::task::block_on(async { retry_test(SharedAsyncSleep::new(AsyncStdSleep)).await })
     {
         println!("{err}");
         panic!();
     }
 }
 
-async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::error::Error>> {
+async fn timeout_test(sleep_impl: SharedAsyncSleep) -> Result<(), Box<dyn std::error::Error>> {
     let conn = NeverConnector::new();
     let region = Region::from_static("us-east-2");
     let timeout_config = TimeoutConfig::builder()
@@ -130,7 +131,7 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
     Ok(())
 }
 
-async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::error::Error>> {
+async fn retry_test(sleep_impl: SharedAsyncSleep) -> Result<(), Box<dyn std::error::Error>> {
     let conn = NeverConnector::new();
     let conf = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-2"))

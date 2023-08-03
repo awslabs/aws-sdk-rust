@@ -7,13 +7,12 @@
 
 use crate::SdkError;
 use aws_smithy_async::future::timeout::Timeout;
-use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 use aws_smithy_http::operation::Operation;
 use aws_smithy_types::timeout::OperationTimeoutConfig;
 use pin_project_lite::pin_project;
 use std::future::Future;
 use std::pin::Pin;
-use std::sync::Arc;
 use std::task::{Context, Poll};
 use std::time::Duration;
 use tower::Layer;
@@ -46,7 +45,7 @@ pub struct TimeoutServiceParams {
     /// The kind of timeouts created from these params
     kind: &'static str,
     /// The AsyncSleep impl that will be used to create time-limited futures
-    async_sleep: Arc<dyn AsyncSleep>,
+    async_sleep: SharedAsyncSleep,
 }
 
 #[derive(Clone, Debug, Default)]
@@ -61,7 +60,7 @@ pub(crate) struct ClientTimeoutParams {
 impl ClientTimeoutParams {
     pub(crate) fn new(
         timeout_config: &OperationTimeoutConfig,
-        async_sleep: Option<Arc<dyn AsyncSleep>>,
+        async_sleep: Option<SharedAsyncSleep>,
     ) -> Self {
         if let Some(async_sleep) = async_sleep {
             Self {
@@ -232,11 +231,10 @@ mod test {
     use crate::never::NeverService;
     use crate::{SdkError, TimeoutLayer};
     use aws_smithy_async::assert_elapsed;
-    use aws_smithy_async::rt::sleep::{AsyncSleep, TokioSleep};
+    use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::operation::{Operation, Request};
     use aws_smithy_types::timeout::TimeoutConfig;
-    use std::sync::Arc;
     use std::time::Duration;
     use tower::{Service, ServiceBuilder, ServiceExt};
 
@@ -250,7 +248,7 @@ mod test {
                 .operation_timeout(Duration::from_secs_f32(0.25))
                 .build(),
         );
-        let sleep_impl: Arc<dyn AsyncSleep> = Arc::new(TokioSleep::new());
+        let sleep_impl = SharedAsyncSleep::new(TokioSleep::new());
         let timeout_service_params = ClientTimeoutParams::new(&timeout_config, Some(sleep_impl));
         let mut svc = ServiceBuilder::new()
             .layer(TimeoutLayer::new(timeout_service_params.operation_timeout))

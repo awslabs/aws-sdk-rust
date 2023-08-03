@@ -18,7 +18,7 @@ use crate::imds::client::error::{ImdsError, TokenError, TokenErrorKind};
 use crate::imds::client::ImdsResponseRetryClassifier;
 use aws_credential_types::cache::ExpiringCache;
 use aws_http::user_agent::UserAgentStage;
-use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_client::retry;
@@ -84,7 +84,7 @@ impl TokenMiddleware {
         token_ttl: Duration,
         retry_config: retry::Config,
         timeout_config: TimeoutConfig,
-        sleep_impl: Option<Arc<dyn AsyncSleep>>,
+        sleep_impl: Option<SharedAsyncSleep>,
     ) -> Self {
         let mut inner_builder = aws_smithy_client::Client::builder()
             .connector(connector)
