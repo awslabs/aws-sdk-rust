@@ -15,6 +15,11 @@ impl DetachTrafficSourcesInput {
         >,
         ::aws_smithy_http::operation::error::BuildError,
     > {
+        assert_ne!(
+            _config.retry_config().map(|rc| rc.mode()),
+            ::std::option::Option::Some(::aws_smithy_types::retry::RetryMode::Adaptive),
+            "Adaptive retry mode is unsupported, please use Standard mode or disable retries."
+        );
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))

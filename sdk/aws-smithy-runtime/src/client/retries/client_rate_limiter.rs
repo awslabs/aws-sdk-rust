@@ -6,42 +6,56 @@
 //! A rate limiter for controlling the rate at which AWS requests are made. The rate changes based
 //! on the number of throttling errors encountered.
 
-// TODO(enableNewSmithyRuntimeLaunch): Zelda will integrate this rate limiter into the retry policy in a separate PR.
 #![allow(dead_code)]
 
-use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
+use crate::client::retries::RetryPartition;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_runtime_api::{builder, builder_methods, builder_struct};
-use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer, Storable, StoreReplace};
+use aws_smithy_types::config_bag::{FrozenLayer, Layer, Storable, StoreReplace};
 use std::sync::{Arc, Mutex};
-use std::time::SystemTime;
+use std::time::Duration;
+use tracing::debug;
 
 /// A [RuntimePlugin] to provide a client rate limiter, usable by a retry strategy.
 #[non_exhaustive]
 #[derive(Debug)]
 pub struct ClientRateLimiterRuntimePlugin {
-    _rate_limiter: Arc<Mutex<ClientRateLimiter>>,
+    rate_limiter: ClientRateLimiter,
 }
 
 impl ClientRateLimiterRuntimePlugin {
-    pub fn new(cfg: &ConfigBag) -> Self {
+    pub fn new(seconds_since_unix_epoch: f64) -> Self {
         Self {
-            _rate_limiter: Arc::new(Mutex::new(ClientRateLimiter::new(cfg))),
+            rate_limiter: ClientRateLimiter::new(seconds_since_unix_epoch),
         }
     }
 }
 
 impl RuntimePlugin for ClientRateLimiterRuntimePlugin {
     fn config(&self) -> Option<FrozenLayer> {
-        let cfg = Layer::new("client rate limiter");
-        // TODO(enableNewSmithyRuntimeLaunch) Move the Arc/Mutex inside the rate limiter so that it
-        //    be both storable and cloneable.
-        // cfg.store_put(self.rate_limiter.clone());
+        let mut cfg = Layer::new("client rate limiter");
+        cfg.store_put(self.rate_limiter.clone());
 
         Some(cfg.freeze())
     }
 }
+
+#[doc(hidden)]
+#[non_exhaustive]
+#[derive(Clone, Debug, Hash, PartialEq, Eq)]
+pub struct ClientRateLimiterPartition {
+    retry_partition: RetryPartition,
+}
+
+impl ClientRateLimiterPartition {
+    pub fn new(retry_partition: RetryPartition) -> Self {
+        Self { retry_partition }
+    }
+}
+
+const RETRY_COST: f64 = 5.0;
+const RETRY_TIMEOUT_COST: f64 = RETRY_COST * 2.0;
+const INITIAL_REQUEST_COST: f64 = 1.0;
 
 const MIN_FILL_RATE: f64 = 0.5;
 const MIN_CAPACITY: f64 = 1.0;
@@ -52,32 +66,40 @@ const BETA: f64 = 0.7;
 const SCALE_CONSTANT: f64 = 0.4;
 
 #[derive(Clone, Debug)]
-pub(crate) struct ClientRateLimiter {
+pub struct ClientRateLimiter {
+    inner: Arc<Mutex<Inner>>,
+}
+
+#[derive(Debug)]
+pub(crate) struct Inner {
     /// The rate at which token are replenished.
-    token_refill_rate: f64,
+    fill_rate: f64,
     /// The maximum capacity allowed in the token bucket.
-    maximum_bucket_capacity: f64,
+    max_capacity: f64,
     /// The current capacity of the token bucket.
-    /// The minimum this can be is 1.0
-    current_bucket_capacity: f64,
+    current_capacity: f64,
     /// The last time the token bucket was refilled.
-    time_of_last_refill: Option<f64>,
-    /// The smoothed rate which tokens are being retrieved.
-    tokens_retrieved_per_second: f64,
-    /// The last half second time bucket used.
-    previous_time_bucket: f64,
-    /// The number of requests seen within the current time bucket.
-    request_count: u64,
+    last_timestamp: Option<f64>,
     /// Boolean indicating if the token bucket is enabled.
     /// The token bucket is initially disabled.
     /// When a throttling error is encountered it is enabled.
-    enable_throttling: bool,
+    enabled: bool,
+    /// The smoothed rate which tokens are being retrieved.
+    measured_tx_rate: f64,
+    /// The last half second time bucket used.
+    last_tx_rate_bucket: f64,
+    /// The number of requests seen within the current time bucket.
+    request_count: u64,
     /// The maximum rate when the client was last throttled.
-    tokens_retrieved_per_second_at_time_of_last_throttle: f64,
+    last_max_rate: f64,
     /// The last time when the client was throttled.
     time_of_last_throttle: f64,
-    time_window: f64,
-    calculated_rate: f64,
+}
+
+pub(crate) enum RequestReason {
+    Retry,
+    RetryTimeout,
+    InitialRequest,
 }
 
 impl Storable for ClientRateLimiter {
@@ -85,10 +107,11 @@ impl Storable for ClientRateLimiter {
 }
 
 impl ClientRateLimiter {
-    pub(crate) fn new(cfg: &ConfigBag) -> Self {
+    pub fn new(seconds_since_unix_epoch: f64) -> Self {
         Self::builder()
-            .time_of_last_throttle(get_unix_timestamp(cfg))
-            .previous_time_bucket(get_unix_timestamp(cfg).floor())
+            .tokens_retrieved_per_second(MIN_FILL_RATE)
+            .time_of_last_throttle(seconds_since_unix_epoch)
+            .previous_time_bucket(seconds_since_unix_epoch.floor())
             .build()
     }
 
@@ -96,122 +119,144 @@ impl ClientRateLimiter {
         Builder::new()
     }
 
-    /// If this function returns `Ok(())`, you're OK to send a request. If it returns an error,
-    /// then you should not send a request; You've sent quite enough already.
     pub(crate) fn acquire_permission_to_send_a_request(
-        &mut self,
+        &self,
         seconds_since_unix_epoch: f64,
-        amount: f64,
-    ) -> Result<(), BoxError> {
-        if !self.enable_throttling {
+        kind: RequestReason,
+    ) -> Result<(), Duration> {
+        let mut it = self.inner.lock().unwrap();
+
+        if !it.enabled {
             // return early if we haven't encountered a throttling error yet
             return Ok(());
         }
+        let amount = match kind {
+            RequestReason::Retry => RETRY_COST,
+            RequestReason::RetryTimeout => RETRY_TIMEOUT_COST,
+            RequestReason::InitialRequest => INITIAL_REQUEST_COST,
+        };
 
-        self.refill(seconds_since_unix_epoch);
+        it.refill(seconds_since_unix_epoch);
 
-        if self.current_bucket_capacity < amount {
-            Err(BoxError::from("the client rate limiter is out of tokens"))
+        let res = if amount > it.current_capacity {
+            let sleep_time = (amount - it.current_capacity) / it.fill_rate;
+            debug!(
+                amount,
+                it.current_capacity,
+                it.fill_rate,
+                sleep_time,
+                "client rate limiter delayed a request"
+            );
+
+            Err(Duration::from_secs_f64(sleep_time))
         } else {
-            self.current_bucket_capacity -= amount;
             Ok(())
-        }
+        };
+
+        it.current_capacity -= amount;
+        res
     }
 
     pub(crate) fn update_rate_limiter(
-        &mut self,
+        &self,
         seconds_since_unix_epoch: f64,
         is_throttling_error: bool,
     ) {
-        self.update_tokens_retrieved_per_second(seconds_since_unix_epoch);
+        let mut it = self.inner.lock().unwrap();
+        it.update_tokens_retrieved_per_second(seconds_since_unix_epoch);
 
+        let calculated_rate;
         if is_throttling_error {
-            let rate_to_use = if self.enable_throttling {
-                f64::min(self.tokens_retrieved_per_second, self.token_refill_rate)
+            let rate_to_use = if it.enabled {
+                f64::min(it.measured_tx_rate, it.fill_rate)
             } else {
-                self.tokens_retrieved_per_second
+                it.measured_tx_rate
             };
 
             // The fill_rate is from the token bucket
-            self.tokens_retrieved_per_second_at_time_of_last_throttle = rate_to_use;
-            self.calculate_time_window();
-            self.time_of_last_throttle = seconds_since_unix_epoch;
-            self.calculated_rate = cubic_throttle(rate_to_use);
-            self.enable_token_bucket();
+            it.last_max_rate = rate_to_use;
+            it.calculate_time_window();
+            it.time_of_last_throttle = seconds_since_unix_epoch;
+            calculated_rate = cubic_throttle(rate_to_use);
+            it.enable_token_bucket();
         } else {
-            self.calculate_time_window();
-            self.calculated_rate = self.cubic_success(seconds_since_unix_epoch);
+            it.calculate_time_window();
+            calculated_rate = it.cubic_success(seconds_since_unix_epoch);
         }
 
-        let new_rate = f64::min(self.calculated_rate, 2.0 * self.tokens_retrieved_per_second);
-        self.update_bucket_refill_rate(seconds_since_unix_epoch, new_rate);
+        let new_rate = f64::min(calculated_rate, 2.0 * it.measured_tx_rate);
+        it.update_bucket_refill_rate(seconds_since_unix_epoch, new_rate);
     }
+}
 
+impl Inner {
     fn refill(&mut self, seconds_since_unix_epoch: f64) {
-        if let Some(last_timestamp) = self.time_of_last_refill {
-            let fill_amount = (seconds_since_unix_epoch - last_timestamp) * self.token_refill_rate;
-            self.current_bucket_capacity = f64::min(
-                self.maximum_bucket_capacity,
-                self.current_bucket_capacity + fill_amount,
+        if let Some(last_timestamp) = self.last_timestamp {
+            let fill_amount = (seconds_since_unix_epoch - last_timestamp) * self.fill_rate;
+            self.current_capacity =
+                f64::min(self.max_capacity, self.current_capacity + fill_amount);
+            debug!(
+                fill_amount,
+                self.current_capacity, self.max_capacity, "refilling client rate limiter tokens"
             );
         }
-        self.time_of_last_refill = Some(seconds_since_unix_epoch);
+        self.last_timestamp = Some(seconds_since_unix_epoch);
     }
 
     fn update_bucket_refill_rate(&mut self, seconds_since_unix_epoch: f64, new_fill_rate: f64) {
         // Refill based on our current rate before we update to the new fill rate.
         self.refill(seconds_since_unix_epoch);
 
-        self.token_refill_rate = f64::max(new_fill_rate, MIN_FILL_RATE);
-        self.maximum_bucket_capacity = f64::max(new_fill_rate, MIN_CAPACITY);
+        self.fill_rate = f64::max(new_fill_rate, MIN_FILL_RATE);
+        self.max_capacity = f64::max(new_fill_rate, MIN_CAPACITY);
+
+        debug!(
+            fill_rate = self.fill_rate,
+            max_capacity = self.max_capacity,
+            current_capacity = self.current_capacity,
+            measured_tx_rate = self.measured_tx_rate,
+            "client rate limiter state has been updated"
+        );
+
         // When we scale down we can't have a current capacity that exceeds our max_capacity.
-        self.current_bucket_capacity =
-            f64::min(self.current_bucket_capacity, self.maximum_bucket_capacity);
+        self.current_capacity = f64::min(self.current_capacity, self.max_capacity);
     }
 
     fn enable_token_bucket(&mut self) {
-        self.enable_throttling = true;
+        // If throttling wasn't already enabled, note that we're now enabling it.
+        if !self.enabled {
+            debug!("client rate limiting has been enabled");
+        }
+        self.enabled = true;
     }
 
     fn update_tokens_retrieved_per_second(&mut self, seconds_since_unix_epoch: f64) {
         let next_time_bucket = (seconds_since_unix_epoch * 2.0).floor() / 2.0;
         self.request_count += 1;
 
-        if next_time_bucket > self.previous_time_bucket {
+        if next_time_bucket > self.last_tx_rate_bucket {
             let current_rate =
-                self.request_count as f64 / (next_time_bucket - self.previous_time_bucket);
-            self.tokens_retrieved_per_second =
-                current_rate * SMOOTH + self.tokens_retrieved_per_second * (1.0 - SMOOTH);
+                self.request_count as f64 / (next_time_bucket - self.last_tx_rate_bucket);
+            self.measured_tx_rate = current_rate * SMOOTH + self.measured_tx_rate * (1.0 - SMOOTH);
             self.request_count = 0;
-            self.previous_time_bucket = next_time_bucket;
+            self.last_tx_rate_bucket = next_time_bucket;
         }
     }
 
-    fn calculate_time_window(&mut self) {
-        // This is broken out into a separate calculation because it only
-        // gets updated when @tokens_retrieved_per_second_at_time_of_last_throttle() changes so it can be cached.
-        let base = (self.tokens_retrieved_per_second_at_time_of_last_throttle * (1.0 - BETA))
-            / SCALE_CONSTANT;
-        self.time_window = base.powf(1.0 / 3.0);
+    fn calculate_time_window(&self) -> f64 {
+        let base = (self.last_max_rate * (1.0 - BETA)) / SCALE_CONSTANT;
+        base.powf(1.0 / 3.0)
     }
 
     fn cubic_success(&self, seconds_since_unix_epoch: f64) -> f64 {
-        let dt = seconds_since_unix_epoch - self.time_of_last_throttle - self.time_window;
-        (SCALE_CONSTANT * dt.powi(3)) + self.tokens_retrieved_per_second_at_time_of_last_throttle
+        let dt =
+            seconds_since_unix_epoch - self.time_of_last_throttle - self.calculate_time_window();
+        (SCALE_CONSTANT * dt.powi(3)) + self.last_max_rate
     }
 }
 
 fn cubic_throttle(rate_to_use: f64) -> f64 {
     rate_to_use * BETA
-}
-
-fn get_unix_timestamp(cfg: &ConfigBag) -> f64 {
-    let request_time = cfg.request_time().unwrap();
-    request_time
-        .now()
-        .duration_since(SystemTime::UNIX_EPOCH)
-        .unwrap()
-        .as_secs_f64()
 }
 
 builder!(
@@ -224,35 +269,34 @@ builder!(
     set_request_count, request_count, u64, "The number of requests seen within the current time bucket.",
     set_enable_throttling, enable_throttling, bool, "Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.",
     set_tokens_retrieved_per_second_at_time_of_last_throttle, tokens_retrieved_per_second_at_time_of_last_throttle, f64, "The maximum rate when the client was last throttled.",
-    set_time_of_last_throttle, time_of_last_throttle, f64, "The last time when the client was throttled.",
-    set_time_window, time_window, f64, "The time window used to calculate the cubic success rate.",
-    set_calculated_rate, calculated_rate, f64, "The calculated rate used to update the sending rate."
+    set_time_of_last_throttle, time_of_last_throttle, f64, "The last time when the client was throttled."
 );
 
 impl Builder {
     fn build(self) -> ClientRateLimiter {
         ClientRateLimiter {
-            token_refill_rate: self.token_refill_rate.unwrap_or_default(),
-            maximum_bucket_capacity: self.maximum_bucket_capacity.unwrap_or(f64::MAX),
-            current_bucket_capacity: self.current_bucket_capacity.unwrap_or_default(),
-            time_of_last_refill: self.time_of_last_refill,
-            enable_throttling: self.enable_throttling.unwrap_or_default(),
-            tokens_retrieved_per_second: self.tokens_retrieved_per_second.unwrap_or_default(),
-            previous_time_bucket: self.previous_time_bucket.unwrap_or_default(),
-            request_count: self.request_count.unwrap_or_default(),
-            tokens_retrieved_per_second_at_time_of_last_throttle: self
-                .tokens_retrieved_per_second_at_time_of_last_throttle
-                .unwrap_or_default(),
-            time_of_last_throttle: self.time_of_last_throttle.unwrap_or_default(),
-            time_window: self.time_window.unwrap_or_default(),
-            calculated_rate: self.calculated_rate.unwrap_or_default(),
+            inner: Arc::new(Mutex::new(Inner {
+                fill_rate: self.token_refill_rate.unwrap_or_default(),
+                max_capacity: self.maximum_bucket_capacity.unwrap_or(f64::MAX),
+                current_capacity: self.current_bucket_capacity.unwrap_or_default(),
+                last_timestamp: self.time_of_last_refill,
+                enabled: self.enable_throttling.unwrap_or_default(),
+                measured_tx_rate: self.tokens_retrieved_per_second.unwrap_or_default(),
+                last_tx_rate_bucket: self.previous_time_bucket.unwrap_or_default(),
+                request_count: self.request_count.unwrap_or_default(),
+                last_max_rate: self
+                    .tokens_retrieved_per_second_at_time_of_last_throttle
+                    .unwrap_or_default(),
+                time_of_last_throttle: self.time_of_last_throttle.unwrap_or_default(),
+            })),
         }
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{cubic_throttle, get_unix_timestamp, ClientRateLimiter};
+    use super::{cubic_throttle, ClientRateLimiter};
+    use crate::client::retries::client_rate_limiter::RequestReason;
     use approx::assert_relative_eq;
     use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::test_util::instant_time_and_sleep;
@@ -261,28 +305,21 @@ mod tests {
     use aws_smithy_types::config_bag::ConfigBag;
     use std::time::{Duration, SystemTime};
 
-    #[test]
-    fn it_sets_the_time_window_correctly() {
-        let mut rate_limiter = ClientRateLimiter::builder()
-            .tokens_retrieved_per_second_at_time_of_last_throttle(10.0)
-            .build();
-
-        rate_limiter.calculate_time_window();
-        assert_relative_eq!(rate_limiter.time_window, 1.9574338205844317);
-    }
+    const ONE_SECOND: Duration = Duration::from_secs(1);
+    const TWO_HUNDRED_MILLISECONDS: Duration = Duration::from_millis(200);
 
     #[test]
     fn should_match_beta_decrease() {
         let new_rate = cubic_throttle(10.0);
         assert_relative_eq!(new_rate, 7.0);
 
-        let mut rate_limiter = ClientRateLimiter::builder()
+        let rate_limiter = ClientRateLimiter::builder()
             .tokens_retrieved_per_second_at_time_of_last_throttle(10.0)
             .time_of_last_throttle(1.0)
             .build();
 
-        rate_limiter.calculate_time_window();
-        let new_rate = rate_limiter.cubic_success(1.0);
+        rate_limiter.inner.lock().unwrap().calculate_time_window();
+        let new_rate = rate_limiter.inner.lock().unwrap().cubic_success(1.0);
         assert_relative_eq!(new_rate, 7.0);
     }
 
@@ -294,19 +331,18 @@ mod tests {
             .set_request_time(SharedTimeSource::new(time_source));
         cfg.interceptor_state()
             .set_sleep_impl(Some(SharedAsyncSleep::new(sleep_impl)));
-        let now = get_unix_timestamp(&cfg);
-        let mut rate_limiter = ClientRateLimiter::builder()
-            .previous_time_bucket((now).floor())
-            .time_of_last_throttle(now)
+        let rate_limiter = ClientRateLimiter::builder()
+            .previous_time_bucket(0.0)
+            .time_of_last_throttle(0.0)
             .build();
 
         assert!(
-            !rate_limiter.enable_throttling,
+            !rate_limiter.inner.lock().unwrap().enabled,
             "rate_limiter should be disabled by default"
         );
-        rate_limiter.update_rate_limiter(now, true);
+        rate_limiter.update_rate_limiter(0.0, true);
         assert!(
-            rate_limiter.enable_throttling,
+            rate_limiter.inner.lock().unwrap().enabled,
             "rate_limiter should be enabled after throttling error"
         );
     }
@@ -320,9 +356,8 @@ mod tests {
             .set_request_time(SharedTimeSource::new(time_source));
         cfg.interceptor_state()
             .set_sleep_impl(Some(SharedAsyncSleep::new(sleep_impl.clone())));
-        let now = get_unix_timestamp(&cfg);
-        let mut rate_limiter = ClientRateLimiter::builder()
-            .time_of_last_throttle(now)
+        let rate_limiter = ClientRateLimiter::builder()
+            .time_of_last_throttle(5.0)
             .tokens_retrieved_per_second_at_time_of_last_throttle(10.0)
             .build();
 
@@ -366,8 +401,12 @@ mod tests {
         // was implemented. See for yourself:
         // https://github.com/aws/aws-sdk-go-v2/blob/844ff45cdc76182229ad098c95bf3f5ab8c20e9f/aws/retry/adaptive_ratelimit_test.go#L97
         for attempt in attempts {
-            rate_limiter.calculate_time_window();
-            let calculated_rate = rate_limiter.cubic_success(attempt.seconds_since_unix_epoch);
+            rate_limiter.inner.lock().unwrap().calculate_time_window();
+            let calculated_rate = rate_limiter
+                .inner
+                .lock()
+                .unwrap()
+                .cubic_success(attempt.seconds_since_unix_epoch);
 
             assert_relative_eq!(attempt.expected_calculated_rate, calculated_rate);
         }
@@ -382,10 +421,9 @@ mod tests {
             .set_request_time(SharedTimeSource::new(time_source));
         cfg.interceptor_state()
             .set_sleep_impl(Some(SharedAsyncSleep::new(sleep_impl.clone())));
-        let now = get_unix_timestamp(&cfg);
-        let mut rate_limiter = ClientRateLimiter::builder()
+        let rate_limiter = ClientRateLimiter::builder()
             .tokens_retrieved_per_second_at_time_of_last_throttle(10.0)
-            .time_of_last_throttle(now)
+            .time_of_last_throttle(5.0)
             .build();
 
         struct Attempt {
@@ -442,13 +480,14 @@ mod tests {
         // https://github.com/aws/aws-sdk-go-v2/blob/844ff45cdc76182229ad098c95bf3f5ab8c20e9f/aws/retry/adaptive_ratelimit_test.go#L97
         let mut calculated_rate = 0.0;
         for attempt in attempts {
-            rate_limiter.calculate_time_window();
+            let mut inner = rate_limiter.inner.lock().unwrap();
+            inner.calculate_time_window();
             if attempt.throttled {
                 calculated_rate = cubic_throttle(calculated_rate);
-                rate_limiter.time_of_last_throttle = attempt.seconds_since_unix_epoch;
-                rate_limiter.tokens_retrieved_per_second_at_time_of_last_throttle = calculated_rate;
+                inner.time_of_last_throttle = attempt.seconds_since_unix_epoch;
+                inner.last_max_rate = calculated_rate;
             } else {
-                calculated_rate = rate_limiter.cubic_success(attempt.seconds_since_unix_epoch);
+                calculated_rate = inner.cubic_success(attempt.seconds_since_unix_epoch);
             };
 
             assert_relative_eq!(attempt.expected_calculated_rate, calculated_rate);
@@ -463,7 +502,7 @@ mod tests {
             .set_request_time(SharedTimeSource::new(time_source));
         cfg.interceptor_state()
             .set_sleep_impl(Some(SharedAsyncSleep::new(sleep_impl.clone())));
-        let mut rate_limiter = ClientRateLimiter::builder().build();
+        let rate_limiter = ClientRateLimiter::builder().build();
 
         struct Attempt {
             throttled: bool,
@@ -577,9 +616,8 @@ mod tests {
             },
         ];
 
-        let two_hundred_milliseconds = Duration::from_millis(200);
         for attempt in attempts {
-            sleep_impl.sleep(two_hundred_milliseconds).await;
+            sleep_impl.sleep(TWO_HUNDRED_MILLISECONDS).await;
             assert_eq!(
                 attempt.seconds_since_unix_epoch,
                 sleep_impl.total_duration().as_secs_f64()
@@ -588,12 +626,53 @@ mod tests {
             rate_limiter.update_rate_limiter(attempt.seconds_since_unix_epoch, attempt.throttled);
             assert_relative_eq!(
                 attempt.expected_tokens_retrieved_per_second,
-                rate_limiter.tokens_retrieved_per_second
+                rate_limiter.inner.lock().unwrap().measured_tx_rate
             );
             assert_relative_eq!(
                 attempt.expected_token_refill_rate,
-                rate_limiter.token_refill_rate
+                rate_limiter.inner.lock().unwrap().fill_rate
             );
         }
+    }
+
+    // This test is only testing that we don't fail basic math and panic. It does include an
+    // element of randomness, but no duration between >= 0.0s and <= 1.0s will ever cause a panic.
+    //
+    // Because the cost of sending an individual request is 1.0, and because the minimum capacity is
+    // also 1.0, we will never encounter a situation where we run out of tokens.
+    #[tokio::test]
+    async fn test_when_throttling_is_enabled_requests_can_still_be_sent() {
+        let (time_source, sleep_impl) = instant_time_and_sleep(SystemTime::UNIX_EPOCH);
+        let crl = ClientRateLimiter::builder()
+            .time_of_last_throttle(0.0)
+            .previous_time_bucket(0.0)
+            .build();
+
+        // Start by recording a throttling error
+        crl.update_rate_limiter(0.0, true);
+
+        for _i in 0..100 {
+            // advance time by a random amount (up to 1s) each iteration
+            let duration = Duration::from_secs_f64(fastrand::f64());
+            sleep_impl.sleep(duration).await;
+            if let Err(delay) = crl.acquire_permission_to_send_a_request(
+                time_source.seconds_since_unix_epoch(),
+                RequestReason::InitialRequest,
+            ) {
+                sleep_impl.sleep(delay).await;
+            }
+
+            // Assume all further requests succeed on the first try
+            crl.update_rate_limiter(time_source.seconds_since_unix_epoch(), false);
+        }
+
+        let inner = crl.inner.lock().unwrap();
+        assert!(inner.enabled, "the rate limiter should still be enabled");
+        // Assert that the rate limiter respects the passage of time.
+        assert_relative_eq!(
+            inner.last_timestamp.unwrap(),
+            sleep_impl.total_duration().as_secs_f64(),
+            max_relative = 0.0001
+        );
     }
 }

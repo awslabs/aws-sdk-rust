@@ -5,7 +5,7 @@
 
 //! Module with client connectors useful for testing.
 
-use aws_smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
@@ -191,16 +191,16 @@ impl ValidateRequest {
 pub struct TestConnection {
     data: Arc<Mutex<ConnectionEvents>>,
     requests: Arc<Mutex<Vec<ValidateRequest>>>,
-    sleep_impl: Arc<dyn AsyncSleep>,
+    sleep_impl: SharedAsyncSleep,
 }
 
 impl TestConnection {
-    pub fn new(mut data: ConnectionEvents, sleep_impl: Arc<dyn AsyncSleep>) -> Self {
+    pub fn new(mut data: ConnectionEvents, sleep_impl: impl Into<SharedAsyncSleep>) -> Self {
         data.reverse();
         TestConnection {
             data: Arc::new(Mutex::new(data)),
             requests: Default::default(),
-            sleep_impl,
+            sleep_impl: sleep_impl.into(),
         }
     }
 

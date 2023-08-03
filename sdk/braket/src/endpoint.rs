@@ -673,7 +673,9 @@ pub struct ParamsBuilder {
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
-    pub fn build(self) -> Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::endpoint::Params, crate::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::endpoint::Params {

@@ -9,5 +9,35 @@ pub mod strategy;
 mod client_rate_limiter;
 mod token_bucket;
 
-pub use client_rate_limiter::ClientRateLimiterRuntimePlugin;
-pub use token_bucket::TokenBucketRuntimePlugin;
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
+pub use client_rate_limiter::{ClientRateLimiter, ClientRateLimiterRuntimePlugin};
+use std::fmt;
+pub use token_bucket::{TokenBucket, TokenBucketRuntimePlugin};
+
+#[doc(hidden)]
+pub use client_rate_limiter::ClientRateLimiterPartition;
+#[doc(hidden)]
+pub use token_bucket::TokenBucketPartition;
+
+#[doc(hidden)]
+#[non_exhaustive]
+#[derive(Clone, Debug, Hash, PartialEq, Eq)]
+pub struct RetryPartition {
+    inner: &'static str,
+}
+
+impl RetryPartition {
+    pub fn new(name: &'static str) -> Self {
+        Self { inner: name }
+    }
+}
+
+impl fmt::Display for RetryPartition {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.inner)
+    }
+}
+
+impl Storable for RetryPartition {
+    type Storer = StoreReplace<RetryPartition>;
+}

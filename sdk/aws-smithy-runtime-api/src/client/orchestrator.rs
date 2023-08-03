@@ -135,7 +135,7 @@ impl Storable for EndpointResolverParams {
 }
 
 pub trait EndpointResolver: Send + Sync + fmt::Debug {
-    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Result<Endpoint, BoxError>;
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint>;
 }
 
 #[derive(Debug)]
@@ -148,7 +148,7 @@ impl DynEndpointResolver {
 }
 
 impl EndpointResolver for DynEndpointResolver {
-    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Result<Endpoint, BoxError> {
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint> {
         self.0.resolve_endpoint(params)
     }
 }

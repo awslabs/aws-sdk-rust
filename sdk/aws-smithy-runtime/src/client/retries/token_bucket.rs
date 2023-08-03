@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::client::retries::RetryPartition;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::config_bag::{FrozenLayer, Layer, Storable, StoreReplace};
 use aws_smithy_types::retry::ErrorKind;
@@ -34,13 +35,26 @@ impl RuntimePlugin for TokenBucketRuntimePlugin {
     }
 }
 
+#[doc(hidden)]
+#[non_exhaustive]
+#[derive(Clone, Debug, Hash, PartialEq, Eq)]
+pub struct TokenBucketPartition {
+    retry_partition: RetryPartition,
+}
+
+impl TokenBucketPartition {
+    pub fn new(retry_partition: RetryPartition) -> Self {
+        Self { retry_partition }
+    }
+}
+
 const DEFAULT_CAPACITY: usize = 500;
 const RETRY_COST: u32 = 5;
 const RETRY_TIMEOUT_COST: u32 = RETRY_COST * 2;
 const PERMIT_REGENERATION_AMOUNT: usize = 1;
 
 #[derive(Clone, Debug)]
-pub(crate) struct TokenBucket {
+pub struct TokenBucket {
     semaphore: Arc<Semaphore>,
     max_permits: usize,
     timeout_retry_cost: u32,
@@ -63,7 +77,7 @@ impl Default for TokenBucket {
 }
 
 impl TokenBucket {
-    pub(crate) fn new(initial_quota: usize) -> Self {
+    pub fn new(initial_quota: usize) -> Self {
         Self {
             semaphore: Arc::new(Semaphore::new(initial_quota)),
             max_permits: initial_quota,

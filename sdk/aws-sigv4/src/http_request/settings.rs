@@ -3,11 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use http::header::{HeaderName, USER_AGENT};
+use http::header::{HeaderName, AUTHORIZATION, USER_AGENT};
 use std::time::Duration;
 
 /// HTTP signing parameters
 pub type SigningParams<'a> = crate::SigningParams<'a, SigningSettings>;
+
+const HEADER_NAME_X_RAY_TRACE_ID: &str = "x-amzn-trace-id";
 
 /// HTTP-specific signing settings
 #[derive(Debug, PartialEq)]
@@ -97,15 +99,30 @@ pub enum SessionTokenMode {
 
 impl Default for SigningSettings {
     fn default() -> Self {
-        // The user agent header should not be signed because it may be altered by proxies
-        const EXCLUDED_HEADERS: [HeaderName; 1] = [USER_AGENT];
-
+        // Headers that are potentially altered by proxies or as a part of standard service operations.
+        // Reference:
+        // Go SDK: <https://github.com/aws/aws-sdk-go/blob/v1.44.289/aws/signer/v4/v4.go#L92>
+        // Java SDK: <https://github.com/aws/aws-sdk-java-v2/blob/master/core/auth/src/main/java/software/amazon/awssdk/auth/signer/internal/AbstractAws4Signer.java#L70>
+        // JS SDK: <https://github.com/aws/aws-sdk-js/blob/master/lib/signers/v4.js#L191>
+        // There is no single source of truth for these available, so this uses the minimum common set of the excluded options.
+        // Instantiate this every time, because SigningSettings takes a Vec (which cannot be const);
+        let excluded_headers = Some(
+            [
+                // This header is calculated as part of the signing process, so if it's present, discard it
+                AUTHORIZATION,
+                // Changes when sent by proxy
+                USER_AGENT,
+                // Changes based on the request from the client
+                HeaderName::from_static(HEADER_NAME_X_RAY_TRACE_ID),
+            ]
+            .to_vec(),
+        );
         Self {
             percent_encoding_mode: PercentEncodingMode::Double,
             payload_checksum_kind: PayloadChecksumKind::NoHeader,
             signature_location: SignatureLocation::Headers,
             expires_in: None,
-            excluded_headers: Some(EXCLUDED_HEADERS.to_vec()),
+            excluded_headers,
             uri_path_normalization_mode: UriPathNormalizationMode::Enabled,
             session_token_mode: SessionTokenMode::Include,
         }

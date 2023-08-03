@@ -22,6 +22,21 @@ pub struct ManualTimeSource {
     log: Arc<Mutex<Vec<Duration>>>,
 }
 
+#[cfg(feature = "test-util")]
+impl ManualTimeSource {
+    /// Get the number of seconds since the UNIX Epoch as an f64.
+    ///
+    /// ## Panics
+    ///
+    /// This will panic if `self.now()` returns a time that's before the UNIX Epoch.
+    pub fn seconds_since_unix_epoch(&self) -> f64 {
+        self.now()
+            .duration_since(SystemTime::UNIX_EPOCH)
+            .unwrap()
+            .as_secs_f64()
+    }
+}
+
 impl TimeSource for ManualTimeSource {
     fn now(&self) -> SystemTime {
         self.start_time + self.log.lock().unwrap().iter().sum::<Duration>()

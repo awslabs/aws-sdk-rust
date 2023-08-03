@@ -50,6 +50,10 @@ version = "0.0.0-smithy-rs-head"
 path = "../aws-smithy-json"
 version = "0.0.0-smithy-rs-head"
 
+[dependencies.aws-smithy-runtime]
+path = "../aws-smithy-runtime"
+version = "0.0.0-smithy-rs-head"
+
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 version = "0.0.0-smithy-rs-head"
@@ -100,6 +104,11 @@ version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
+version = "0.0.0-smithy-rs-head"
+
+[dev-dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
+features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.futures-util]

@@ -12,7 +12,7 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::{
-    EndpointResolver, EndpointResolverParams, HttpRequest,
+    EndpointResolver, EndpointResolverParams, Future, HttpRequest,
 };
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
@@ -40,8 +40,10 @@ impl StaticUriEndpointResolver {
 }
 
 impl EndpointResolver for StaticUriEndpointResolver {
-    fn resolve_endpoint(&self, _params: &EndpointResolverParams) -> Result<Endpoint, BoxError> {
-        Ok(Endpoint::builder().url(self.endpoint.to_string()).build())
+    fn resolve_endpoint(&self, _params: &EndpointResolverParams) -> Future<Endpoint> {
+        Future::ready(Ok(Endpoint::builder()
+            .url(self.endpoint.to_string())
+            .build()))
     }
 }
 
@@ -86,17 +88,19 @@ impl<Params> EndpointResolver for DefaultEndpointResolver<Params>
 where
     Params: Debug + Send + Sync + 'static,
 {
-    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Result<Endpoint, BoxError> {
-        match params.get::<Params>() {
-            Some(params) => Ok(self.inner.resolve_endpoint(params)?),
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint> {
+        let ep = match params.get::<Params>() {
+            Some(params) => self.inner.resolve_endpoint(params).map_err(Box::new),
             None => Err(Box::new(ResolveEndpointError::message(
                 "params of expected type was not present",
             ))),
         }
+        .map_err(|e| e as _);
+        Future::ready(ep)
     }
 }
 
-pub(super) fn orchestrate_endpoint(
+pub(super) async fn orchestrate_endpoint(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,
 ) -> Result<(), BoxError> {
@@ -105,7 +109,7 @@ pub(super) fn orchestrate_endpoint(
     let request = ctx.request_mut().expect("set during serialization");
 
     let endpoint_resolver = cfg.endpoint_resolver();
-    let endpoint = endpoint_resolver.resolve_endpoint(params)?;
+    let endpoint = endpoint_resolver.resolve_endpoint(params).await?;
     apply_endpoint(request, &endpoint, endpoint_prefix)?;
 
     // Make the endpoint config available to interceptors

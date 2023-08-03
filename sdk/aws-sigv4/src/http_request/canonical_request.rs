@@ -774,14 +774,46 @@ mod tests {
         assert_eq!(creq.values.signed_headers().as_str(), "host;x-amz-date");
     }
 
-    // It should exclude user-agent and x-amz-user-agent headers from presigning
+    // It should exclude authorization, user-agent, x-amzn-trace-id headers from presigning
+    #[test]
+    fn non_presigning_header_exclusion() {
+        let request = http::Request::builder()
+            .uri("https://some-endpoint.some-region.amazonaws.com")
+            .header("authorization", "test-authorization")
+            .header("content-type", "application/xml")
+            .header("content-length", "0")
+            .header("user-agent", "test-user-agent")
+            .header("x-amzn-trace-id", "test-trace-id")
+            .header("x-amz-user-agent", "test-user-agent")
+            .body("")
+            .unwrap();
+        let request = SignableRequest::from(&request);
+
+        let settings = SigningSettings {
+            signature_location: SignatureLocation::Headers,
+            ..Default::default()
+        };
+
+        let signing_params = signing_params(settings);
+        let canonical = CanonicalRequest::from(&request, &signing_params).unwrap();
+
+        let values = canonical.values.as_headers().unwrap();
+        assert_eq!(
+            "content-length;content-type;host;x-amz-date;x-amz-user-agent",
+            values.signed_headers.as_str()
+        );
+    }
+
+    // It should exclude authorization, user-agent, x-amz-user-agent, x-amzn-trace-id headers from presigning
     #[test]
     fn presigning_header_exclusion() {
         let request = http::Request::builder()
             .uri("https://some-endpoint.some-region.amazonaws.com")
+            .header("authorization", "test-authorization")
             .header("content-type", "application/xml")
             .header("content-length", "0")
             .header("user-agent", "test-user-agent")
+            .header("x-amzn-trace-id", "test-trace-id")
             .header("x-amz-user-agent", "test-user-agent")
             .body("")
             .unwrap();

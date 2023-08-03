@@ -6,6 +6,11 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(&self, _config: &crate::config::Config) -> ::std::result::Result<::aws_smithy_http::operation::Operation<crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuota, ::aws_http::retry::AwsResponseRetryClassifier>, ::aws_smithy_http::operation::error::BuildError>{
+        assert_ne!(
+            _config.retry_config().map(|rc| rc.mode()),
+            ::std::option::Option::Some(::aws_smithy_types::retry::RetryMode::Adaptive),
+            "Adaptive retry mode is unsupported, please use Standard mode or disable retries."
+        );
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))

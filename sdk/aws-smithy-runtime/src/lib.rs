@@ -11,3 +11,5 @@
 )]
 
 pub mod client;
+
+pub mod static_partition_map;
