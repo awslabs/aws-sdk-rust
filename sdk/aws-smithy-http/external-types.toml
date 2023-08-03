@@ -31,7 +31,4 @@ allowed_external_types = [
 
     # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `event-stream` feature
     "aws_smithy_eventstream::*",
-
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide whether to expose this type or not
-    "bytes_utils::segmented::SegmentedBuf",
 ]

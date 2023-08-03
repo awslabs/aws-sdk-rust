@@ -97,8 +97,8 @@ pub enum RawMessage {
     Invalid(Option<Bytes>),
 }
 
-impl From<&mut SegmentedBuf<Bytes>> for RawMessage {
-    fn from(buf: &mut SegmentedBuf<Bytes>) -> Self {
+impl RawMessage {
+    pub(crate) fn invalid(buf: &mut SegmentedBuf<Bytes>) -> Self {
         Self::Invalid(Some(buf.copy_to_bytes(buf.remaining())))
     }
 }
@@ -213,7 +213,7 @@ impl<T, E> Receiver<T, E> {
                 ReceiverError {
                     kind: ReceiverErrorKind::UnexpectedEndOfStream,
                 },
-                self.buffer.buffered().into(),
+                RawMessage::invalid(self.buffer.buffered()),
             ));
         }
         Ok(None)
