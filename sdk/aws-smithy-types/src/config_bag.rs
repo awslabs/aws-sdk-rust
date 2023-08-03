@@ -242,6 +242,13 @@ impl Layer {
         }
     }
 
+    pub fn with_name(self, name: impl Into<Cow<'static, str>>) -> Self {
+        Self {
+            name: name.into(),
+            props: self.props,
+        }
+    }
+
     /// Load a storable item from the bag
     pub fn load<T: Storable>(&self) -> <T::Storer as Store>::ReturnedType<'_> {
         T::Storer::merge_iter(ItemIter {
