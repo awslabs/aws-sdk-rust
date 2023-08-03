@@ -30,8 +30,8 @@ use aws_sdk_synthetics as synthetics;
 
 #[::tokio::main]
 async fn main() -> Result<(), synthetics::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = synthetics::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_synthetics::Client::new(&config);
 
     // ... make some calls with the client
 

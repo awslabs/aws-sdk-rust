@@ -32,8 +32,8 @@ use aws_sdk_iotjobsdataplane as iotjobsdataplane;
 
 #[::tokio::main]
 async fn main() -> Result<(), iotjobsdataplane::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iotjobsdataplane::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iotjobsdataplane::Client::new(&config);
 
     // ... make some calls with the client
 

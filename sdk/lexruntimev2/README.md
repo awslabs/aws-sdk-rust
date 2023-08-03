@@ -28,8 +28,8 @@ use aws_sdk_lexruntimev2 as lexruntimev2;
 
 #[::tokio::main]
 async fn main() -> Result<(), lexruntimev2::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = lexruntimev2::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_lexruntimev2::Client::new(&config);
 
     // ... make some calls with the client
 

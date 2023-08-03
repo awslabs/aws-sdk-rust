@@ -32,8 +32,8 @@ use aws_sdk_sfn as sfn;
 
 #[::tokio::main]
 async fn main() -> Result<(), sfn::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = sfn::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_sfn::Client::new(&config);
 
     // ... make some calls with the client
 

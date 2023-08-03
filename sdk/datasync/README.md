@@ -30,8 +30,8 @@ use aws_sdk_datasync as datasync;
 
 #[::tokio::main]
 async fn main() -> Result<(), datasync::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = datasync::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_datasync::Client::new(&config);
 
     // ... make some calls with the client
 

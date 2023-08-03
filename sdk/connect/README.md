@@ -34,8 +34,8 @@ use aws_sdk_connect as connect;
 
 #[::tokio::main]
 async fn main() -> Result<(), connect::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = connect::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_connect::Client::new(&config);
 
     // ... make some calls with the client
 

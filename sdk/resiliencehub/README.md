@@ -28,8 +28,8 @@ use aws_sdk_resiliencehub as resiliencehub;
 
 #[::tokio::main]
 async fn main() -> Result<(), resiliencehub::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = resiliencehub::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_resiliencehub::Client::new(&config);
 
     // ... make some calls with the client
 

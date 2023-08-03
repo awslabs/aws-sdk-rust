@@ -32,8 +32,8 @@ use aws_sdk_cognitosync as cognitosync;
 
 #[::tokio::main]
 async fn main() -> Result<(), cognitosync::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = cognitosync::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_cognitosync::Client::new(&config);
 
     // ... make some calls with the client
 

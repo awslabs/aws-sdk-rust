@@ -28,8 +28,8 @@ use aws_sdk_fis as fis;
 
 #[::tokio::main]
 async fn main() -> Result<(), fis::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = fis::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_fis::Client::new(&config);
 
     // ... make some calls with the client
 

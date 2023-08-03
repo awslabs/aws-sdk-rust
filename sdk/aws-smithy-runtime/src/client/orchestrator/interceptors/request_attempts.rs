@@ -6,7 +6,7 @@
 use aws_smithy_runtime_api::client::interceptors::{
     BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
 };
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 
 #[derive(Debug, Clone, Default)]
 #[non_exhaustive]

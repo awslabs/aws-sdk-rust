@@ -32,8 +32,8 @@ use aws_sdk_ssoadmin as ssoadmin;
 
 #[::tokio::main]
 async fn main() -> Result<(), ssoadmin::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = ssoadmin::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_ssoadmin::Client::new(&config);
 
     // ... make some calls with the client
 

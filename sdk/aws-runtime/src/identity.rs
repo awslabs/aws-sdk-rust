@@ -8,7 +8,7 @@ pub mod credentials {
     use aws_credential_types::cache::SharedCredentialsCache;
     use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver};
     use aws_smithy_runtime_api::client::orchestrator::{BoxError, Future};
-    use aws_smithy_runtime_api::config_bag::ConfigBag;
+    use aws_smithy_types::config_bag::ConfigBag;
 
     /// Smithy identity resolver for AWS credentials.
     #[derive(Debug)]

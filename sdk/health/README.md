@@ -38,8 +38,8 @@ use aws_sdk_health as health;
 
 #[::tokio::main]
 async fn main() -> Result<(), health::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = health::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_health::Client::new(&config);
 
     // ... make some calls with the client
 

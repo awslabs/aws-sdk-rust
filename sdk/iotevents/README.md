@@ -28,8 +28,8 @@ use aws_sdk_iotevents as iotevents;
 
 #[::tokio::main]
 async fn main() -> Result<(), iotevents::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iotevents::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iotevents::Client::new(&config);
 
     // ... make some calls with the client
 

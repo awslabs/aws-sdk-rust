@@ -28,8 +28,8 @@ use aws_sdk_forecast as forecast;
 
 #[::tokio::main]
 async fn main() -> Result<(), forecast::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = forecast::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_forecast::Client::new(&config);
 
     // ... make some calls with the client
 

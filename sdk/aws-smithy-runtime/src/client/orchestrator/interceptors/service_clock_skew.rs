@@ -6,7 +6,7 @@
 use aws_smithy_runtime_api::client::interceptors::{
     BeforeDeserializationInterceptorContextMut, BoxError, Interceptor,
 };
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
 use std::time::{Duration, SystemTime};

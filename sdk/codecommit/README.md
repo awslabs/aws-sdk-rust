@@ -129,8 +129,8 @@ use aws_sdk_codecommit as codecommit;
 
 #[::tokio::main]
 async fn main() -> Result<(), codecommit::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = codecommit::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_codecommit::Client::new(&config);
 
     // ... make some calls with the client
 

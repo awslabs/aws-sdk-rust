@@ -35,8 +35,8 @@ use aws_sdk_serverlessapplicationrepository as serverlessapplicationrepository;
 
 #[::tokio::main]
 async fn main() -> Result<(), serverlessapplicationrepository::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = serverlessapplicationrepository::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_serverlessapplicationrepository::Client::new(&config);
 
     // ... make some calls with the client
 

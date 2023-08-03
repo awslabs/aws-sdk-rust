@@ -36,8 +36,8 @@ use aws_sdk_pinpointemail as pinpointemail;
 
 #[::tokio::main]
 async fn main() -> Result<(), pinpointemail::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = pinpointemail::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_pinpointemail::Client::new(&config);
 
     // ... make some calls with the client
 

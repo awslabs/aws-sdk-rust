@@ -28,8 +28,8 @@ use aws_sdk_wellarchitected as wellarchitected;
 
 #[::tokio::main]
 async fn main() -> Result<(), wellarchitected::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = wellarchitected::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_wellarchitected::Client::new(&config);
 
     // ... make some calls with the client
 

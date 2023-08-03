@@ -14,8 +14,8 @@ use aws_smithy_runtime_api::client::auth::{
 use aws_smithy_runtime_api::client::identity::http::{Login, Token};
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, HttpRequest};
-use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_smithy_types::base64::encode;
+use aws_smithy_types::config_bag::ConfigBag;
 use http::header::HeaderName;
 use http::HeaderValue;
 

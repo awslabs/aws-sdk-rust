@@ -28,8 +28,8 @@ use aws_sdk_finspace as finspace;
 
 #[::tokio::main]
 async fn main() -> Result<(), finspace::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = finspace::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_finspace::Client::new(&config);
 
     // ... make some calls with the client
 

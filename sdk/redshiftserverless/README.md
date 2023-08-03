@@ -32,8 +32,8 @@ use aws_sdk_redshiftserverless as redshiftserverless;
 
 #[::tokio::main]
 async fn main() -> Result<(), redshiftserverless::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = redshiftserverless::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_redshiftserverless::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -36,8 +36,8 @@ use aws_sdk_ssm as ssm;
 
 #[::tokio::main]
 async fn main() -> Result<(), ssm::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = ssm::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_ssm::Client::new(&config);
 
     // ... make some calls with the client
 

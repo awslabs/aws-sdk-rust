@@ -30,8 +30,8 @@ use aws_sdk_dlm as dlm;
 
 #[::tokio::main]
 async fn main() -> Result<(), dlm::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = dlm::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_dlm::Client::new(&config);
 
     // ... make some calls with the client
 

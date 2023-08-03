@@ -28,8 +28,8 @@ use aws_sdk_acm as acm;
 
 #[::tokio::main]
 async fn main() -> Result<(), acm::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = acm::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_acm::Client::new(&config);
 
     // ... make some calls with the client
 

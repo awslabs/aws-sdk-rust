@@ -28,8 +28,8 @@ use aws_sdk_snowball as snowball;
 
 #[::tokio::main]
 async fn main() -> Result<(), snowball::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = snowball::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_snowball::Client::new(&config);
 
     // ... make some calls with the client
 

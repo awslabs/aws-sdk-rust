@@ -28,8 +28,8 @@ use aws_sdk_amp as amp;
 
 #[::tokio::main]
 async fn main() -> Result<(), amp::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = amp::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_amp::Client::new(&config);
 
     // ... make some calls with the client
 

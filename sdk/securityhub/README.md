@@ -40,8 +40,8 @@ use aws_sdk_securityhub as securityhub;
 
 #[::tokio::main]
 async fn main() -> Result<(), securityhub::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = securityhub::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_securityhub::Client::new(&config);
 
     // ... make some calls with the client
 

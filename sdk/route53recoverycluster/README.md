@@ -40,8 +40,8 @@ use aws_sdk_route53recoverycluster as route53recoverycluster;
 
 #[::tokio::main]
 async fn main() -> Result<(), route53recoverycluster::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = route53recoverycluster::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_route53recoverycluster::Client::new(&config);
 
     // ... make some calls with the client
 

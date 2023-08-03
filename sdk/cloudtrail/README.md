@@ -32,8 +32,8 @@ use aws_sdk_cloudtrail as cloudtrail;
 
 #[::tokio::main]
 async fn main() -> Result<(), cloudtrail::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = cloudtrail::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_cloudtrail::Client::new(&config);
 
     // ... make some calls with the client
 

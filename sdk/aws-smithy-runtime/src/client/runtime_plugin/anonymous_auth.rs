@@ -16,7 +16,7 @@ use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, Ident
 use aws_smithy_runtime_api::client::interceptors::InterceptorRegistrar;
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpRequest};
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 
 const ANONYMOUS_AUTH_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("anonymous");
 

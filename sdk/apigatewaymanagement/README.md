@@ -28,8 +28,8 @@ use aws_sdk_apigatewaymanagement as apigatewaymanagement;
 
 #[::tokio::main]
 async fn main() -> Result<(), apigatewaymanagement::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = apigatewaymanagement::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_apigatewaymanagement::Client::new(&config);
 
     // ... make some calls with the client
 

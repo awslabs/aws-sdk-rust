@@ -28,8 +28,8 @@ use aws_sdk_sagemakeredge as sagemakeredge;
 
 #[::tokio::main]
 async fn main() -> Result<(), sagemakeredge::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = sagemakeredge::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_sagemakeredge::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -38,8 +38,8 @@ use aws_sdk_glacier as glacier;
 
 #[::tokio::main]
 async fn main() -> Result<(), glacier::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = glacier::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_glacier::Client::new(&config);
 
     // ... make some calls with the client
 

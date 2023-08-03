@@ -30,8 +30,8 @@ use aws_sdk_ecr as ecr;
 
 #[::tokio::main]
 async fn main() -> Result<(), ecr::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = ecr::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_ecr::Client::new(&config);
 
     // ... make some calls with the client
 

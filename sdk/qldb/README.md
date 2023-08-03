@@ -28,8 +28,8 @@ use aws_sdk_qldb as qldb;
 
 #[::tokio::main]
 async fn main() -> Result<(), qldb::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = qldb::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_qldb::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -30,8 +30,8 @@ use aws_sdk_appmesh as appmesh;
 
 #[::tokio::main]
 async fn main() -> Result<(), appmesh::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = appmesh::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_appmesh::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -34,8 +34,8 @@ use aws_sdk_iotdataplane as iotdataplane;
 
 #[::tokio::main]
 async fn main() -> Result<(), iotdataplane::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iotdataplane::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iotdataplane::Client::new(&config);
 
     // ... make some calls with the client
 

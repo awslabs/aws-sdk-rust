@@ -28,8 +28,8 @@ use aws_sdk_mediaconvert as mediaconvert;
 
 #[::tokio::main]
 async fn main() -> Result<(), mediaconvert::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = mediaconvert::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_mediaconvert::Client::new(&config);
 
     // ... make some calls with the client
 

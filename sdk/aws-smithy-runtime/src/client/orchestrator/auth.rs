@@ -6,7 +6,7 @@
 use aws_smithy_runtime_api::client::auth::{AuthSchemeEndpointConfig, AuthSchemeId};
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors};
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::Document;
 use std::borrow::Cow;
@@ -140,7 +140,7 @@ mod tests {
     use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
     use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
     use aws_smithy_runtime_api::client::orchestrator::{Future, HttpRequest};
-    use aws_smithy_runtime_api::type_erasure::TypedBox;
+    use aws_smithy_types::type_erasure::TypedBox;
     use std::collections::HashMap;
 
     #[tokio::test]

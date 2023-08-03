@@ -28,8 +28,8 @@ use aws_sdk_licensemanagerusersubscriptions as licensemanagerusersubscriptions;
 
 #[::tokio::main]
 async fn main() -> Result<(), licensemanagerusersubscriptions::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = licensemanagerusersubscriptions::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_licensemanagerusersubscriptions::Client::new(&config);
 
     // ... make some calls with the client
 

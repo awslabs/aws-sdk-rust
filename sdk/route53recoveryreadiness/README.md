@@ -28,8 +28,8 @@ use aws_sdk_route53recoveryreadiness as route53recoveryreadiness;
 
 #[::tokio::main]
 async fn main() -> Result<(), route53recoveryreadiness::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = route53recoveryreadiness::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_route53recoveryreadiness::Client::new(&config);
 
     // ... make some calls with the client
 

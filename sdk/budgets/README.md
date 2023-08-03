@@ -47,8 +47,8 @@ use aws_sdk_budgets as budgets;
 
 #[::tokio::main]
 async fn main() -> Result<(), budgets::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = budgets::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_budgets::Client::new(&config);
 
     // ... make some calls with the client
 

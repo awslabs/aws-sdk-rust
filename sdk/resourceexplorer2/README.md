@@ -34,8 +34,8 @@ use aws_sdk_resourceexplorer2 as resourceexplorer2;
 
 #[::tokio::main]
 async fn main() -> Result<(), resourceexplorer2::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = resourceexplorer2::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_resourceexplorer2::Client::new(&config);
 
     // ... make some calls with the client
 

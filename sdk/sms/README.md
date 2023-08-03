@@ -34,8 +34,8 @@ use aws_sdk_sms as sms;
 
 #[::tokio::main]
 async fn main() -> Result<(), sms::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = sms::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_sms::Client::new(&config);
 
     // ... make some calls with the client
 

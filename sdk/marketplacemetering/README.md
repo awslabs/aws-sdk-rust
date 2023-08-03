@@ -44,8 +44,8 @@ use aws_sdk_marketplacemetering as marketplacemetering;
 
 #[::tokio::main]
 async fn main() -> Result<(), marketplacemetering::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = marketplacemetering::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_marketplacemetering::Client::new(&config);
 
     // ... make some calls with the client
 

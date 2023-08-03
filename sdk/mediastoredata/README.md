@@ -28,8 +28,8 @@ use aws_sdk_mediastoredata as mediastoredata;
 
 #[::tokio::main]
 async fn main() -> Result<(), mediastoredata::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = mediastoredata::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_mediastoredata::Client::new(&config);
 
     // ... make some calls with the client
 

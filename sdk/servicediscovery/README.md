@@ -28,8 +28,8 @@ use aws_sdk_servicediscovery as servicediscovery;
 
 #[::tokio::main]
 async fn main() -> Result<(), servicediscovery::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = servicediscovery::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_servicediscovery::Client::new(&config);
 
     // ... make some calls with the client
 

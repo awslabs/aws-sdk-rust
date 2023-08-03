@@ -59,8 +59,8 @@ use aws_sdk_detective as detective;
 
 #[::tokio::main]
 async fn main() -> Result<(), detective::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = detective::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_detective::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -33,8 +33,8 @@ use aws_sdk_marketplaceentitlement as marketplaceentitlement;
 
 #[::tokio::main]
 async fn main() -> Result<(), marketplaceentitlement::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = marketplaceentitlement::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_marketplaceentitlement::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -30,8 +30,8 @@ use aws_sdk_fms as fms;
 
 #[::tokio::main]
 async fn main() -> Result<(), fms::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = fms::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_fms::Client::new(&config);
 
     // ... make some calls with the client
 

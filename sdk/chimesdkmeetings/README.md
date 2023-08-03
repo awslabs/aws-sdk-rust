@@ -28,8 +28,8 @@ use aws_sdk_chimesdkmeetings as chimesdkmeetings;
 
 #[::tokio::main]
 async fn main() -> Result<(), chimesdkmeetings::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = chimesdkmeetings::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_chimesdkmeetings::Client::new(&config);
 
     // ... make some calls with the client
 

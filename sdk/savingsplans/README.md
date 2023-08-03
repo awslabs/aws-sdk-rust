@@ -28,8 +28,8 @@ use aws_sdk_savingsplans as savingsplans;
 
 #[::tokio::main]
 async fn main() -> Result<(), savingsplans::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = savingsplans::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_savingsplans::Client::new(&config);
 
     // ... make some calls with the client
 

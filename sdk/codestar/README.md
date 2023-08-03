@@ -53,8 +53,8 @@ use aws_sdk_codestar as codestar;
 
 #[::tokio::main]
 async fn main() -> Result<(), codestar::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = codestar::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_codestar::Client::new(&config);
 
     // ... make some calls with the client
 

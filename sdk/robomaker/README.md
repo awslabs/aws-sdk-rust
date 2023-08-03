@@ -28,8 +28,8 @@ use aws_sdk_robomaker as robomaker;
 
 #[::tokio::main]
 async fn main() -> Result<(), robomaker::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = robomaker::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_robomaker::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -9,7 +9,7 @@ pub mod error;
 use crate::client::interceptors::context::wrappers::{
     FinalizerInterceptorContextMut, FinalizerInterceptorContextRef,
 };
-use crate::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 pub use context::{
     wrappers::{

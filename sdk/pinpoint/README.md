@@ -28,8 +28,8 @@ use aws_sdk_pinpoint as pinpoint;
 
 #[::tokio::main]
 async fn main() -> Result<(), pinpoint::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = pinpoint::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_pinpoint::Client::new(&config);
 
     // ... make some calls with the client
 

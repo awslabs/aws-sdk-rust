@@ -28,8 +28,8 @@ use aws_sdk_memorydb as memorydb;
 
 #[::tokio::main]
 async fn main() -> Result<(), memorydb::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = memorydb::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_memorydb::Client::new(&config);
 
     // ... make some calls with the client
 

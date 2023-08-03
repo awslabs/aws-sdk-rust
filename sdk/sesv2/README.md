@@ -30,8 +30,8 @@ use aws_sdk_sesv2 as sesv2;
 
 #[::tokio::main]
 async fn main() -> Result<(), sesv2::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = sesv2::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_sesv2::Client::new(&config);
 
     // ... make some calls with the client
 

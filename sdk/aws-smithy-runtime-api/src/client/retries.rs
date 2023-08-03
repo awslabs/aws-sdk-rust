@@ -6,7 +6,7 @@
 use crate::client::interceptors::context::Error;
 use crate::client::interceptors::InterceptorContext;
 use crate::client::orchestrator::{BoxError, OrchestratorError};
-use crate::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::retry::ErrorKind;
 use std::fmt::Debug;
 use std::time::Duration;

@@ -28,8 +28,8 @@ use aws_sdk_schemas as schemas;
 
 #[::tokio::main]
 async fn main() -> Result<(), schemas::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = schemas::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_schemas::Client::new(&config);
 
     // ... make some calls with the client
 

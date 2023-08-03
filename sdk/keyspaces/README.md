@@ -36,8 +36,8 @@ use aws_sdk_keyspaces as keyspaces;
 
 #[::tokio::main]
 async fn main() -> Result<(), keyspaces::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = keyspaces::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_keyspaces::Client::new(&config);
 
     // ... make some calls with the client
 

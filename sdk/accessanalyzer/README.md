@@ -30,8 +30,8 @@ use aws_sdk_accessanalyzer as accessanalyzer;
 
 #[::tokio::main]
 async fn main() -> Result<(), accessanalyzer::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = accessanalyzer::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_accessanalyzer::Client::new(&config);
 
     // ... make some calls with the client
 

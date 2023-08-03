@@ -28,8 +28,8 @@ use aws_sdk_docdb as docdb;
 
 #[::tokio::main]
 async fn main() -> Result<(), docdb::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = docdb::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_docdb::Client::new(&config);
 
     // ... make some calls with the client
 

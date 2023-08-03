@@ -6,7 +6,7 @@
 use aws_smithy_runtime_api::client::interceptors::{
     BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
 };
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::os_shim_internal::Env;
 use http::HeaderValue;
 use percent_encoding::{percent_encode, CONTROLS};
@@ -75,7 +75,7 @@ mod tests {
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_protocol_test::{assert_ok, validate_headers};
     use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
-    use aws_smithy_runtime_api::type_erasure::TypedBox;
+    use aws_smithy_types::type_erasure::TypedBox;
     use aws_types::os_shim_internal::Env;
     use http::HeaderValue;
     use proptest::{prelude::*, proptest};

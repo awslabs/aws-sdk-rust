@@ -7,8 +7,8 @@ use super::BoxError;
 use crate::client::interceptors::context::phase::Phase;
 use crate::client::interceptors::InterceptorError;
 use crate::client::orchestrator::HttpResponse;
-use crate::type_erasure::TypeErasedError;
 use aws_smithy_http::result::{ConnectorError, SdkError};
+use aws_smithy_types::type_erasure::TypeErasedError;
 use std::fmt::Debug;
 
 #[derive(Debug)]

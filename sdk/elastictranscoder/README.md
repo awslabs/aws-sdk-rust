@@ -28,8 +28,8 @@ use aws_sdk_elastictranscoder as elastictranscoder;
 
 #[::tokio::main]
 async fn main() -> Result<(), elastictranscoder::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = elastictranscoder::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_elastictranscoder::Client::new(&config);
 
     // ... make some calls with the client
 

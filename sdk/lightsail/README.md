@@ -32,8 +32,8 @@ use aws_sdk_lightsail as lightsail;
 
 #[::tokio::main]
 async fn main() -> Result<(), lightsail::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = lightsail::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_lightsail::Client::new(&config);
 
     // ... make some calls with the client
 

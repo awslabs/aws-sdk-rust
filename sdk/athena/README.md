@@ -32,8 +32,8 @@ use aws_sdk_athena as athena;
 
 #[::tokio::main]
 async fn main() -> Result<(), athena::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = athena::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_athena::Client::new(&config);
 
     // ... make some calls with the client
 

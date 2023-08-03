@@ -28,8 +28,8 @@ use aws_sdk_iottwinmaker as iottwinmaker;
 
 #[::tokio::main]
 async fn main() -> Result<(), iottwinmaker::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iottwinmaker::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iottwinmaker::Client::new(&config);
 
     // ... make some calls with the client
 

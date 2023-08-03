@@ -28,8 +28,8 @@ use aws_sdk_route53recoverycontrolconfig as route53recoverycontrolconfig;
 
 #[::tokio::main]
 async fn main() -> Result<(), route53recoverycontrolconfig::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = route53recoverycontrolconfig::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_route53recoverycontrolconfig::Client::new(&config);
 
     // ... make some calls with the client
 

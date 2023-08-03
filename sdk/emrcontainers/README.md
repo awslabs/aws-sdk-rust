@@ -33,8 +33,8 @@ use aws_sdk_emrcontainers as emrcontainers;
 
 #[::tokio::main]
 async fn main() -> Result<(), emrcontainers::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = emrcontainers::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_emrcontainers::Client::new(&config);
 
     // ... make some calls with the client
 

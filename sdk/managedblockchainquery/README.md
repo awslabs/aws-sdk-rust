@@ -28,8 +28,8 @@ use aws_sdk_managedblockchainquery as managedblockchainquery;
 
 #[::tokio::main]
 async fn main() -> Result<(), managedblockchainquery::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = managedblockchainquery::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_managedblockchainquery::Client::new(&config);
 
     // ... make some calls with the client
 

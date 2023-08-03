@@ -7,7 +7,7 @@ use aws_smithy_async::future::timeout::Timeout;
 use aws_smithy_async::rt::sleep::{AsyncSleep, Sleep};
 use aws_smithy_client::SdkError;
 use aws_smithy_runtime_api::client::orchestrator::{ConfigBagAccessors, HttpResponse};
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::timeout::TimeoutConfig;
 use pin_project_lite::pin_project;
 use std::future::Future;

@@ -28,8 +28,8 @@ use aws_sdk_iot1clickprojects as iot1clickprojects;
 
 #[::tokio::main]
 async fn main() -> Result<(), iot1clickprojects::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iot1clickprojects::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iot1clickprojects::Client::new(&config);
 
     // ... make some calls with the client
 

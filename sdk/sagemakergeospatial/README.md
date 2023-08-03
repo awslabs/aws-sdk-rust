@@ -28,8 +28,8 @@ use aws_sdk_sagemakergeospatial as sagemakergeospatial;
 
 #[::tokio::main]
 async fn main() -> Result<(), sagemakergeospatial::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = sagemakergeospatial::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_sagemakergeospatial::Client::new(&config);
 
     // ... make some calls with the client
 

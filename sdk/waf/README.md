@@ -28,8 +28,8 @@ use aws_sdk_waf as waf;
 
 #[::tokio::main]
 async fn main() -> Result<(), waf::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = waf::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_waf::Client::new(&config);
 
     // ... make some calls with the client
 

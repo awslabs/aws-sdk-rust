@@ -5,8 +5,8 @@
 
 use crate::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use crate::client::orchestrator::{BoxError, HttpRequest};
-use crate::config_bag::ConfigBag;
-use crate::type_erasure::{TypeErasedBox, TypedBox};
+use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_types::Document;
 use std::borrow::Cow;
 use std::fmt;

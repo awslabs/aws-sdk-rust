@@ -28,8 +28,8 @@ use aws_sdk_mediapackage as mediapackage;
 
 #[::tokio::main]
 async fn main() -> Result<(), mediapackage::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = mediapackage::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_mediapackage::Client::new(&config);
 
     // ... make some calls with the client
 

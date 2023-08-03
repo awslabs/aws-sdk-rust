@@ -1,0 +1,407 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://query.timestream.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-amz-json-1.0"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head api/timestreamquery/0.0.0-local os/macos lang/rust/1.67.1"
+              ],
+              "authorization": [
+                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/timestream/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token;x-amz-target;x-amz-user-agent, Signature=1b50e2545f06c8e1ca0e205c20f25a34b6aab82f3a47e4cc370e9a5fea01d08c"
+              ],
+              "x-amz-security-token": [
+                "notarealsessiontoken"
+              ],
+              "x-amz-target": [
+                "Timestream_20181101.DescribeEndpoints"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head os/macos lang/rust/1.67.1"
+              ],
+              "x-amz-date": [
+                "20090213T233130Z"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{}"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "x-amzn-requestid": [
+                  "fcfdab03-2bb8-45e9-a284-b789cf7efb63"
+                ],
+                "content-type": [
+                  "application/x-amz-json-1.0"
+                ],
+                "date": [
+                  "Wed, 24 May 2023 15:51:07 GMT"
+                ],
+                "content-length": [
+                  "104"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"Endpoints\":[{\"Address\":\"query-cell1.timestream.us-west-2.amazonaws.com\",\"CachePeriodInMinutes\":10}]}"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://query-cell1.timestream.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-amz-json-1.0"
+              ],
+              "content-length": [
+                "73"
+              ],
+              "x-amz-security-token": [
+                "notarealsessiontoken"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head os/macos lang/rust/1.67.1"
+              ],
+              "x-amz-date": [
+                "20090213T233130Z"
+              ],
+              "authorization": [
+                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/timestream/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-security-token;x-amz-target;x-amz-user-agent, Signature=8174b6ca0ece22834b562b60785f47ef354b2c1ddf7a541482f255006b5f98c2"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head api/timestreamquery/0.0.0-local os/macos lang/rust/1.67.1"
+              ],
+              "x-amz-target": [
+                "Timestream_20181101.Query"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"QueryString\":\"SELECT now() as time_now\",\"ClientToken\":\"0000-0000-0000\"}"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-type": [
+                  "application/x-amz-json-1.0"
+                ],
+                "date": [
+                  "Wed, 24 May 2023 15:51:08 GMT"
+                ],
+                "x-amzn-requestid": [
+                  "OFO47BQ6XAXGTIK3XH4S6GBFLQ"
+                ],
+                "content-length": [
+                  "318"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"ColumnInfo\":[{\"Name\":\"time_now\",\"Type\":{\"ScalarType\":\"TIMESTAMP\"}}],\"QueryId\":\"AEDACANMQDLSTQR3SPDV6HEWYACX5IALTEWGK7JM3VSFQQ5J5F3HGKVEMNHBRHY\",\"QueryStatus\":{\"CumulativeBytesMetered\":10000000,\"CumulativeBytesScanned\":0,\"ProgressPercentage\":100.0},\"Rows\":[{\"Data\":[{\"ScalarValue\":\"2023-05-24 15:51:08.760000000\"}]}]}"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://query.timestream.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-amz-json-1.0"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head os/macos lang/rust/1.67.1"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head api/timestreamquery/0.0.0-local os/macos lang/rust/1.67.1"
+              ],
+              "x-amz-date": [
+                "20090213T234030Z"
+              ],
+              "authorization": [
+                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/timestream/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token;x-amz-target;x-amz-user-agent, Signature=32e468e574c514ba0fa4a0f0304cef82b72f82965b9e8792fd63f6efb67b297c"
+              ],
+              "x-amz-target": [
+                "Timestream_20181101.DescribeEndpoints"
+              ],
+              "x-amz-security-token": [
+                "notarealsessiontoken"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-type": [
+                  "application/x-amz-json-1.0"
+                ],
+                "content-length": [
+                  "104"
+                ],
+                "date": [
+                  "Wed, 24 May 2023 15:51:07 GMT"
+                ],
+                "x-amzn-requestid": [
+                  "fcfdab03-2bb8-45e9-a284-b789cf7efb63"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{}"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"Endpoints\":[{\"Address\":\"query-cell2.timestream.us-west-2.amazonaws.com\",\"CachePeriodInMinutes\":10}]}"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 2,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://query-cell2.timestream.us-west-2.amazonaws.com/",
+            "headers": {
+              "authorization": [
+                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/timestream/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-security-token;x-amz-target;x-amz-user-agent, Signature=8b2abd7688aefb4004200e5fa087f6c154fde879f2df79d3f6c57934cdc8f62a"
+              ],
+              "x-amz-date": [
+                "20090213T234130Z"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head os/macos lang/rust/1.67.1"
+              ],
+              "x-amz-target": [
+                "Timestream_20181101.Query"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.0.0-smithy-rs-head api/timestreamquery/0.0.0-local os/macos lang/rust/1.67.1"
+              ],
+              "content-type": [
+                "application/x-amz-json-1.0"
+              ],
+              "content-length": [
+                "73"
+              ],
+              "x-amz-security-token": [
+                "notarealsessiontoken"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"QueryString\":\"SELECT now() as time_now\",\"ClientToken\":\"0000-0000-0000\"}"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-type": [
+                  "application/x-amz-json-1.0"
+                ],
+                "date": [
+                  "Wed, 24 May 2023 15:51:08 GMT"
+                ],
+                "x-amzn-requestid": [
+                  "OFO47BQ6XAXGTIK3XH4S6GBFLQ"
+                ],
+                "content-length": [
+                  "318"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"ColumnInfo\":[{\"Name\":\"time_now\",\"Type\":{\"ScalarType\":\"TIMESTAMP\"}}],\"QueryId\":\"AEDACANMQDLSTQR3SPDV6HEWYACX5IALTEWGK7JM3VSFQQ5J5F3HGKVEMNHBRHY\",\"QueryStatus\":{\"CumulativeBytesMetered\":10000000,\"CumulativeBytesScanned\":0,\"ProgressPercentage\":100.0},\"Rows\":[{\"Data\":[{\"ScalarValue\":\"2023-05-24 15:51:08.760000000\"}]}]}"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 3,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "todo docs",
+  "version": "V0"
+}

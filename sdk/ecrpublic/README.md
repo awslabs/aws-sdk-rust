@@ -28,8 +28,8 @@ use aws_sdk_ecrpublic as ecrpublic;
 
 #[::tokio::main]
 async fn main() -> Result<(), ecrpublic::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = ecrpublic::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_ecrpublic::Client::new(&config);
 
     // ... make some calls with the client
 

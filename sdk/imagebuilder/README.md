@@ -28,8 +28,8 @@ use aws_sdk_imagebuilder as imagebuilder;
 
 #[::tokio::main]
 async fn main() -> Result<(), imagebuilder::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = imagebuilder::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_imagebuilder::Client::new(&config);
 
     // ... make some calls with the client
 

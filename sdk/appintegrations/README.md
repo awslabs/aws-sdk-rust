@@ -30,8 +30,8 @@ use aws_sdk_appintegrations as appintegrations;
 
 #[::tokio::main]
 async fn main() -> Result<(), appintegrations::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = appintegrations::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_appintegrations::Client::new(&config);
 
     // ... make some calls with the client
 

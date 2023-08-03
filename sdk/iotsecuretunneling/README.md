@@ -30,8 +30,8 @@ use aws_sdk_iotsecuretunneling as iotsecuretunneling;
 
 #[::tokio::main]
 async fn main() -> Result<(), iotsecuretunneling::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iotsecuretunneling::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iotsecuretunneling::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -26,8 +26,8 @@ use aws_sdk_kinesisvideomedia as kinesisvideomedia;
 
 #[::tokio::main]
 async fn main() -> Result<(), kinesisvideomedia::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = kinesisvideomedia::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_kinesisvideomedia::Client::new(&config);
 
     // ... make some calls with the client
 

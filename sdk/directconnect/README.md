@@ -28,8 +28,8 @@ use aws_sdk_directconnect as directconnect;
 
 #[::tokio::main]
 async fn main() -> Result<(), directconnect::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = directconnect::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_directconnect::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -34,8 +34,8 @@ use aws_sdk_migrationhubconfig as migrationhubconfig;
 
 #[::tokio::main]
 async fn main() -> Result<(), migrationhubconfig::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = migrationhubconfig::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_migrationhubconfig::Client::new(&config);
 
     // ... make some calls with the client
 

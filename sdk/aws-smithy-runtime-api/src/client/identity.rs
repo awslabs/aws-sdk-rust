@@ -5,7 +5,7 @@
 
 use crate::client::auth::AuthSchemeId;
 use crate::client::orchestrator::Future;
-use crate::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use std::any::Any;
 use std::fmt::Debug;
 use std::sync::Arc;

@@ -28,8 +28,8 @@ use aws_sdk_computeoptimizer as computeoptimizer;
 
 #[::tokio::main]
 async fn main() -> Result<(), computeoptimizer::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = computeoptimizer::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_computeoptimizer::Client::new(&config);
 
     // ... make some calls with the client
 

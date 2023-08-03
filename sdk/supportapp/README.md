@@ -39,8 +39,8 @@ use aws_sdk_supportapp as supportapp;
 
 #[::tokio::main]
 async fn main() -> Result<(), supportapp::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = supportapp::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_supportapp::Client::new(&config);
 
     // ... make some calls with the client
 

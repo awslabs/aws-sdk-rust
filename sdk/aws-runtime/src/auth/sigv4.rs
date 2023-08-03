@@ -13,7 +13,7 @@ use aws_smithy_runtime_api::client::auth::{
 };
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpRequest};
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::Document;
 use aws_types::region::{Region, SigningRegion};
 use aws_types::SigningService;

@@ -52,8 +52,8 @@ use aws_sdk_controltower as controltower;
 
 #[::tokio::main]
 async fn main() -> Result<(), controltower::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = controltower::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_controltower::Client::new(&config);
 
     // ... make some calls with the client
 

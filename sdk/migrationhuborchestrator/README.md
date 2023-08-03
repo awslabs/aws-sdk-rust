@@ -28,8 +28,8 @@ use aws_sdk_migrationhuborchestrator as migrationhuborchestrator;
 
 #[::tokio::main]
 async fn main() -> Result<(), migrationhuborchestrator::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = migrationhuborchestrator::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_migrationhuborchestrator::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -43,7 +43,7 @@
 //! #[::tokio::main]
 //! async fn main() -> Result<(), sso::Error> {
 //!     let config = aws_config::load_from_env().await;
-//!     let client = sso::Client::new(&config);
+//!     let client = aws_sdk_sso::Client::new(&config);
 //!
 //!     // ... make some calls with the client
 //!

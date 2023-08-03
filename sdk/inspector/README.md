@@ -28,8 +28,8 @@ use aws_sdk_inspector as inspector;
 
 #[::tokio::main]
 async fn main() -> Result<(), inspector::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = inspector::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_inspector::Client::new(&config);
 
     // ... make some calls with the client
 

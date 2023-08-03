@@ -28,8 +28,8 @@ use aws_sdk_firehose as firehose;
 
 #[::tokio::main]
 async fn main() -> Result<(), firehose::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = firehose::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_firehose::Client::new(&config);
 
     // ... make some calls with the client
 

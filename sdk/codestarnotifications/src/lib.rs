@@ -63,8 +63,8 @@
 //!
 //! #[::tokio::main]
 //! async fn main() -> Result<(), codestarnotifications::Error> {
-//!     let config = ::aws_config::load_from_env().await;
-//!     let client = codestarnotifications::Client::new(&config);
+//!     let config = aws_config::load_from_env().await;
+//!     let client = aws_sdk_codestarnotifications::Client::new(&config);
 //!
 //!     // ... make some calls with the client
 //!
@@ -132,7 +132,7 @@ pub use config::Config;
 /// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
 /// # async fn wrapper() {
-/// let config = ::aws_config::load_from_env().await;
+/// let config = aws_config::load_from_env().await;
 /// let client = aws_sdk_codestarnotifications::Client::new(&config);
 /// # }
 /// ```

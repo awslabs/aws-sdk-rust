@@ -28,8 +28,8 @@ use aws_sdk_honeycode as honeycode;
 
 #[::tokio::main]
 async fn main() -> Result<(), honeycode::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = honeycode::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_honeycode::Client::new(&config);
 
     // ... make some calls with the client
 

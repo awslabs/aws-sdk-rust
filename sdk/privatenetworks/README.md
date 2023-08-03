@@ -28,8 +28,8 @@ use aws_sdk_privatenetworks as privatenetworks;
 
 #[::tokio::main]
 async fn main() -> Result<(), privatenetworks::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = privatenetworks::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_privatenetworks::Client::new(&config);
 
     // ... make some calls with the client
 

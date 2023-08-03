@@ -47,8 +47,8 @@ use aws_sdk_appconfigdata as appconfigdata;
 
 #[::tokio::main]
 async fn main() -> Result<(), appconfigdata::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = appconfigdata::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_appconfigdata::Client::new(&config);
 
     // ... make some calls with the client
 

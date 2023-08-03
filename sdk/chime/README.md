@@ -49,8 +49,8 @@ use aws_sdk_chime as chime;
 
 #[::tokio::main]
 async fn main() -> Result<(), chime::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = chime::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_chime::Client::new(&config);
 
     // ... make some calls with the client
 

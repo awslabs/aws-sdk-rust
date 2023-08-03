@@ -26,8 +26,8 @@ use aws_sdk_s3 as s3;
 
 #[::tokio::main]
 async fn main() -> Result<(), s3::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = s3::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_s3::Client::new(&config);
 
     // ... make some calls with the client
 

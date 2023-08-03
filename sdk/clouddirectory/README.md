@@ -28,8 +28,8 @@ use aws_sdk_clouddirectory as clouddirectory;
 
 #[::tokio::main]
 async fn main() -> Result<(), clouddirectory::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = clouddirectory::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_clouddirectory::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -28,8 +28,8 @@ use aws_sdk_iot1clickdevices as iot1clickdevices;
 
 #[::tokio::main]
 async fn main() -> Result<(), iot1clickdevices::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iot1clickdevices::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iot1clickdevices::Client::new(&config);
 
     // ... make some calls with the client
 

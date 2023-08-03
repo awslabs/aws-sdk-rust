@@ -49,8 +49,8 @@ use aws_sdk_codedeploy as codedeploy;
 
 #[::tokio::main]
 async fn main() -> Result<(), codedeploy::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = codedeploy::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_codedeploy::Client::new(&config);
 
     // ... make some calls with the client
 

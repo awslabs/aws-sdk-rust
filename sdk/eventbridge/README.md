@@ -33,8 +33,8 @@ use aws_sdk_eventbridge as eventbridge;
 
 #[::tokio::main]
 async fn main() -> Result<(), eventbridge::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = eventbridge::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_eventbridge::Client::new(&config);
 
     // ... make some calls with the client
 

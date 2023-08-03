@@ -28,8 +28,8 @@ use aws_sdk_chimesdkmessaging as chimesdkmessaging;
 
 #[::tokio::main]
 async fn main() -> Result<(), chimesdkmessaging::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = chimesdkmessaging::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_chimesdkmessaging::Client::new(&config);
 
     // ... make some calls with the client
 

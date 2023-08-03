@@ -9,7 +9,7 @@ use aws_smithy_runtime_api::client::orchestrator::BoxError;
 use aws_smithy_runtime_api::client::retries::{
     ClassifyRetry, RetryClassifiers, RetryReason, RetryStrategy, ShouldAttempt,
 };
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use std::time::Duration;
 
 // A retry policy used in tests. This relies on an error classifier already present in the config bag.

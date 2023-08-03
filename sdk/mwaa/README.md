@@ -50,8 +50,8 @@ use aws_sdk_mwaa as mwaa;
 
 #[::tokio::main]
 async fn main() -> Result<(), mwaa::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = mwaa::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_mwaa::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -28,8 +28,8 @@ use aws_sdk_iotfleethub as iotfleethub;
 
 #[::tokio::main]
 async fn main() -> Result<(), iotfleethub::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iotfleethub::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iotfleethub::Client::new(&config);
 
     // ... make some calls with the client
 

@@ -28,8 +28,8 @@ use aws_sdk_lookoutmetrics as lookoutmetrics;
 
 #[::tokio::main]
 async fn main() -> Result<(), lookoutmetrics::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = lookoutmetrics::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_lookoutmetrics::Client::new(&config);
 
     // ... make some calls with the client
 

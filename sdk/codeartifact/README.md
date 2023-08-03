@@ -85,8 +85,8 @@ use aws_sdk_codeartifact as codeartifact;
 
 #[::tokio::main]
 async fn main() -> Result<(), codeartifact::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = codeartifact::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_codeartifact::Client::new(&config);
 
     // ... make some calls with the client
 

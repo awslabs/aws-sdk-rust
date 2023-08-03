@@ -9,7 +9,7 @@ use aws_smithy_runtime_api::client::orchestrator::{
     ConfigBagAccessors, HttpRequest, RequestSerializer,
 };
 use aws_smithy_runtime_api::client::runtime_plugin::{BoxError, RuntimePlugin};
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use std::sync::Mutex;
 
 #[derive(Default, Debug)]

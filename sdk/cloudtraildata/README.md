@@ -28,8 +28,8 @@ use aws_sdk_cloudtraildata as cloudtraildata;
 
 #[::tokio::main]
 async fn main() -> Result<(), cloudtraildata::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = cloudtraildata::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_cloudtraildata::Client::new(&config);
 
     // ... make some calls with the client
 

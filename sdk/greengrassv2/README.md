@@ -32,8 +32,8 @@ use aws_sdk_greengrassv2 as greengrassv2;
 
 #[::tokio::main]
 async fn main() -> Result<(), greengrassv2::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = greengrassv2::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_greengrassv2::Client::new(&config);
 
     // ... make some calls with the client
 

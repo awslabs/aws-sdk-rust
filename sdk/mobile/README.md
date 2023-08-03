@@ -28,8 +28,8 @@ use aws_sdk_mobile as mobile;
 
 #[::tokio::main]
 async fn main() -> Result<(), mobile::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = mobile::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_mobile::Client::new(&config);
 
     // ... make some calls with the client
 

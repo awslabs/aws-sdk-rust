@@ -32,8 +32,8 @@ use aws_sdk_iotanalytics as iotanalytics;
 
 #[::tokio::main]
 async fn main() -> Result<(), iotanalytics::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = iotanalytics::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_iotanalytics::Client::new(&config);
 
     // ... make some calls with the client
 

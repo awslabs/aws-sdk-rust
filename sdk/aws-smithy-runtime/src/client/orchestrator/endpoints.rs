@@ -12,7 +12,7 @@ use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::{
     BoxError, ConfigBagAccessors, EndpointResolver, EndpointResolverParams, HttpRequest,
 };
-use aws_smithy_runtime_api::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::endpoint::Endpoint;
 use http::header::HeaderName;
 use http::{HeaderValue, Uri};

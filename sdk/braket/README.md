@@ -31,8 +31,8 @@ use aws_sdk_braket as braket;
 
 #[::tokio::main]
 async fn main() -> Result<(), braket::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = braket::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_braket::Client::new(&config);
 
     // ... make some calls with the client
 

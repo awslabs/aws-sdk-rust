@@ -28,8 +28,8 @@ use aws_sdk_backup as backup;
 
 #[::tokio::main]
 async fn main() -> Result<(), backup::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = backup::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_backup::Client::new(&config);
 
     // ... make some calls with the client
 

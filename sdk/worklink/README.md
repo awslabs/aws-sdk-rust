@@ -28,8 +28,8 @@ use aws_sdk_worklink as worklink;
 
 #[::tokio::main]
 async fn main() -> Result<(), worklink::Error> {
-    let config = ::aws_config::load_from_env().await;
-    let client = worklink::Client::new(&config);
+    let config = aws_config::load_from_env().await;
+    let client = aws_sdk_worklink::Client::new(&config);
 
     // ... make some calls with the client
 
