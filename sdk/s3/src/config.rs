@@ -31,7 +31,7 @@ pub struct Config {
     #[allow(missing_docs)] // documentation missing in model
     pub(crate) accelerate: ::std::option::Option<bool>,
     pub(crate) endpoint_resolver:
-        std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
+        ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
@@ -63,8 +63,7 @@ impl Config {
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(
         &self,
-    ) -> std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>
-    {
+    ) -> ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params> {
         self.endpoint_resolver.clone()
     }
     /// Return a reference to the retry configuration contained in this config, if any.
@@ -122,8 +121,8 @@ pub struct Builder {
     disable_multi_region_access_points: ::std::option::Option<bool>,
 
     accelerate: ::std::option::Option<bool>,
-    endpoint_resolver: Option<
-        std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
+    endpoint_resolver: ::std::option::Option<
+        ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     >,
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
@@ -236,7 +235,9 @@ impl Builder {
         endpoint_resolver: impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>
             + 'static,
     ) -> Self {
-        self.endpoint_resolver = Some(std::sync::Arc::new(endpoint_resolver) as _);
+        self.endpoint_resolver = ::std::option::Option::Some(
+            ::aws_smithy_http::endpoint::SharedEndpointResolver::new(endpoint_resolver),
+        );
         self
     }
 
@@ -246,10 +247,8 @@ impl Builder {
     /// rules for `aws_sdk_s3`.
     pub fn set_endpoint_resolver(
         &mut self,
-        endpoint_resolver: Option<
-            std::sync::Arc<
-                dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>,
-            >,
+        endpoint_resolver: ::std::option::Option<
+            ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
         >,
     ) -> &mut Self {
         self.endpoint_resolver = endpoint_resolver;
@@ -646,9 +645,11 @@ impl Builder {
             disable_multi_region_access_points: self.disable_multi_region_access_points,
 
             accelerate: self.accelerate,
-            endpoint_resolver: self
-                .endpoint_resolver
-                .unwrap_or_else(|| std::sync::Arc::new(crate::endpoint::DefaultResolver::new())),
+            endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
+                ::aws_smithy_http::endpoint::SharedEndpointResolver::new(
+                    crate::endpoint::DefaultResolver::new(),
+                )
+            }),
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl.clone(),
             timeout_config: self.timeout_config,

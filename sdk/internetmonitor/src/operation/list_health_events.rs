@@ -15,6 +15,7 @@ impl ListHealthEventsInput {
         >,
         ::aws_smithy_http::operation::error::BuildError,
     > {
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
             .set_use_fips(_config.use_fips)

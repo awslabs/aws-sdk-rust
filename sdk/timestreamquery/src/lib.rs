@@ -146,7 +146,8 @@ impl Client {
             time,
         )
         .await?;
-        new_conf.endpoint_resolver = ::std::sync::Arc::new(resolver);
+        new_conf.endpoint_resolver =
+            ::aws_smithy_http::endpoint::SharedEndpointResolver::new(resolver);
         Ok((Self::from_conf(new_conf), reloader))
     }
 }

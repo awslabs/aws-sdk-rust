@@ -6,6 +6,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(&self, _config: &crate::config::Config) -> ::std::result::Result<::aws_smithy_http::operation::Operation<crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplate, ::aws_http::retry::AwsResponseRetryClassifier>, ::aws_smithy_http::operation::error::BuildError>{
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
             .set_use_dual_stack(_config.use_dual_stack)

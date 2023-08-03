@@ -15,6 +15,7 @@ impl SubmitContainerStateChangeInput {
         >,
         ::aws_smithy_http::operation::error::BuildError,
     > {
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
             .set_use_dual_stack(_config.use_dual_stack)

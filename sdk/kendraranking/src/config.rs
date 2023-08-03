@@ -20,7 +20,7 @@
 pub struct Config {
     pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
     pub(crate) endpoint_resolver:
-        std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
+        ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
     timeout_config: Option<::aws_smithy_types::timeout::TimeoutConfig>,
@@ -55,8 +55,7 @@ impl Config {
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(
         &self,
-    ) -> std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>
-    {
+    ) -> ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params> {
         self.endpoint_resolver.clone()
     }
     /// Return a reference to the retry configuration contained in this config, if any.
@@ -108,8 +107,8 @@ impl Config {
 #[derive(Clone, Default)]
 pub struct Builder {
     make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
-    endpoint_resolver: Option<
-        std::sync::Arc<dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>,
+    endpoint_resolver: ::std::option::Option<
+        ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     >,
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
     sleep_impl: Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
@@ -189,7 +188,9 @@ impl Builder {
         endpoint_resolver: impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>
             + 'static,
     ) -> Self {
-        self.endpoint_resolver = Some(std::sync::Arc::new(endpoint_resolver) as _);
+        self.endpoint_resolver = ::std::option::Option::Some(
+            ::aws_smithy_http::endpoint::SharedEndpointResolver::new(endpoint_resolver),
+        );
         self
     }
 
@@ -199,10 +200,8 @@ impl Builder {
     /// rules for `aws_sdk_kendraranking`.
     pub fn set_endpoint_resolver(
         &mut self,
-        endpoint_resolver: Option<
-            std::sync::Arc<
-                dyn ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>,
-            >,
+        endpoint_resolver: ::std::option::Option<
+            ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
         >,
     ) -> &mut Self {
         self.endpoint_resolver = endpoint_resolver;
@@ -583,9 +582,11 @@ impl Builder {
             make_token: self
                 .make_token
                 .unwrap_or_else(crate::idempotency_token::default_provider),
-            endpoint_resolver: self
-                .endpoint_resolver
-                .unwrap_or_else(|| std::sync::Arc::new(crate::endpoint::DefaultResolver::new())),
+            endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
+                ::aws_smithy_http::endpoint::SharedEndpointResolver::new(
+                    crate::endpoint::DefaultResolver::new(),
+                )
+            }),
             retry_config: self.retry_config,
             sleep_impl: self.sleep_impl.clone(),
             timeout_config: self.timeout_config,
