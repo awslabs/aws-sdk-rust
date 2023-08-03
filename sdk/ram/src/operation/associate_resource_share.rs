@@ -84,17 +84,16 @@ impl AssociateResourceShare {
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AssociateResourceShare {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
         let mut cfg = ::aws_smithy_types::config_bag::Layer::new("AssociateResourceShare");
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors as _;
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
             AssociateResourceShareRequestSerializer,
         ));
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
             AssociateResourceShareResponseDeserializer,
         ));
 
-        cfg.set_auth_option_resolver_params(::aws_smithy_runtime_api::client::auth::AuthOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolverParams::new(),
+        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
+            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("AssociateResourceShare", "ram"));
@@ -131,9 +130,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AssociateResourceShare")
                 .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
-                .with_auth_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver::new(vec![
+                .with_auth_scheme_option_resolver(::std::option::Option::Some(
+                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
+                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
                             ::aws_runtime::auth::sigv4::SCHEME_ID,
                         ]),
                     ),
@@ -147,7 +146,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
 
 #[derive(Debug)]
 struct AssociateResourceShareResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for AssociateResourceShareResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AssociateResourceShareResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -166,7 +165,7 @@ impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for As
 }
 #[derive(Debug)]
 struct AssociateResourceShareRequestSerializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::RequestSerializer for AssociateResourceShareRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AssociateResourceShareRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -227,7 +226,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AssociateRe
         >,
         cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
         let _input = context
             .input()
             .downcast_ref::<AssociateResourceShareInput>()
@@ -243,7 +241,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AssociateRe
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
             })?;
         cfg.interceptor_state()
-            .set_endpoint_resolver_params(::aws_smithy_runtime_api::client::orchestrator::EndpointResolverParams::new(params));
+            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
         ::std::result::Result::Ok(())
     }
 }

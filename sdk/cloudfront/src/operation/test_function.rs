@@ -80,17 +80,16 @@ impl TestFunction {
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TestFunction {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
         let mut cfg = ::aws_smithy_types::config_bag::Layer::new("TestFunction");
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors as _;
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
             TestFunctionRequestSerializer,
         ));
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
             TestFunctionResponseDeserializer,
         ));
 
-        cfg.set_auth_option_resolver_params(::aws_smithy_runtime_api::client::auth::AuthOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolverParams::new(),
+        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
+            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("TestFunction", "cloudfront"));
@@ -127,9 +126,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TestFun
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("TestFunction")
                 .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
-                .with_auth_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver::new(vec![
+                .with_auth_scheme_option_resolver(::std::option::Option::Some(
+                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
+                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
                             ::aws_runtime::auth::sigv4::SCHEME_ID,
                         ]),
                     ),
@@ -141,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TestFun
 
 #[derive(Debug)]
 struct TestFunctionResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for TestFunctionResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TestFunctionResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -160,7 +159,7 @@ impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for Te
 }
 #[derive(Debug)]
 struct TestFunctionRequestSerializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::RequestSerializer for TestFunctionRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TestFunctionRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -230,7 +229,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for TestFunctio
         >,
         cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
         let _input = context
             .input()
             .downcast_ref::<TestFunctionInput>()
@@ -246,7 +244,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for TestFunctio
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
             })?;
         cfg.interceptor_state()
-            .set_endpoint_resolver_params(::aws_smithy_runtime_api::client::orchestrator::EndpointResolverParams::new(params));
+            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
         ::std::result::Result::Ok(())
     }
 }

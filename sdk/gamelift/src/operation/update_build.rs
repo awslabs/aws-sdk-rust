@@ -80,17 +80,16 @@ impl UpdateBuild {
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateBuild {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
         let mut cfg = ::aws_smithy_types::config_bag::Layer::new("UpdateBuild");
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors as _;
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
             UpdateBuildRequestSerializer,
         ));
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
             UpdateBuildResponseDeserializer,
         ));
 
-        cfg.set_auth_option_resolver_params(::aws_smithy_runtime_api::client::auth::AuthOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolverParams::new(),
+        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
+            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("UpdateBuild", "gamelift"));
@@ -127,9 +126,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateB
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateBuild")
                 .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
-                .with_auth_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver::new(vec![
+                .with_auth_scheme_option_resolver(::std::option::Option::Some(
+                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
+                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
                             ::aws_runtime::auth::sigv4::SCHEME_ID,
                         ]),
                     ),
@@ -141,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateB
 
 #[derive(Debug)]
 struct UpdateBuildResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for UpdateBuildResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateBuildResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -160,7 +159,7 @@ impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for Up
 }
 #[derive(Debug)]
 struct UpdateBuildRequestSerializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::RequestSerializer for UpdateBuildRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateBuildRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -223,7 +222,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateBuild
         >,
         cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
         let _input = context
             .input()
             .downcast_ref::<UpdateBuildInput>()
@@ -239,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateBuild
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
             })?;
         cfg.interceptor_state()
-            .set_endpoint_resolver_params(::aws_smithy_runtime_api::client::orchestrator::EndpointResolverParams::new(params));
+            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
         ::std::result::Result::Ok(())
     }
 }

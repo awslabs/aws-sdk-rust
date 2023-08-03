@@ -83,17 +83,16 @@ impl DescribeInferenceExperiment {
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DescribeInferenceExperiment {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
         let mut cfg = ::aws_smithy_types::config_bag::Layer::new("DescribeInferenceExperiment");
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors as _;
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
             DescribeInferenceExperimentRequestSerializer,
         ));
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
             DescribeInferenceExperimentResponseDeserializer,
         ));
 
-        cfg.set_auth_option_resolver_params(::aws_smithy_runtime_api::client::auth::AuthOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolverParams::new(),
+        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
+            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("DescribeInferenceExperiment", "sagemaker"));
@@ -130,9 +129,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeInferenceExperiment")
                 .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
-                .with_auth_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver::new(vec![
+                .with_auth_scheme_option_resolver(::std::option::Option::Some(
+                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
+                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
                             ::aws_runtime::auth::sigv4::SCHEME_ID,
                         ]),
                     ),
@@ -146,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 
 #[derive(Debug)]
 struct DescribeInferenceExperimentResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for DescribeInferenceExperimentResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DescribeInferenceExperimentResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -165,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for De
 }
 #[derive(Debug)]
 struct DescribeInferenceExperimentRequestSerializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::RequestSerializer for DescribeInferenceExperimentRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeInferenceExperimentRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -228,7 +227,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeInf
         >,
         cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
         let _input = context
             .input()
             .downcast_ref::<DescribeInferenceExperimentInput>()
@@ -244,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeInf
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
             })?;
         cfg.interceptor_state()
-            .set_endpoint_resolver_params(::aws_smithy_runtime_api::client::orchestrator::EndpointResolverParams::new(params));
+            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
         ::std::result::Result::Ok(())
     }
 }

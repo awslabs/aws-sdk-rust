@@ -36,6 +36,7 @@ use std::fmt::Debug;
 use std::{fmt, mem};
 use tracing::{debug, error, trace};
 
+// TODO(enableNewSmithyRuntimeLaunch): New-type `Input`/`Output`/`Error`
 pub type Input = TypeErasedBox;
 pub type Output = TypeErasedBox;
 pub type Error = TypeErasedError;

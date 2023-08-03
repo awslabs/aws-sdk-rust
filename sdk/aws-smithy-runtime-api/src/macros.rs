@@ -111,6 +111,7 @@
 ///     }
 /// }
 /// ```
+#[doc(hidden)]
 #[macro_export]
 macro_rules! builder {
     ($($tt:tt)+) => {
@@ -128,6 +129,7 @@ macro_rules! builder {
 
 /// Define a new builder struct, its fields, and their docs. This macro is intended to be called
 /// by the `builder!` macro and should not be called directly.
+#[doc(hidden)]
 #[macro_export]
 macro_rules! builder_struct {
     ($($_setter_name:ident, $field_name:ident, $ty:ty, $doc:literal $(,)?)+) => {
@@ -143,6 +145,7 @@ macro_rules! builder_struct {
 
 /// Define setter methods for a builder struct. Must be called from within an `impl` block. This
 /// macro is intended to be called by the `builder!` macro and should not be called directly.
+#[doc(hidden)]
 #[macro_export]
 macro_rules! builder_methods {
     ($fn_name:ident, $arg_name:ident, $ty:ty, $doc:literal, $($tail:tt)+) => {

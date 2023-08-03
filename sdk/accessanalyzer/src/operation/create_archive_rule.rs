@@ -88,17 +88,16 @@ impl CreateArchiveRule {
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateArchiveRule {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
         let mut cfg = ::aws_smithy_types::config_bag::Layer::new("CreateArchiveRule");
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors as _;
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
             CreateArchiveRuleRequestSerializer,
         ));
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
             CreateArchiveRuleResponseDeserializer,
         ));
 
-        cfg.set_auth_option_resolver_params(::aws_smithy_runtime_api::client::auth::AuthOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolverParams::new(),
+        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
+            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("CreateArchiveRule", "accessanalyzer"));
@@ -135,9 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateArchiveRule")
                 .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
-                .with_auth_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver::new(vec![
+                .with_auth_scheme_option_resolver(::std::option::Option::Some(
+                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
+                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
                             ::aws_runtime::auth::sigv4::SCHEME_ID,
                         ]),
                     ),
@@ -151,7 +150,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
 
 #[derive(Debug)]
 struct CreateArchiveRuleResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for CreateArchiveRuleResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateArchiveRuleResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -170,7 +169,7 @@ impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for Cr
 }
 #[derive(Debug)]
 struct CreateArchiveRuleRequestSerializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::RequestSerializer for CreateArchiveRuleRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateArchiveRuleRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -239,7 +238,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreateArchi
         >,
         cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
         let _input = context
             .input()
             .downcast_ref::<CreateArchiveRuleInput>()
@@ -255,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreateArchi
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
             })?;
         cfg.interceptor_state()
-            .set_endpoint_resolver_params(::aws_smithy_runtime_api::client::orchestrator::EndpointResolverParams::new(params));
+            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
         ::std::result::Result::Ok(())
     }
 }

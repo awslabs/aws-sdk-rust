@@ -181,6 +181,7 @@ pub struct ContextAttachedError {
 }
 
 impl ContextAttachedError {
+    /// Creates a new `ContextAttachedError` with the given `context` and `source`.
     pub fn new(context: impl Into<String>, source: impl Into<BoxError>) -> Self {
         Self {
             context: context.into(),

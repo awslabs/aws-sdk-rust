@@ -19,6 +19,7 @@
 )]
 
 /// Runtime support logic for generated clients.
+#[cfg(feature = "client")]
 pub mod client;
 
 pub mod static_partition_map;

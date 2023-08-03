@@ -8,7 +8,7 @@
 use crate::client::identity::no_auth::NoAuthIdentityResolver;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
-    AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpRequestSigner, SharedHttpAuthScheme,
+    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, SharedAuthScheme, Signer,
 };
 use aws_smithy_runtime_api::client::identity::{Identity, SharedIdentityResolver};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
@@ -43,7 +43,7 @@ impl NoAuthRuntimePlugin {
                     NO_AUTH_SCHEME_ID,
                     SharedIdentityResolver::new(NoAuthIdentityResolver::new()),
                 )
-                .with_http_auth_scheme(SharedHttpAuthScheme::new(NoAuthScheme::new())),
+                .with_auth_scheme(SharedAuthScheme::new(NoAuthScheme::new())),
         )
     }
 }
@@ -68,8 +68,8 @@ impl NoAuthScheme {
 #[derive(Debug, Default)]
 struct NoAuthSigner;
 
-impl HttpRequestSigner for NoAuthSigner {
-    fn sign_request(
+impl Signer for NoAuthSigner {
+    fn sign_http_request(
         &self,
         _request: &mut HttpRequest,
         _identity: &Identity,
@@ -81,7 +81,7 @@ impl HttpRequestSigner for NoAuthSigner {
     }
 }
 
-impl HttpAuthScheme for NoAuthScheme {
+impl AuthScheme for NoAuthScheme {
     fn scheme_id(&self) -> AuthSchemeId {
         NO_AUTH_SCHEME_ID
     }
@@ -93,7 +93,7 @@ impl HttpAuthScheme for NoAuthScheme {
         identity_resolvers.identity_resolver(NO_AUTH_SCHEME_ID)
     }
 
-    fn request_signer(&self) -> &dyn HttpRequestSigner {
+    fn signer(&self) -> &dyn Signer {
         &self.signer
     }
 }

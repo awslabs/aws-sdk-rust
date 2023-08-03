@@ -193,18 +193,22 @@ impl<'a, I, O, E: Debug> From<&'a InterceptorContext<I, O, E>>
 }
 
 impl<'a, I, O, E: Debug> FinalizerInterceptorContextRef<'a, I, O, E> {
+    /// Returns the operation input.
     pub fn input(&self) -> Option<&I> {
         self.inner.input.as_ref()
     }
 
+    /// Returns the serialized request.
     pub fn request(&self) -> Option<&Request> {
         self.inner.request.as_ref()
     }
 
+    /// Returns the raw response.
     pub fn response(&self) -> Option<&Response> {
         self.inner.response.as_ref()
     }
 
+    /// Returns the deserialized operation output or error.
     pub fn output_or_error(&self) -> Option<Result<&O, &OrchestratorError<E>>> {
         self.inner.output_or_error.as_ref().map(|o| o.as_ref())
     }
@@ -223,34 +227,42 @@ impl<'a, I, O, E: Debug> From<&'a mut InterceptorContext<I, O, E>>
 }
 
 impl<'a, I, O, E: Debug> FinalizerInterceptorContextMut<'a, I, O, E> {
+    /// Returns the operation input.
     pub fn input(&self) -> Option<&I> {
         self.inner.input.as_ref()
     }
 
+    /// Returns the serialized request.
     pub fn request(&self) -> Option<&Request> {
         self.inner.request.as_ref()
     }
 
+    /// Returns the raw response.
     pub fn response(&self) -> Option<&Response> {
         self.inner.response.as_ref()
     }
 
+    /// Returns the deserialized operation output or error.
     pub fn output_or_error(&self) -> Option<Result<&O, &OrchestratorError<E>>> {
         self.inner.output_or_error.as_ref().map(|o| o.as_ref())
     }
 
+    /// Mutably returns the operation input.
     pub fn input_mut(&mut self) -> Option<&mut I> {
         self.inner.input.as_mut()
     }
 
+    /// Mutably returns the serialized request.
     pub fn request_mut(&mut self) -> Option<&mut Request> {
         self.inner.request.as_mut()
     }
 
+    /// Mutably returns the raw response.
     pub fn response_mut(&mut self) -> Option<&mut Response> {
         self.inner.response.as_mut()
     }
 
+    /// Mutably returns the deserialized operation output or error.
     pub fn output_or_error_mut(&mut self) -> Option<&mut Result<O, OrchestratorError<E>>> {
         self.inner.output_or_error.as_mut()
     }

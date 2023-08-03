@@ -3,13 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Runtime components used to make a request and handle a response.
+//!
+//! Runtime components are trait implementations that are _always_ used by the orchestrator.
+//! There are other trait implementations that can be configured for a client, but if they
+//! aren't directly and always used by the orchestrator, then they are placed in the
+//! [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag) instead of in
+//! [`RuntimeComponents`](RuntimeComponents).
+
 use crate::client::auth::{
-    AuthSchemeId, HttpAuthScheme, SharedAuthOptionResolver, SharedHttpAuthScheme,
+    AuthScheme, AuthSchemeId, SharedAuthScheme, SharedAuthSchemeOptionResolver,
 };
-use crate::client::connectors::SharedConnector;
+use crate::client::connectors::SharedHttpConnector;
+use crate::client::endpoint::SharedEndpointResolver;
 use crate::client::identity::{ConfiguredIdentityResolver, SharedIdentityResolver};
 use crate::client::interceptors::SharedInterceptor;
-use crate::client::orchestrator::SharedEndpointResolver;
 use crate::client::retries::{RetryClassifiers, SharedRetryStrategy};
 use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_async::time::SharedTimeSource;
@@ -134,6 +142,7 @@ macro_rules! declare_runtime_components {
             $($field_name: runtime_component_field_type!($outer_type $inner_type $($option)?),)+
         }
 
+        /// Builder for [`RuntimeComponents`].
         #[derive(Clone, Debug)]
         pub struct $builder_name {
             builder_name: &'static str,
@@ -171,16 +180,16 @@ macro_rules! declare_runtime_components {
 declare_runtime_components! {
     fields for RuntimeComponents and RuntimeComponentsBuilder {
         #[required]
-        auth_option_resolver: Option<SharedAuthOptionResolver>,
+        auth_scheme_option_resolver: Option<SharedAuthSchemeOptionResolver>,
 
         // A connector is not required since a client could technically only be used for presigning
-        connector: Option<SharedConnector>,
+        http_connector: Option<SharedHttpConnector>,
 
         #[required]
         endpoint_resolver: Option<SharedEndpointResolver>,
 
         #[atLeastOneRequired]
-        http_auth_schemes: Vec<SharedHttpAuthScheme>,
+        auth_schemes: Vec<SharedAuthScheme>,
 
         #[atLeastOneRequired]
         identity_resolvers: Vec<ConfiguredIdentityResolver>,
@@ -204,14 +213,14 @@ impl RuntimeComponents {
         RuntimeComponentsBuilder::new(name)
     }
 
-    /// Returns the auth option resolver.
-    pub fn auth_option_resolver(&self) -> SharedAuthOptionResolver {
-        self.auth_option_resolver.value.clone()
+    /// Returns the auth scheme option resolver.
+    pub fn auth_scheme_option_resolver(&self) -> SharedAuthSchemeOptionResolver {
+        self.auth_scheme_option_resolver.value.clone()
     }
 
     /// Returns the connector.
-    pub fn connector(&self) -> Option<SharedConnector> {
-        self.connector.as_ref().map(|s| s.value.clone())
+    pub fn http_connector(&self) -> Option<SharedHttpConnector> {
+        self.http_connector.as_ref().map(|s| s.value.clone())
     }
 
     /// Returns the endpoint resolver.
@@ -220,8 +229,8 @@ impl RuntimeComponents {
     }
 
     /// Returns the requested auth scheme if it is set.
-    pub fn http_auth_scheme(&self, scheme_id: AuthSchemeId) -> Option<SharedHttpAuthScheme> {
-        self.http_auth_schemes
+    pub fn auth_scheme(&self, scheme_id: AuthSchemeId) -> Option<SharedAuthScheme> {
+        self.auth_schemes
             .iter()
             .find(|s| s.value.scheme_id() == scheme_id)
             .map(|s| s.value.clone())
@@ -254,44 +263,46 @@ impl RuntimeComponents {
 }
 
 impl RuntimeComponentsBuilder {
-    /// Returns the auth option resolver.
-    pub fn auth_option_resolver(&self) -> Option<SharedAuthOptionResolver> {
-        self.auth_option_resolver.as_ref().map(|s| s.value.clone())
+    /// Returns the auth scheme option resolver.
+    pub fn auth_scheme_option_resolver(&self) -> Option<SharedAuthSchemeOptionResolver> {
+        self.auth_scheme_option_resolver
+            .as_ref()
+            .map(|s| s.value.clone())
     }
 
-    /// Sets the auth option resolver.
-    pub fn set_auth_option_resolver(
+    /// Sets the auth scheme option resolver.
+    pub fn set_auth_scheme_option_resolver(
         &mut self,
-        auth_option_resolver: Option<SharedAuthOptionResolver>,
+        auth_scheme_option_resolver: Option<SharedAuthSchemeOptionResolver>,
     ) -> &mut Self {
-        self.auth_option_resolver =
-            auth_option_resolver.map(|r| Tracked::new(self.builder_name, r));
+        self.auth_scheme_option_resolver =
+            auth_scheme_option_resolver.map(|r| Tracked::new(self.builder_name, r));
         self
     }
 
-    /// Sets the auth option resolver.
-    pub fn with_auth_option_resolver(
+    /// Sets the auth scheme option resolver.
+    pub fn with_auth_scheme_option_resolver(
         mut self,
-        auth_option_resolver: Option<SharedAuthOptionResolver>,
+        auth_scheme_option_resolver: Option<SharedAuthSchemeOptionResolver>,
     ) -> Self {
-        self.set_auth_option_resolver(auth_option_resolver);
+        self.set_auth_scheme_option_resolver(auth_scheme_option_resolver);
         self
     }
 
-    /// Returns the connector.
-    pub fn connector(&self) -> Option<SharedConnector> {
-        self.connector.as_ref().map(|s| s.value.clone())
+    /// Returns the HTTP connector.
+    pub fn http_connector(&self) -> Option<SharedHttpConnector> {
+        self.http_connector.as_ref().map(|s| s.value.clone())
     }
 
-    /// Sets the connector.
-    pub fn set_connector(&mut self, connector: Option<SharedConnector>) -> &mut Self {
-        self.connector = connector.map(|c| Tracked::new(self.builder_name, c));
+    /// Sets the HTTP connector.
+    pub fn set_http_connector(&mut self, connector: Option<SharedHttpConnector>) -> &mut Self {
+        self.http_connector = connector.map(|c| Tracked::new(self.builder_name, c));
         self
     }
 
-    /// Sets the connector.
-    pub fn with_connector(mut self, connector: Option<SharedConnector>) -> Self {
-        self.set_connector(connector);
+    /// Sets the HTTP connector.
+    pub fn with_http_connector(mut self, connector: Option<SharedHttpConnector>) -> Self {
+        self.set_http_connector(connector);
         self
     }
 
@@ -318,21 +329,21 @@ impl RuntimeComponentsBuilder {
         self
     }
 
-    /// Returns the HTTP auth schemes.
-    pub fn http_auth_schemes(&self) -> impl Iterator<Item = SharedHttpAuthScheme> + '_ {
-        self.http_auth_schemes.iter().map(|s| s.value.clone())
+    /// Returns the auth schemes.
+    pub fn auth_schemes(&self) -> impl Iterator<Item = SharedAuthScheme> + '_ {
+        self.auth_schemes.iter().map(|s| s.value.clone())
     }
 
-    /// Adds a HTTP auth scheme.
-    pub fn push_http_auth_scheme(&mut self, auth_scheme: SharedHttpAuthScheme) -> &mut Self {
-        self.http_auth_schemes
+    /// Adds an auth scheme.
+    pub fn push_auth_scheme(&mut self, auth_scheme: SharedAuthScheme) -> &mut Self {
+        self.auth_schemes
             .push(Tracked::new(self.builder_name, auth_scheme));
         self
     }
 
-    /// Adds a HTTP auth scheme.
-    pub fn with_http_auth_scheme(mut self, auth_scheme: SharedHttpAuthScheme) -> Self {
-        self.push_http_auth_scheme(auth_scheme);
+    /// Adds an auth scheme.
+    pub fn with_auth_scheme(mut self, auth_scheme: SharedAuthScheme) -> Self {
+        self.push_auth_scheme(auth_scheme);
         self
     }
 
@@ -499,11 +510,12 @@ impl RuntimeComponentsBuilder {
     /// Creates a runtime components builder with all the required components filled in with fake (panicking) implementations.
     #[cfg(feature = "test-util")]
     pub fn for_tests() -> Self {
-        use crate::client::auth::AuthOptionResolver;
-        use crate::client::connectors::Connector;
+        use crate::client::auth::AuthSchemeOptionResolver;
+        use crate::client::connectors::HttpConnector;
+        use crate::client::endpoint::{EndpointResolver, EndpointResolverParams};
         use crate::client::identity::Identity;
         use crate::client::identity::IdentityResolver;
-        use crate::client::orchestrator::{EndpointResolver, EndpointResolverParams, Future};
+        use crate::client::orchestrator::Future;
         use crate::client::retries::RetryStrategy;
         use aws_smithy_async::rt::sleep::AsyncSleep;
         use aws_smithy_async::time::TimeSource;
@@ -511,20 +523,20 @@ impl RuntimeComponentsBuilder {
         use aws_smithy_types::endpoint::Endpoint;
 
         #[derive(Debug)]
-        struct FakeAuthOptionResolver;
-        impl AuthOptionResolver for FakeAuthOptionResolver {
-            fn resolve_auth_options(
+        struct FakeAuthSchemeOptionResolver;
+        impl AuthSchemeOptionResolver for FakeAuthSchemeOptionResolver {
+            fn resolve_auth_scheme_options(
                 &self,
-                _: &crate::client::auth::AuthOptionResolverParams,
+                _: &crate::client::auth::AuthSchemeOptionResolverParams,
             ) -> Result<std::borrow::Cow<'_, [AuthSchemeId]>, crate::box_error::BoxError>
             {
-                unreachable!("fake auth option resolver must be overridden for this test")
+                unreachable!("fake auth scheme option resolver must be overridden for this test")
             }
         }
 
         #[derive(Debug)]
         struct FakeConnector;
-        impl Connector for FakeConnector {
+        impl HttpConnector for FakeConnector {
             fn call(
                 &self,
                 _: crate::client::orchestrator::HttpRequest,
@@ -543,8 +555,8 @@ impl RuntimeComponentsBuilder {
         }
 
         #[derive(Debug)]
-        struct FakeHttpAuthScheme;
-        impl HttpAuthScheme for FakeHttpAuthScheme {
+        struct FakeAuthScheme;
+        impl AuthScheme for FakeAuthScheme {
             fn scheme_id(&self) -> AuthSchemeId {
                 AuthSchemeId::new("fake")
             }
@@ -556,7 +568,7 @@ impl RuntimeComponentsBuilder {
                 None
             }
 
-            fn request_signer(&self) -> &dyn crate::client::auth::HttpRequestSigner {
+            fn signer(&self) -> &dyn crate::client::auth::Signer {
                 unreachable!("fake http auth scheme must be overridden for this test")
             }
         }
@@ -609,18 +621,19 @@ impl RuntimeComponentsBuilder {
         }
 
         Self::new("aws_smithy_runtime_api::client::runtime_components::RuntimeComponentBuilder::for_tests")
-            .with_auth_option_resolver(Some(SharedAuthOptionResolver::new(FakeAuthOptionResolver)))
-            .with_connector(Some(SharedConnector::new(FakeConnector)))
+            .with_auth_scheme(SharedAuthScheme::new(FakeAuthScheme))
+            .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(FakeAuthSchemeOptionResolver)))
             .with_endpoint_resolver(Some(SharedEndpointResolver::new(FakeEndpointResolver)))
-            .with_http_auth_scheme(SharedHttpAuthScheme::new(FakeHttpAuthScheme))
+            .with_http_connector(Some(SharedHttpConnector::new(FakeConnector)))
             .with_identity_resolver(AuthSchemeId::new("fake"), SharedIdentityResolver::new(FakeIdentityResolver))
             .with_retry_classifiers(Some(RetryClassifiers::new()))
             .with_retry_strategy(Some(SharedRetryStrategy::new(FakeRetryStrategy)))
-            .with_time_source(Some(SharedTimeSource::new(FakeTimeSource)))
             .with_sleep_impl(Some(SharedAsyncSleep::new(FakeSleep)))
+            .with_time_source(Some(SharedTimeSource::new(FakeTimeSource)))
     }
 }
 
+/// An error that occurs when building runtime components.
 #[derive(Debug)]
 pub struct BuildError(&'static str);
 
@@ -634,7 +647,7 @@ impl fmt::Display for BuildError {
 
 /// A trait for retrieving a shared identity resolver.
 ///
-/// This trait exists so that [`HttpAuthScheme::identity_resolver`](crate::client::auth::HttpAuthScheme::identity_resolver)
+/// This trait exists so that [`AuthScheme::identity_resolver`](crate::client::auth::AuthScheme::identity_resolver)
 /// can have access to configured identity resolvers without having access to all the runtime components.
 pub trait GetIdentityResolver: Send + Sync {
     /// Returns the requested identity resolver if it is set.

@@ -1,7 +1,5 @@
 # aws-smithy-runtime
 
-**This crate is UNSTABLE! All internal and external interfaces are subject to change without notice.**
-
 Runtime support logic and types for smithy-rs generated code.
 
 <!-- anchor_start:footer -->

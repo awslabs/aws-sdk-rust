@@ -5,9 +5,9 @@
 
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
-    AuthOptionResolver, AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme,
+    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOptionResolver,
+    AuthSchemeOptionResolverParams,
 };
-use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
 use aws_smithy_runtime_api::client::identity::IdentityResolver;
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -49,7 +49,7 @@ impl fmt::Display for AuthOrchestrationError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::NoMatchingAuthScheme => f.write_str(
-                "no auth scheme matched auth options. This is a bug. Please file an issue.",
+                "no auth scheme matched auth scheme options. This is a bug. Please file an issue.",
             ),
             Self::BadAuthSchemeEndpointConfig(message) => f.write_str(message),
             Self::AuthSchemeEndpointConfigMismatch(supported_schemes) => {
@@ -70,24 +70,26 @@ pub(super) async fn orchestrate_auth(
     runtime_components: &RuntimeComponents,
     cfg: &ConfigBag,
 ) -> Result<(), BoxError> {
-    let params = cfg.auth_option_resolver_params();
-    let auth_option_resolver = runtime_components.auth_option_resolver();
-    let auth_options = auth_option_resolver.resolve_auth_options(params)?;
+    let params = cfg
+        .load::<AuthSchemeOptionResolverParams>()
+        .expect("auth scheme option resolver params must be set");
+    let option_resolver = runtime_components.auth_scheme_option_resolver();
+    let options = option_resolver.resolve_auth_scheme_options(params)?;
 
     trace!(
-        auth_option_resolver_params = ?params,
-        auth_options = ?auth_options,
+        auth_scheme_option_resolver_params = ?params,
+        auth_scheme_options = ?options,
         "orchestrating auth",
     );
 
-    for &scheme_id in auth_options.as_ref() {
-        if let Some(auth_scheme) = runtime_components.http_auth_scheme(scheme_id) {
+    for &scheme_id in options.as_ref() {
+        if let Some(auth_scheme) = runtime_components.auth_scheme(scheme_id) {
             if let Some(identity_resolver) = auth_scheme.identity_resolver(runtime_components) {
-                let request_signer = auth_scheme.request_signer();
+                let signer = auth_scheme.signer();
                 trace!(
                     auth_scheme = ?auth_scheme,
                     identity_resolver = ?identity_resolver,
-                    request_signer = ?request_signer,
+                    signer = ?signer,
                     "resolved auth scheme, identity resolver, and signing implementation"
                 );
 
@@ -103,7 +105,7 @@ pub(super) async fn orchestrate_auth(
 
                 trace!("signing request");
                 let request = ctx.request_mut().expect("set during serialization");
-                request_signer.sign_request(
+                signer.sign_http_request(
                     request,
                     &identity,
                     auth_scheme_endpoint_config,
@@ -125,7 +127,7 @@ fn extract_endpoint_auth_scheme_config(
     let auth_schemes = match endpoint.properties().get("authSchemes") {
         Some(Document::Array(schemes)) => schemes,
         // no auth schemes:
-        None => return Ok(AuthSchemeEndpointConfig::new(None)),
+        None => return Ok(AuthSchemeEndpointConfig::from(None)),
         _other => {
             return Err(AuthOrchestrationError::BadAuthSchemeEndpointConfig(
                 "expected an array for `authSchemes` in endpoint config".into(),
@@ -144,17 +146,17 @@ fn extract_endpoint_auth_scheme_config(
         .ok_or_else(|| {
             AuthOrchestrationError::auth_scheme_endpoint_config_mismatch(auth_schemes.iter())
         })?;
-    Ok(AuthSchemeEndpointConfig::new(Some(auth_scheme_config)))
+    Ok(AuthSchemeEndpointConfig::from(Some(auth_scheme_config)))
 }
 
 #[cfg(all(test, feature = "test-util"))]
 mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver;
+    use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
     use aws_smithy_runtime_api::client::auth::{
-        AuthOptionResolverParams, AuthSchemeId, HttpAuthScheme, HttpRequestSigner,
-        SharedAuthOptionResolver, SharedHttpAuthScheme,
+        AuthScheme, AuthSchemeId, AuthSchemeOptionResolverParams, SharedAuthScheme,
+        SharedAuthSchemeOptionResolver, Signer,
     };
     use aws_smithy_runtime_api::client::identity::{
         Identity, IdentityResolver, SharedIdentityResolver,
@@ -181,8 +183,8 @@ mod tests {
         #[derive(Debug)]
         struct TestSigner;
 
-        impl HttpRequestSigner for TestSigner {
-            fn sign_request(
+        impl Signer for TestSigner {
+            fn sign_http_request(
                 &self,
                 request: &mut HttpRequest,
                 _identity: &Identity,
@@ -203,7 +205,7 @@ mod tests {
         struct TestAuthScheme {
             signer: TestSigner,
         }
-        impl HttpAuthScheme for TestAuthScheme {
+        impl AuthScheme for TestAuthScheme {
             fn scheme_id(&self) -> AuthSchemeId {
                 TEST_SCHEME_ID
             }
@@ -215,7 +217,7 @@ mod tests {
                 identity_resolvers.identity_resolver(self.scheme_id())
             }
 
-            fn request_signer(&self) -> &dyn HttpRequestSigner {
+            fn signer(&self) -> &dyn Signer {
                 &self.signer
             }
         }
@@ -227,21 +229,19 @@ mod tests {
         ctx.enter_before_transmit_phase();
 
         let runtime_components = RuntimeComponentsBuilder::for_tests()
-            .with_auth_option_resolver(Some(SharedAuthOptionResolver::new(
-                StaticAuthOptionResolver::new(vec![TEST_SCHEME_ID]),
+            .with_auth_scheme(SharedAuthScheme::new(TestAuthScheme { signer: TestSigner }))
+            .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(
+                StaticAuthSchemeOptionResolver::new(vec![TEST_SCHEME_ID]),
             )))
             .with_identity_resolver(
                 TEST_SCHEME_ID,
                 SharedIdentityResolver::new(TestIdentityResolver),
             )
-            .with_http_auth_scheme(SharedHttpAuthScheme::new(TestAuthScheme {
-                signer: TestSigner,
-            }))
             .build()
             .unwrap();
 
         let mut layer: Layer = Layer::new("test");
-        layer.store_put(AuthOptionResolverParams::new("doesntmatter"));
+        layer.store_put(AuthSchemeOptionResolverParams::new("doesntmatter"));
         layer.store_put(Endpoint::builder().url("dontcare").build());
         let cfg = ConfigBag::of_layers(vec![layer]);
 
@@ -279,10 +279,10 @@ mod tests {
             identity: impl IdentityResolver + 'static,
         ) -> (RuntimeComponents, ConfigBag) {
             let runtime_components = RuntimeComponentsBuilder::for_tests()
-                .with_http_auth_scheme(SharedHttpAuthScheme::new(BasicAuthScheme::new()))
-                .with_http_auth_scheme(SharedHttpAuthScheme::new(BearerAuthScheme::new()))
-                .with_auth_option_resolver(Some(SharedAuthOptionResolver::new(
-                    StaticAuthOptionResolver::new(vec![
+                .with_auth_scheme(SharedAuthScheme::new(BasicAuthScheme::new()))
+                .with_auth_scheme(SharedAuthScheme::new(BearerAuthScheme::new()))
+                .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(
+                    StaticAuthSchemeOptionResolver::new(vec![
                         HTTP_BASIC_AUTH_SCHEME_ID,
                         HTTP_BEARER_AUTH_SCHEME_ID,
                     ]),
@@ -293,7 +293,7 @@ mod tests {
 
             let mut layer = Layer::new("test");
             layer.store_put(Endpoint::builder().url("dontcare").build());
-            layer.store_put(AuthOptionResolverParams::new("doesntmatter"));
+            layer.store_put(AuthSchemeOptionResolverParams::new("doesntmatter"));
 
             (runtime_components, ConfigBag::of_layers(vec![layer]))
         }
@@ -343,7 +343,7 @@ mod tests {
             .build();
         let config = extract_endpoint_auth_scheme_config(&endpoint, "test-scheme-id".into())
             .expect("success");
-        assert!(config.config().is_none());
+        assert!(config.as_document().is_none());
     }
 
     #[test]
@@ -412,7 +412,7 @@ mod tests {
         assert_eq!(
             "magic string value",
             config
-                .config()
+                .as_document()
                 .expect("config is set")
                 .as_object()
                 .expect("it's an object")

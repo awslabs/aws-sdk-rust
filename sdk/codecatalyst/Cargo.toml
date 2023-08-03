@@ -43,12 +43,12 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
-features = ["http-auth"]
+features = ["client", "http-auth"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
-features = ["http-auth"]
+features = ["client", "http-auth"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-types]

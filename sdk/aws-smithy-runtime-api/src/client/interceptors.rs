@@ -3,6 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Interceptors for clients.
+//!
+//! Interceptors are operation lifecycle hooks that can read/modify requests and responses.
+
 use crate::box_error::BoxError;
 use crate::client::interceptors::context::{
     AfterDeserializationInterceptorContextRef, BeforeDeserializationInterceptorContextMut,

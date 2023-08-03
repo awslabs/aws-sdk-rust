@@ -7,20 +7,30 @@ use crate::client::orchestrator::{BoxFuture, HttpRequest, HttpResponse};
 use std::fmt;
 use std::sync::Arc;
 
-pub trait Connector: Send + Sync + fmt::Debug {
+/// Trait with a `call` function that asynchronously converts a request into a response.
+///
+/// Ordinarily, a connector would use an underlying HTTP library such as [hyper](https://crates.io/crates/hyper),
+/// and any associated HTTPS implementation alongside it to service requests.
+///
+/// However, it can also be useful to create fake connectors implementing this trait
+/// for testing.
+pub trait HttpConnector: Send + Sync + fmt::Debug {
+    /// Asynchronously converts a request into a response.
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse>;
 }
 
+/// A shared [`HttpConnector`] implementation.
 #[derive(Clone, Debug)]
-pub struct SharedConnector(Arc<dyn Connector>);
+pub struct SharedHttpConnector(Arc<dyn HttpConnector>);
 
-impl SharedConnector {
-    pub fn new(connection: impl Connector + 'static) -> Self {
+impl SharedHttpConnector {
+    /// Returns a new [`SharedHttpConnector`].
+    pub fn new(connection: impl HttpConnector + 'static) -> Self {
         Self(Arc::new(connection))
     }
 }
 
-impl Connector for SharedConnector {
+impl HttpConnector for SharedHttpConnector {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         (*self.0).call(request)
     }

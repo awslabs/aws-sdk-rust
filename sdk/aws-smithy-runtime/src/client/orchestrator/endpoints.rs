@@ -9,11 +9,9 @@ use aws_smithy_http::endpoint::{
     SharedEndpointResolver,
 };
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
+use aws_smithy_runtime_api::client::endpoint::{EndpointResolver, EndpointResolverParams};
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::{
-    EndpointResolver, EndpointResolverParams, Future, HttpRequest,
-};
+use aws_smithy_runtime_api::client::orchestrator::{Future, HttpRequest};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
@@ -109,7 +107,9 @@ pub(super) async fn orchestrate_endpoint(
 ) -> Result<(), BoxError> {
     trace!("orchestrating endpoint resolution");
 
-    let params = cfg.endpoint_resolver_params();
+    let params = cfg
+        .load::<EndpointResolverParams>()
+        .expect("endpoint resolver params must be set");
     let endpoint_prefix = cfg.load::<EndpointPrefix>();
     let request = ctx.request_mut().expect("set during serialization");
 

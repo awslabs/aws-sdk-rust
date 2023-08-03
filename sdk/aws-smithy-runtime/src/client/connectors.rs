@@ -7,9 +7,13 @@ pub mod connection_poisoning;
 #[cfg(feature = "test-util")]
 pub mod test_util;
 
+// TODO(enableNewSmithyRuntimeCleanup): Delete this module
+/// Unstable API for interfacing the old middleware connectors with the newer orchestrator connectors.
+///
+/// Important: This module and its contents will be removed in the next release.
 pub mod adapter {
     use aws_smithy_client::erase::DynConnector;
-    use aws_smithy_runtime_api::client::connectors::Connector;
+    use aws_smithy_runtime_api::client::connectors::HttpConnector;
     use aws_smithy_runtime_api::client::orchestrator::{BoxFuture, HttpRequest, HttpResponse};
     use std::sync::{Arc, Mutex};
 
@@ -27,7 +31,7 @@ pub mod adapter {
         }
     }
 
-    impl Connector for DynConnectorAdapter {
+    impl HttpConnector for DynConnectorAdapter {
         fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
             let future = self.dyn_connector.lock().unwrap().call_lite(request);
             future

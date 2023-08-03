@@ -3,8 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Retry handling and token bucket.
+//!
+//! This code defines when and how failed requests should be retried. It also defines the behavior
+//! used to limit the rate that requests are sent.
+
 use crate::client::interceptors::context::InterceptorContext;
-use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::fmt::Debug;
 use std::time::Duration;
 use tracing::trace;
@@ -14,13 +19,17 @@ pub use aws_smithy_types::retry::ErrorKind;
 #[derive(Debug, Clone, PartialEq, Eq)]
 /// An answer to the question "should I make a request attempt?"
 pub enum ShouldAttempt {
+    /// Yes, an attempt should be made
     Yes,
+    /// No, no attempt should be made
     No,
+    /// Yes, an attempt should be made, but only after the given amount of time has passed
     YesAfterDelay(Duration),
 }
 
 #[cfg(feature = "test-util")]
 impl ShouldAttempt {
+    /// Returns the delay duration if this is a `YesAfterDelay` variant.
     pub fn expect_delay(self) -> Duration {
         match self {
             ShouldAttempt::YesAfterDelay(delay) => delay,
@@ -29,13 +38,26 @@ impl ShouldAttempt {
     }
 }
 
+/// Decider for whether or not to attempt a request, and when.
+///
+/// The orchestrator consults the retry strategy every time before making a request.
+/// This includes the initial request, and any retry attempts thereafter. The
+/// orchestrator will retry indefinitely (until success) if the retry strategy
+/// always returns `ShouldAttempt::Yes` from `should_attempt_retry`.
 pub trait RetryStrategy: Send + Sync + Debug {
+    /// Decides if the initial attempt should be made.
     fn should_attempt_initial_request(
         &self,
         runtime_components: &RuntimeComponents,
         cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError>;
 
+    /// Decides if a retry should be done.
+    ///
+    /// The previous attempt's output or error are provided in the
+    /// [`InterceptorContext`] when this is called.
+    ///
+    /// `ShouldAttempt::YesAfterDelay` can be used to add a backoff time.
     fn should_attempt_retry(
         &self,
         context: &InterceptorContext,
@@ -44,10 +66,12 @@ pub trait RetryStrategy: Send + Sync + Debug {
     ) -> Result<ShouldAttempt, BoxError>;
 }
 
+/// A shared retry strategy.
 #[derive(Clone, Debug)]
 pub struct SharedRetryStrategy(Arc<dyn RetryStrategy>);
 
 impl SharedRetryStrategy {
+    /// Creates a new [`SharedRetryStrategy`] from a retry strategy.
     pub fn new(retry_strategy: impl RetryStrategy + 'static) -> Self {
         Self(Arc::new(retry_strategy))
     }
@@ -74,10 +98,13 @@ impl RetryStrategy for SharedRetryStrategy {
     }
 }
 
+/// Classification result from [`ClassifyRetry`].
 #[non_exhaustive]
 #[derive(Clone, Eq, PartialEq, Debug)]
 pub enum RetryReason {
+    /// There was an unexpected error, and this is the kind of error so that it can be properly retried.
     Error(ErrorKind),
+    /// The server explicitly told us to back off by this amount of time.
     Explicit(Duration),
 }
 
@@ -91,12 +118,14 @@ pub trait ClassifyRetry: Send + Sync + Debug {
     fn name(&self) -> &'static str;
 }
 
+/// Classifies an error into a [`RetryReason`].
 #[derive(Clone, Debug)]
 pub struct RetryClassifiers {
     inner: Vec<Arc<dyn ClassifyRetry>>,
 }
 
 impl RetryClassifiers {
+    /// Creates a new [`RetryClassifiers`].
     pub fn new() -> Self {
         Self {
             // It's always expected that at least one classifier will be defined,
@@ -105,6 +134,7 @@ impl RetryClassifiers {
         }
     }
 
+    /// Adds a classifier to this collection.
     pub fn with_classifier(mut self, retry_classifier: impl ClassifyRetry + 'static) -> Self {
         self.inner.push(Arc::new(retry_classifier));
         self
@@ -136,6 +166,43 @@ impl ClassifyRetry for RetryClassifiers {
     fn name(&self) -> &'static str {
         "Collection of Classifiers"
     }
+}
+
+/// A type to track the number of requests sent by the orchestrator for a given operation.
+///
+/// `RequestAttempts` is added to the `ConfigBag` by the orchestrator,
+/// and holds the current attempt number.
+#[derive(Debug, Clone, Copy)]
+pub struct RequestAttempts {
+    attempts: u32,
+}
+
+impl RequestAttempts {
+    /// Creates a new [`RequestAttempts`] with the given number of attempts.
+    pub fn new(attempts: u32) -> Self {
+        Self { attempts }
+    }
+
+    /// Returns the number of attempts.
+    pub fn attempts(&self) -> u32 {
+        self.attempts
+    }
+}
+
+impl From<u32> for RequestAttempts {
+    fn from(attempts: u32) -> Self {
+        Self::new(attempts)
+    }
+}
+
+impl From<RequestAttempts> for u32 {
+    fn from(value: RequestAttempts) -> Self {
+        value.attempts()
+    }
+}
+
+impl Storable for RequestAttempts {
+    type Storer = StoreReplace<Self>;
 }
 
 #[cfg(feature = "test-util")]

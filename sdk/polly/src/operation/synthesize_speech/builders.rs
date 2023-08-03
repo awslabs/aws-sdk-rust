@@ -145,9 +145,8 @@ impl SynthesizeSpeechFluentBuilder {
         struct AlternatePresigningSerializerRuntimePlugin;
         impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AlternatePresigningSerializerRuntimePlugin {
             fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
-                use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
                 let mut cfg = ::aws_smithy_types::config_bag::Layer::new("presigning_serializer");
-                cfg.set_request_serializer(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+                cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
                     crate::operation::synthesize_speech::SynthesizeSpeechPresigningRequestSerializer,
                 ));
                 ::std::option::Option::Some(cfg.freeze())

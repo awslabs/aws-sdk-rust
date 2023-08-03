@@ -40,19 +40,13 @@ impl Config {
             runtime_plugins: self.runtime_plugins.clone(),
         }
     }
-    // TODO(enableNewSmithyRuntimeCleanup): Remove this function
-    /// Return an [`HttpConnector`](::aws_smithy_client::http_connector::HttpConnector) to use when making requests, if any.
-    pub fn http_connector(&self) -> Option<&::aws_smithy_client::http_connector::HttpConnector> {
-        self.config.load::<::aws_smithy_client::http_connector::HttpConnector>()
-    }
-
-    /// Return the [`SharedConnector`](::aws_smithy_runtime_api::client::connectors::SharedConnector) to use when making requests, if any.
-    pub fn connector(&self) -> Option<::aws_smithy_runtime_api::client::connectors::SharedConnector> {
-        self.runtime_components.connector()
+    /// Return the [`SharedHttpConnector`](::aws_smithy_runtime_api::client::connectors::SharedHttpConnector) to use when making requests, if any.
+    pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::connectors::SharedHttpConnector> {
+        self.runtime_components.http_connector()
     }
 
     /// Returns the endpoint resolver.
-    pub fn endpoint_resolver(&self) -> ::aws_smithy_runtime_api::client::orchestrator::SharedEndpointResolver {
+    pub fn endpoint_resolver(&self) -> ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver {
         self.runtime_components.endpoint_resolver().expect("resolver defaulted if not set")
     }
     /// Return a reference to the retry configuration contained in this config, if any.
@@ -844,8 +838,8 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
             ::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new(),
         ) as _);
-        runtime_components.push_http_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedHttpAuthScheme::new(
-            ::aws_runtime::auth::sigv4::SigV4HttpAuthScheme::new(),
+        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
+            ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
         if let Some(credentials_cache) = _service_config.credentials_cache() {
             runtime_components.push_identity_resolver(
@@ -1049,12 +1043,12 @@ fn set_connector(resolver: &mut ::aws_smithy_runtime::client::config_override::R
             .and_then(|c| c.connector(&connector_settings, sleep_impl.clone()))
             .or_else(|| crate::config::default_connector(&connector_settings, sleep_impl))
             .map(|c| {
-                ::aws_smithy_runtime_api::client::connectors::SharedConnector::new(
+                ::aws_smithy_runtime_api::client::connectors::SharedHttpConnector::new(
                     ::aws_smithy_runtime::client::connectors::adapter::DynConnectorAdapter::new(c),
                 )
             });
 
-        resolver.runtime_components_mut().set_connector(connector);
+        resolver.runtime_components_mut().set_http_connector(connector);
     }
 }
 
@@ -1074,7 +1068,7 @@ fn set_endpoint_resolver(resolver: &mut ::aws_smithy_runtime::client::config_ove
         None
     };
     if let Some(endpoint_resolver) = endpoint_resolver {
-        let shared = ::aws_smithy_runtime_api::client::orchestrator::SharedEndpointResolver::new(
+        let shared = ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver::new(
             ::aws_smithy_runtime::client::orchestrator::endpoints::DefaultEndpointResolver::<crate::config::endpoint::Params>::new(endpoint_resolver),
         );
         resolver

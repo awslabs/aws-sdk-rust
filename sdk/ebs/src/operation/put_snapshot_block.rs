@@ -80,17 +80,16 @@ impl PutSnapshotBlock {
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutSnapshotBlock {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
         let mut cfg = ::aws_smithy_types::config_bag::Layer::new("PutSnapshotBlock");
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors as _;
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SharedRequestSerializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
             PutSnapshotBlockRequestSerializer,
         ));
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
             PutSnapshotBlockResponseDeserializer,
         ));
 
-        cfg.set_auth_option_resolver_params(::aws_smithy_runtime_api::client::auth::AuthOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolverParams::new(),
+        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
+            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("PutSnapshotBlock", "ebs"));
@@ -127,9 +126,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutSnap
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutSnapshotBlock")
                 .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
-                .with_auth_option_resolver(::std::option::Option::Some(
-                    ::aws_smithy_runtime_api::client::auth::SharedAuthOptionResolver::new(
-                        ::aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver::new(vec![
+                .with_auth_scheme_option_resolver(::std::option::Option::Some(
+                    ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
+                        ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
                             ::aws_runtime::auth::sigv4::SCHEME_ID,
                         ]),
                     ),
@@ -143,7 +142,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutSnap
 
 #[derive(Debug)]
 struct PutSnapshotBlockResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for PutSnapshotBlockResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutSnapshotBlockResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -162,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer for Pu
 }
 #[derive(Debug)]
 struct PutSnapshotBlockRequestSerializer;
-impl ::aws_smithy_runtime_api::client::orchestrator::RequestSerializer for PutSnapshotBlockRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutSnapshotBlockRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -250,7 +249,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutSnapshot
         >,
         cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        use ::aws_smithy_runtime_api::client::config_bag_accessors::ConfigBagAccessors;
         let _input = context
             .input()
             .downcast_ref::<PutSnapshotBlockInput>()
@@ -266,7 +264,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutSnapshot
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
             })?;
         cfg.interceptor_state()
-            .set_endpoint_resolver_params(::aws_smithy_runtime_api::client::orchestrator::EndpointResolverParams::new(params));
+            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
         ::std::result::Result::Ok(())
     }
 }
@@ -295,13 +293,13 @@ mod put_snapshot_block_request_test {
                 "{\n  \"message\": \"1 validation error detected\"\n}\n",
             ))
             .unwrap();
-        use ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer;
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer;
 
         let op = crate::operation::put_snapshot_block::PutSnapshotBlock::new();
         let config = op.config().expect("the operation has config");
         let de = config
-            .load::<::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer>()
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
             .expect("the config must have a deserializer");
 
         let parsed = de.deserialize_streaming(&mut http_response);
@@ -345,13 +343,13 @@ mod put_snapshot_block_request_test {
                 "{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n",
             ))
             .unwrap();
-        use ::aws_smithy_runtime_api::client::orchestrator::ResponseDeserializer;
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
+        use ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer;
 
         let op = crate::operation::put_snapshot_block::PutSnapshotBlock::new();
         let config = op.config().expect("the operation has config");
         let de = config
-            .load::<::aws_smithy_runtime_api::client::orchestrator::DynResponseDeserializer>()
+            .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
             .expect("the config must have a deserializer");
 
         let parsed = de.deserialize_streaming(&mut http_response);

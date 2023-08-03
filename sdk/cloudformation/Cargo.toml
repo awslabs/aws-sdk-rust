@@ -47,10 +47,12 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
+features = ["client"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
+features = ["client"]
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-types]

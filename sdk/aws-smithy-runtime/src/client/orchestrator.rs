@@ -15,19 +15,20 @@ use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::byte_stream::ByteStream;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::connectors::Connector;
+use aws_smithy_runtime_api::client::connectors::HttpConnector;
 use aws_smithy_runtime_api::client::interceptors::context::{
     Error, Input, InterceptorContext, Output, RewindResult,
 };
 use aws_smithy_runtime_api::client::interceptors::Interceptors;
 use aws_smithy_runtime_api::client::orchestrator::{
-    DynResponseDeserializer, HttpResponse, LoadedRequestBody, OrchestratorError, RequestSerializer,
-    ResponseDeserializer, SharedRequestSerializer,
+    HttpResponse, LoadedRequestBody, OrchestratorError,
 };
-use aws_smithy_runtime_api::client::request_attempts::RequestAttempts;
-use aws_smithy_runtime_api::client::retries::{RetryStrategy, ShouldAttempt};
+use aws_smithy_runtime_api::client::retries::{RequestAttempts, RetryStrategy, ShouldAttempt};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins;
+use aws_smithy_runtime_api::client::ser_de::{
+    RequestSerializer, ResponseDeserializer, SharedRequestSerializer, SharedResponseDeserializer,
+};
 use aws_smithy_types::config_bag::ConfigBag;
 use std::mem;
 use tracing::{debug, debug_span, instrument, trace, Instrument};
@@ -334,7 +335,7 @@ async fn try_attempt(
     let response = halt_on_err!([ctx] => {
         let request = ctx.take_request().expect("set during serialization");
         trace!(request = ?request, "transmitting request");
-        let connector = halt_on_err!([ctx] => runtime_components.connector().ok_or_else(||
+        let connector = halt_on_err!([ctx] => runtime_components.http_connector().ok_or_else(||
             OrchestratorError::other("No HTTP connector was available to send this request. \
                 Enable the `rustls` crate feature or set a connector to fix this.")
         ));
@@ -359,7 +360,7 @@ async fn try_attempt(
     let output_or_error = async {
         let response = ctx.response_mut().expect("set during transmit");
         let response_deserializer = cfg
-            .load::<DynResponseDeserializer>()
+            .load::<SharedResponseDeserializer>()
             .expect("a request deserializer must be in the config bag");
         let maybe_deserialized = {
             let _span = debug_span!("deserialize_streaming").entered();
@@ -420,11 +421,14 @@ mod tests {
         deserializer::CannedResponseDeserializer, serializer::CannedRequestSerializer,
     };
     use ::http::{Request, Response, StatusCode};
-    use aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver;
+    use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
     use aws_smithy_runtime_api::client::auth::{
-        AuthOptionResolverParams, SharedAuthOptionResolver,
+        AuthSchemeOptionResolverParams, SharedAuthSchemeOptionResolver,
     };
-    use aws_smithy_runtime_api::client::connectors::{Connector, SharedConnector};
+    use aws_smithy_runtime_api::client::connectors::{HttpConnector, SharedHttpConnector};
+    use aws_smithy_runtime_api::client::endpoint::{
+        EndpointResolverParams, SharedEndpointResolver,
+    };
     use aws_smithy_runtime_api::client::interceptors::context::{
         AfterDeserializationInterceptorContextRef, BeforeDeserializationInterceptorContextMut,
         BeforeDeserializationInterceptorContextRef, BeforeSerializationInterceptorContextMut,
@@ -433,10 +437,7 @@ mod tests {
         FinalizerInterceptorContextRef,
     };
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, SharedInterceptor};
-    use aws_smithy_runtime_api::client::orchestrator::{
-        BoxFuture, DynResponseDeserializer, EndpointResolverParams, Future, HttpRequest,
-        SharedEndpointResolver, SharedRequestSerializer,
-    };
+    use aws_smithy_runtime_api::client::orchestrator::{BoxFuture, Future, HttpRequest};
     use aws_smithy_runtime_api::client::retries::SharedRetryStrategy;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, RuntimePlugins};
@@ -474,7 +475,7 @@ mod tests {
         }
     }
 
-    impl Connector for OkConnector {
+    impl HttpConnector for OkConnector {
         fn call(&self, _request: HttpRequest) -> BoxFuture<HttpResponse> {
             Box::pin(Future::ready(Ok(::http::Response::builder()
                 .status(200)
@@ -496,9 +497,9 @@ mod tests {
                     .with_endpoint_resolver(Some(SharedEndpointResolver::new(
                         StaticUriEndpointResolver::http_localhost(8080),
                     )))
-                    .with_connector(Some(SharedConnector::new(OkConnector::new())))
-                    .with_auth_option_resolver(Some(SharedAuthOptionResolver::new(
-                        StaticAuthOptionResolver::new(vec![NO_AUTH_SCHEME_ID]),
+                    .with_http_connector(Some(SharedHttpConnector::new(OkConnector::new())))
+                    .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(
+                        StaticAuthSchemeOptionResolver::new(vec![NO_AUTH_SCHEME_ID]),
                     ))),
             }
         }
@@ -507,10 +508,10 @@ mod tests {
     impl RuntimePlugin for TestOperationRuntimePlugin {
         fn config(&self) -> Option<FrozenLayer> {
             let mut layer = Layer::new("TestOperationRuntimePlugin");
-            layer.store_put(AuthOptionResolverParams::new("idontcare"));
+            layer.store_put(AuthSchemeOptionResolverParams::new("idontcare"));
             layer.store_put(EndpointResolverParams::new("dontcare"));
             layer.store_put(SharedRequestSerializer::new(new_request_serializer()));
-            layer.store_put(DynResponseDeserializer::new(new_response_deserializer()));
+            layer.store_put(SharedResponseDeserializer::new(new_response_deserializer()));
             Some(layer.freeze())
         }
 
