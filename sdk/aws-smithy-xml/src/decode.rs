@@ -28,14 +28,6 @@ pub struct XmlDecodeError {
     kind: XmlDecodeErrorKind,
 }
 
-impl From<xmlparser::Error> for XmlDecodeError {
-    fn from(error: xmlparser::Error) -> Self {
-        Self {
-            kind: XmlDecodeErrorKind::InvalidXml(error),
-        }
-    }
-}
-
 impl Display for XmlDecodeError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
@@ -58,6 +50,12 @@ impl Error for XmlDecodeError {
 }
 
 impl XmlDecodeError {
+    pub(crate) fn invalid_xml(error: xmlparser::Error) -> Self {
+        Self {
+            kind: XmlDecodeErrorKind::InvalidXml(error),
+        }
+    }
+
     pub(crate) fn invalid_escape(esc: impl Into<String>) -> Self {
         Self {
             kind: XmlDecodeErrorKind::InvalidEscape { esc: esc.into() },
@@ -256,6 +254,11 @@ impl<'inp> Document<'inp> {
     }
 }
 
+/// A new-type wrapper around `Token` to prevent the wrapped third party type from showing up in
+/// public API
+#[derive(Debug)]
+pub struct XmlToken<'inp>(Token<'inp>);
+
 /// Depth tracking iterator
 ///
 /// ```xml
@@ -267,11 +270,11 @@ impl<'inp> Document<'inp> {
 /// </a> <- endel depth 0
 /// ```
 impl<'inp> Iterator for Document<'inp> {
-    type Item = Result<(Token<'inp>, Depth), XmlDecodeError>;
-    fn next<'a>(&'a mut self) -> Option<Result<(Token<'inp>, Depth), XmlDecodeError>> {
+    type Item = Result<(XmlToken<'inp>, Depth), XmlDecodeError>;
+    fn next<'a>(&'a mut self) -> Option<Result<(XmlToken<'inp>, Depth), XmlDecodeError>> {
         let tok = self.tokenizer.next()?;
         let tok = match tok {
-            Err(e) => return Some(Err(e.into())),
+            Err(e) => return Some(Err(XmlDecodeError::invalid_xml(e))),
             Ok(tok) => tok,
         };
         // depth bookkeeping
@@ -290,11 +293,11 @@ impl<'inp> Iterator for Document<'inp> {
                 self.depth += 1;
                 // We want the startel and endel to have the same depth, but after the opener,
                 // the parser will be at depth 1. Return the previous depth:
-                return Some(Ok((t, self.depth - 1)));
+                return Some(Ok((XmlToken(t), self.depth - 1)));
             }
             _ => {}
         }
-        Some(Ok((tok, self.depth)))
+        Some(Ok((XmlToken(tok), self.depth)))
     }
 }
 
@@ -351,7 +354,7 @@ impl<'inp> ScopedDecoder<'inp, '_> {
 }
 
 impl<'inp, 'a> Iterator for ScopedDecoder<'inp, 'a> {
-    type Item = Result<(Token<'inp>, Depth), XmlDecodeError>;
+    type Item = Result<(XmlToken<'inp>, Depth), XmlDecodeError>;
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.start_el.closed {
@@ -365,7 +368,7 @@ impl<'inp, 'a> Iterator for ScopedDecoder<'inp, 'a> {
             other => return other,
         };
 
-        match tok {
+        match tok.0 {
             Token::ElementEnd { end, .. } if self.start_el.end_el(end, depth) => {
                 self.terminated = true;
                 return None;
@@ -378,23 +381,23 @@ impl<'inp, 'a> Iterator for ScopedDecoder<'inp, 'a> {
 
 /// Load the next start element out of a depth-tagged token iterator
 fn next_start_element<'a, 'inp>(
-    tokens: &'a mut impl Iterator<Item = Result<(Token<'inp>, Depth), XmlDecodeError>>,
+    tokens: &'a mut impl Iterator<Item = Result<(XmlToken<'inp>, Depth), XmlDecodeError>>,
 ) -> Option<StartEl<'inp>> {
     let mut out = StartEl::new("", "", 0);
     loop {
         match tokens.next()? {
-            Ok((Token::ElementStart { local, prefix, .. }, depth)) => {
+            Ok((XmlToken(Token::ElementStart { local, prefix, .. }), depth)) => {
                 out.name.local = local.as_str();
                 out.name.prefix = prefix.as_str();
                 out.depth = depth;
             }
             Ok((
-                Token::Attribute {
+                XmlToken(Token::Attribute {
                     prefix,
                     local,
                     value,
                     ..
-                },
+                }),
                 _,
             )) => out.attributes.push(Attr {
                 name: Name {
@@ -404,17 +407,17 @@ fn next_start_element<'a, 'inp>(
                 value: unescape(value.as_str()).ok()?,
             }),
             Ok((
-                Token::ElementEnd {
+                XmlToken(Token::ElementEnd {
                     end: ElementEnd::Open,
                     ..
-                },
+                }),
                 _,
             )) => break,
             Ok((
-                Token::ElementEnd {
+                XmlToken(Token::ElementEnd {
                     end: ElementEnd::Empty,
                     ..
-                },
+                }),
                 _,
             )) => {
                 out.closed = true;
@@ -431,13 +434,13 @@ fn next_start_element<'a, 'inp>(
 /// If the current position is not a data element (and is instead a `<start-element>`) an error
 /// will be returned
 pub fn try_data<'a, 'inp>(
-    tokens: &'a mut impl Iterator<Item = Result<(Token<'inp>, Depth), XmlDecodeError>>,
+    tokens: &'a mut impl Iterator<Item = Result<(XmlToken<'inp>, Depth), XmlDecodeError>>,
 ) -> Result<Cow<'inp, str>, XmlDecodeError> {
     loop {
         match tokens.next().map(|opt| opt.map(|opt| opt.0)) {
             None => return Ok(Cow::Borrowed("")),
-            Some(Ok(Token::Text { text })) => return unescape(text.as_str()),
-            Some(Ok(e @ Token::ElementStart { .. })) => {
+            Some(Ok(XmlToken(Token::Text { text }))) => return unescape(text.as_str()),
+            Some(Ok(e @ XmlToken(Token::ElementStart { .. }))) => {
                 return Err(XmlDecodeError::custom(format!(
                     "looking for a data element, found: {:?}",
                     e

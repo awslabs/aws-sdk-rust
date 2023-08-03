@@ -5,7 +5,9 @@
 
 use aws_smithy_async::rt::sleep::SharedAsyncSleep;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
-use aws_smithy_types::config_bag::{FrozenLayer, Layer, Storable, Store, StoreReplace};
+use aws_smithy_types::config_bag::{
+    CloneableLayer, FrozenLayer, Layer, Storable, Store, StoreReplace,
+};
 
 macro_rules! component {
     ($typ:ty, $accessor:ident, $latest_accessor:ident) => {
@@ -39,14 +41,14 @@ macro_rules! latest_component {
 }
 
 struct Initial<'a> {
-    config: &'a mut Layer,
+    config: &'a mut CloneableLayer,
     components: &'a mut RuntimeComponentsBuilder,
 }
 
 struct Override<'a> {
     initial_config: FrozenLayer,
     initial_components: &'a RuntimeComponentsBuilder,
-    config: &'a mut Layer,
+    config: &'a mut CloneableLayer,
     components: &'a mut RuntimeComponentsBuilder,
 }
 
@@ -74,7 +76,10 @@ pub struct Resolver<'a> {
 
 impl<'a> Resolver<'a> {
     /// Construct a new [`Resolver`] in _initial mode_.
-    pub fn initial(config: &'a mut Layer, components: &'a mut RuntimeComponentsBuilder) -> Self {
+    pub fn initial(
+        config: &'a mut CloneableLayer,
+        components: &'a mut RuntimeComponentsBuilder,
+    ) -> Self {
         Self {
             inner: Inner::Initial(Initial { config, components }),
         }
@@ -84,7 +89,7 @@ impl<'a> Resolver<'a> {
     pub fn overrid(
         initial_config: FrozenLayer,
         initial_components: &'a RuntimeComponentsBuilder,
-        config: &'a mut Layer,
+        config: &'a mut CloneableLayer,
         components: &'a mut RuntimeComponentsBuilder,
     ) -> Self {
         Self {
@@ -103,7 +108,7 @@ impl<'a> Resolver<'a> {
     }
 
     /// Returns a mutable reference to the latest config.
-    pub fn config_mut(&mut self) -> &mut Layer {
+    pub fn config_mut(&mut self) -> &mut CloneableLayer {
         match &mut self.inner {
             Inner::Initial(initial) => initial.config,
             Inner::Override(overrid) => overrid.config,
@@ -180,7 +185,7 @@ mod tests {
 
     #[test]
     fn initial_mode_config() {
-        let mut config = Layer::new("test");
+        let mut config = CloneableLayer::new("test");
         let mut components = RuntimeComponentsBuilder::new("test");
 
         let mut resolver = Resolver::initial(&mut config, &mut components);
@@ -199,7 +204,7 @@ mod tests {
     fn override_mode_config() {
         let mut initial_config = CloneableLayer::new("initial");
         let initial_components = RuntimeComponentsBuilder::new("initial");
-        let mut config = Layer::new("override");
+        let mut config = CloneableLayer::new("override");
         let mut components = RuntimeComponentsBuilder::new("override");
 
         let resolver = Resolver::overrid(

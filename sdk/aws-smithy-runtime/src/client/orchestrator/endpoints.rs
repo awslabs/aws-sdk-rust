@@ -117,6 +117,7 @@ pub(super) async fn orchestrate_endpoint(
         .endpoint_resolver()
         .resolve_endpoint(params)
         .await?;
+    tracing::debug!("will use endpoint {:?}", endpoint);
     apply_endpoint(request, &endpoint, endpoint_prefix)?;
 
     // Make the endpoint config available to interceptors

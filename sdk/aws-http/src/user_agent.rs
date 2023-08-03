@@ -550,6 +550,16 @@ pub struct UserAgentStageError {
     kind: UserAgentStageErrorKind,
 }
 
+impl UserAgentStageError {
+    // `pub(crate)` method instead of implementing `From<InvalidHeaderValue>` so that we
+    // don't have to expose `InvalidHeaderValue` in public API.
+    pub(crate) fn from_invalid_header(value: InvalidHeaderValue) -> Self {
+        Self {
+            kind: UserAgentStageErrorKind::InvalidHeader(value),
+        }
+    }
+}
+
 impl Error for UserAgentStageError {
     fn source(&self) -> Option<&(dyn Error + 'static)> {
         use UserAgentStageErrorKind::*;
@@ -578,14 +588,6 @@ impl From<UserAgentStageErrorKind> for UserAgentStageError {
     }
 }
 
-impl From<InvalidHeaderValue> for UserAgentStageError {
-    fn from(value: InvalidHeaderValue) -> Self {
-        Self {
-            kind: UserAgentStageErrorKind::InvalidHeader(value),
-        }
-    }
-}
-
 #[allow(clippy::declare_interior_mutable_const)] // we will never mutate this
 const X_AMZ_USER_AGENT: HeaderName = HeaderName::from_static("x-amz-user-agent");
 
@@ -601,11 +603,16 @@ impl MapRequest for UserAgentStage {
             let ua = conf
                 .get::<AwsUserAgent>()
                 .ok_or(UserAgentStageErrorKind::UserAgentMissing)?;
-            req.headers_mut()
-                .append(USER_AGENT, HeaderValue::try_from(ua.ua_header())?);
-            req.headers_mut()
-                .append(X_AMZ_USER_AGENT, HeaderValue::try_from(ua.aws_ua_header())?);
-
+            req.headers_mut().append(
+                USER_AGENT,
+                HeaderValue::try_from(ua.ua_header())
+                    .map_err(UserAgentStageError::from_invalid_header)?,
+            );
+            req.headers_mut().append(
+                X_AMZ_USER_AGENT,
+                HeaderValue::try_from(ua.aws_ua_header())
+                    .map_err(UserAgentStageError::from_invalid_header)?,
+            );
             Ok(req)
         })
     }

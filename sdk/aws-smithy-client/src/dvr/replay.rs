@@ -113,7 +113,7 @@ impl ReplayingConnection {
                 ))?
                 .take()
                 .await;
-            aws_smithy_protocol_test::assert_uris_match(actual.uri(), expected.uri());
+            aws_smithy_protocol_test::assert_uris_match(expected.uri(), actual.uri());
             body_comparer(expected.body().as_ref(), actual.body().as_ref())?;
             let expected_headers = expected
                 .headers()

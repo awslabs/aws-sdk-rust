@@ -27,8 +27,7 @@ use aws_sdk_timestreamquery as timestreamquery;
 #[::tokio::main]
 async fn main() -> Result<(), timestreamquery::Error> {
     let config = aws_config::load_from_env().await;
-    // You MUST call `enable_endpoint_discovery` to produce a working client for this service.
-    let client = aws_sdk_timestreamquery::Client::new(&config).enable_endpoint_discovery().await;
+    let client = aws_sdk_timestreamquery::Client::new(&config);
 
     // ... make some calls with the client
 

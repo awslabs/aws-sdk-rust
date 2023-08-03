@@ -3,20 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_sdk_timestreamquery as query;
-use aws_sdk_timestreamquery::config::Credentials;
-use aws_smithy_async::rt::sleep::SharedAsyncSleep;
-use aws_smithy_async::test_util::controlled_time_and_sleep;
-use aws_smithy_async::time::{SharedTimeSource, TimeSource};
-use aws_smithy_client::dvr::{MediaType, ReplayingConnection};
-use aws_types::region::Region;
-use aws_types::SdkConfig;
-use std::time::{Duration, UNIX_EPOCH};
-
+#[cfg(aws_sdk_orchestrator_mode)]
 #[tokio::test]
 async fn do_endpoint_discovery() {
-    tracing_subscriber::fmt::init();
+    use aws_credential_types::provider::SharedCredentialsProvider;
+    use aws_sdk_timestreamquery as query;
+    use aws_sdk_timestreamquery::config::Credentials;
+    use aws_smithy_async::rt::sleep::SharedAsyncSleep;
+    use aws_smithy_async::test_util::controlled_time_and_sleep;
+    use aws_smithy_async::time::{SharedTimeSource, TimeSource};
+    use aws_smithy_client::dvr::{MediaType, ReplayingConnection};
+    use aws_types::region::Region;
+    use aws_types::SdkConfig;
+    use std::time::{Duration, UNIX_EPOCH};
+
+    let _logs = aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs();
+
     let conn = ReplayingConnection::from_file("tests/traffic.json").unwrap();
     //let conn = aws_smithy_client::dvr::RecordingConnection::new(conn);
     let start = UNIX_EPOCH + Duration::from_secs(1234567890);
@@ -32,7 +34,7 @@ async fn do_endpoint_discovery() {
         .idempotency_token_provider("0000-0000-0000")
         .build();
     let (client, reloader) = query::Client::from_conf(conf)
-        .enable_endpoint_discovery()
+        .with_endpoint_discovery_enabled()
         .await
         .expect("initial setup of endpoint discovery failed");
 

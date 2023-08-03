@@ -69,10 +69,6 @@ version = "0.2.9"
 [dependencies.regex]
 version = "1.5.5"
 
-[dependencies.tokio]
-version = "1.23.1"
-features = ["sync"]
-
 [dependencies.tokio-stream]
 version = "0.1.7"
 
